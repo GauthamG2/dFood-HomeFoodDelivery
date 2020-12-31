@@ -58,4 +58,4 @@ $(document).on('pageinit', '#qr-scanner', function () {
       setTimeout(scan, 300);
     }
   }
-});
+});   //scan QR
