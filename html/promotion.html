@@ -3,52 +3,29 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title> Promotion </title>
+		<title>Promotion</title>
 		<link rel="stylesheet" href="../css/myTheme1.css" />
+
+		<link rel="stylesheet" href="../css/promotion.css" />
+
 		<link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
-		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> 
-		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> 
+        
+        
+    	<script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+    	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-		<script> 
-    $(function(){
-      $("#includedContent").load("footer.html"); 
-    });
-	</script> 
 	
-		<style>
-			#FR {
-			border-style: solid;
-			border-color: #FB752C;
-			border-radius: 8px; 
-			padding:15px;
-			margin-top: 3em;
-			}
-			/* Slideshow container */
-			.slideshow-container {
-			max-width: 1000px;
-			position: relative;
-			margin: auto;
-			}
-			/* The dots/bullets/indicators */
-			.dot {
-			height: 10px;
-			width: 10px;
-			margin: 0 1px;
-			border-width: 15px;
-			border-color: #FB752C;
-			background-color:green;
-			border-radius: 50%;
-			display: inline-block;
-			transition: background-color 0.6s ease;
-			}
-			.active {
-			background-color: #FB752C;
-			}
-		</style>
+		<script> 
+			$(function(){
+			  $("#includedContent").load("footer.html"); 
+			});
+			</script> 
+
 	</head>
 	<body>
-		<div data-role="page" id="aboutus" data-theme="d" style="text-align: center; ">
+		<div data-role="page" id="qr-scanner" data-theme="d" style="text-align: center; ">
 			<div data-role="header" data-position="fixed">
 				<h1>Promotion </h1>
 			</div>
@@ -70,7 +47,7 @@
 					<span class="dot"></span> 
 					<span class="dot"></span> 
 				</div>
-			
+		
 				<div id="FR" >
 					<h4 style="margin:1px; text-align:left; font-weight:bold; font-size: 20px;"> Add promotions </h4>
 					<p style=" text-align:left; margin: 12px 0px 2px 0px;"> Promo code </p>
@@ -79,10 +56,12 @@
 					<hr style="height:4px;border-width:0; color:#FB752C;;background-color:#FB752C;">
 					<button class="submit-button" style="background-color: #FB752C; color:white;" class="ui-btn ui-corner-all ui-mini" id="scan">Scan QR code </button>
 				</div>
-			</div>
-		</div>
+            </div>
+			
+			
+			<script> 
 
-		<script>
+
 					var slideIndex = 0;
 					showSlides();
 					
@@ -102,13 +81,16 @@
 					  dots[slideIndex-1].className += " active";
 					  setTimeout(showSlides, 3000); 
 					}
+			
+			$("#scan").click(function(){
+				window.location.href = "scanQR.html";				
+			});
+
+		</script>
 
 
 
-				</script>
-
-
-
-<div id="includedContent"></div>
+		</div>
+	<div id="includedContent"></div>
 	</body>
 </html>

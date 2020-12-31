@@ -1,0 +1,28 @@
+#FR {
+    border-style: solid;
+    border-color: #FB752C;
+    border-radius: 8px; 
+    padding:15px;
+    margin-top: 3em;
+    }
+    /* Slideshow container */
+    .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    }
+    /* The dots/bullets/indicators */
+    .dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 1px;
+    border-width: 15px;
+    border-color: #FB752C;
+    background-color:green;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    }
+    .active {
+    background-color: #FB752C;
+    }
