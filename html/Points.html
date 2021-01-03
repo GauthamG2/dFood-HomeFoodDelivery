@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Points</title>
     <meta charset="utf-8" />
@@ -11,7 +12,7 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    
+
     <style>
         .points {
             text-align: center;
@@ -69,6 +70,15 @@
             transform: translateY(-50%);
         }
 
+        #footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #08204C;
+            color: white;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -79,7 +89,6 @@
         </div>
 
         <div class="points">
-            </br>
             <h3>TOTAL AVAILABLE POINTS</h3>
             <h1>10.4</h1>
         </div>
@@ -132,16 +141,34 @@
 
         <div data-role="main" class="pp">
             <div>
-                </br>
                 <span class="labelplusminus">-</span>
                 <span class="label" style="font-size:large; margin-top: 10px; font-family: 'Open Sans';">3.0</span>
                 <span class="labelplusminus">+</span>
 
                 <div style="text-align:center;">
                     <button
-                        style="background-color:#FB752C; color:white; display: inline-block;  margin: 0 auto; width: 35%; border-radius: 10px; font-family: 'Open Sans';">Redeem</button>
+                        style="background-color:#FB752C; color:white; display: inline-block;  margin: 0 auto; width: 35%; border-radius: 10px; font-family: 'Open Sans'; height: 35px;">Redeem</button>
                 </div>
-            </br>
+            </div>
+        </div>
+    </div>
+    <div data-role="footer" data-position="fixed" id='footer'>
+        <div style="padding:0 20px 0 20px; font-size: 12px;">
+            <p style="float: left; text-align: left; margin:8px 0 2px 0  ">No 97, <br>
+                Ramakrishna Garden, <br>
+                Colombo - 06 <br>
+                + 94 11 412 5050 <br>
+                thefoodcorporation@gmail.com
+            </p>
+            <p style="float: right; text-align: right;  font-weight: bold; margin:8px 0 2px 0 "> About Us<br>
+                FAQs <br>
+                Legal
+            </p>
+            <br> <br> <br> <br> <br> <br>
+            <div>
+                <hr style="margin:0 0 5px 0 ">
+                <p style=" margin: 0 0 8px 0 "> Copyrights <i class="fa fa-copyright" style="font-size:12px;"></i> 2020
+                    The Food Corporation. All rights reserved. </p>
             </div>
         </div>
     </div>
