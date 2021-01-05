@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My mobile page!</title>
+    <link rel="stylesheet" href="../css/myTheme1.css" />
+    <link rel="stylesheet" href="../css/practise.css"/>
+    <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+</head>
+<body>
+    <!-- This is a 'Home' page -->
+    <div data-role="page" id="home" data-theme="d">
+        <div data-role="header" data-position="fixed">
+            <h1>Practise</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <h1>Hello John</h1>
+            <p>Welcome to dFood Practise page</p>
+            <a href="#popupPadded" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Sort & Filter</a>
+            <div data-role="popup" id="popupPadded" class="ui-content">
+                
+                <!-- <p>This is a popup with the <code>ui-content</code> class added to the popup container.</p> -->
+                <div>
+                    <form>
+                        <fieldset data-role="controlgroup" data-iconpos="right" data-mini="true">
+                            <legend>Sort by Price</legend><hr>
+                            <input type="radio" name="radio-choice-v-6" id="radio-choice-v-6a" value="on" data-theme="d">
+                            <label for="radio-choice-v-6a">Low to High</label>
+                            <input type="radio" name="radio-choice-v-6" id="radio-choice-v-6b" value="off" data-theme="d">
+                            <label for="radio-choice-v-6b">High to Low</label><br>
+                        </fieldset>
+                    </form>
+                </div>
+                <div>
+                    <form>
+                        <fieldset data-role="controlgroup" data-iconpos="right">
+                            <legend>Filter by Meal Type</legend><hr>
+                            <input type="checkbox" name="checkbox-h-6a" id="checkbox-h-6a" data-mini="true" data-theme="d">
+                            <label for="checkbox-h-6a">Breakfast</label>
+                            <input type="checkbox" name="checkbox-h-6b" id="checkbox-h-6b" data-mini="true" data-theme="d">
+                            <label for="checkbox-h-6b">Lunch</label>
+                            <input type="checkbox" name="checkbox-h-6c" id="checkbox-h-6c" data-mini="true" data-theme="d">
+                            <label for="checkbox-h-6c">Dinner</label>
+                            </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-card">
+                <div>
+                    <img src="/images/Food_Images/10.jpg">
+                </div>
+                <div class="shop-title"> House of Fashion</div>
+            </div>
+
+            <div class="section-card">
+                <div>
+                    <img src="/images/Food_Images/11.jpg">
+                </div>
+                <div class="shop-title"> House of Fashion</div>
+            </div>
+
+            <div class="section-card">
+                <div>
+                    <img src="/images/Food_Images/12.jpg">
+                </div>
+                <div class="shop-title"> House of Fashion</div>
+            </div>
+        </div>
+
+
+        <div data-role="footer" data-position="fixed" data-theme="e">
+            <div data-role="navbar" data-theme="e">
+            <ul>
+                <li> <a href="#home" data-icon="home">Home</a></li>
+                <li> <a href="#favourite" data-icon="heart">Favourites</a></li>
+                <li> <a href="#myOrders" data-icon="mail">My Orders</a></li>
+                <li> <a href="#account" data-icon="user">Account</a></li>
+            </ul>
+        </div>
+        </div>
+
+
+
+
+    </div>
+
+    <!-- This is a 'Favourites' page -->
+    <div data-role="page" id="favourite" data-theme="d">
+        <div data-role="header" data-position="fixed">
+            <h1>Favourite</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <h1>Hello John</h1>
+            <p>Welcome to favourite page</p>
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="e">
+            <div data-role="navbar" data-theme="e">
+            <ul>
+                <li> <a href="#home" data-icon="home">Home</a></li>
+                <li> <a href="#favourite" data-icon="heart">Favourites</a></li>
+                <li> <a href="#myOrders" data-icon="mail">My Orders</a></li>
+                <li> <a href="#account" data-icon="user">Account</a></li>
+            </ul>
+        </div>
+        </div>
+
+
+    </div>
+    <!-- This is a 'My Orders' page -->
+    <div data-role="page" id="myOrders" data-theme="d">
+        <div data-role="header" data-position="fixed">
+            <h1>My Orders</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <h1>Hello John</h1>
+            <p>Welcome to my orders page</p>
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="e">
+            <div data-role="navbar" data-theme="e">
+            <ul>
+                <li> <a href="#home" data-icon="home">Home</a></li>
+                <li> <a href="#favourite" data-icon="heart">Favourites</a></li>
+                <li> <a href="#myOrders" data-icon="mail">My Orders</a></li>
+                <li> <a href="#account" data-icon="user">Account</a></li>
+            </ul>
+        </div>
+        </div>
+
+
+    </div>
+    <!-- This is a 'Account' page -->
+    <div data-role="page" id="account" data-theme="d">
+        <div data-role="header" data-position="fixed">
+            <h1>Account</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <h1>Hello John</h1>
+            <p>Welcome to account page</p>
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="e">
+            <div data-role="navbar" data-theme="e">
+            <ul>
+                <li> <a href="#home" data-icon="home">Home</a></li>
+                <li> <a href="#favourite" data-icon="heart">Favourites</a></li>
+                <li> <a href="#myOrders" data-icon="mail">My Orders</a></li>
+                <li> <a href="#account" data-icon="user">Account</a></li>
+            </ul>
+        </div>
+        </div>
+
+
+    </div>
+
+
+</body>
+</html>

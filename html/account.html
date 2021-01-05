@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My mobile page!</title>
+    <link rel="stylesheet" href="../css/myTheme1.css"/>
+    <link rel="stylesheet" href="../css/home.css"/>
+    <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css"/>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css"/>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+
+    <!-- Adding footer -->
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    <script> 
+        $(function(){
+            $("#footer").load("footer.html"); 
+        });
+    </script> 
+</head>
+<body>
+    <!-- This is a 'Account' page -->
+    <div data-role="page" id="account" data-theme="d">
+        <div data-role="header" data-position="fixed">
+            <h1>Account</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <h1>Hello John</h1>
+            <p>Welcome to account page</p>
+        </div>
+
+        <!-- Adding Footer -->
+        <div id="footer"></div>
+
+        <!-- Adding Tab-bar -->
+        <div data-role="footer" data-position="fixed" data-theme="e">
+            <div data-role="navbar" data-theme="e">
+                <ul>
+                    <li><a href="/html/Home.html" data-icon="home">Home</a></li>
+                    <li><a href="/html/favourite.html" data-icon="heart">Favourites</a></li>
+                    <li><a href="/html/myOrders.html" data-icon="mail">My Orders</a></li>
+                    <li><a href="/html/account.html" data-icon="user">Account</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

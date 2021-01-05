@@ -1,0 +1,16 @@
+.section {
+    width: auto;
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.section-card {
+    width: 340px;
+    height: 210px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 4px 4px 18px --2px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
