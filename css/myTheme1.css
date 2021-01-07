@@ -1007,3 +1007,40 @@ html head + body .ui-btn.ui-btn-e.ui-btn-active {
 	color: #FB752C /*{e-active-color}*/;
 	text-shadow: 0 /*{e-active-shadow-x}*/ 0 /*{e-active-shadow-y}*/ 0 /*{e-active-shadow-radius}*/ #f3f3f3 /*{e-active-shadow-color}*/;
 }
+
+/* Tab-bar icon changes */
+.ui-icon-home::after {
+    background: url('/images/icons_svg/home-nav-bar.svg') no-repeat !important;
+}
+
+.ui-btn.ui-btn-active.ui-icon-home::after {
+    background: url('/images/icons_svg/home-nav-bar-active.svg') no-repeat !important;
+}
+
+.ui-icon-heart::after {
+    background: url('/images/icons_svg/favorite-nav-bar.svg') no-repeat !important;
+}
+
+.ui-btn.ui-btn-active.ui-icon-heart::after {
+    background: url('/images/icons_svg/favorite-nav-bar-active.svg') no-repeat !important;
+}
+
+.ui-icon-mail::after {
+    background: url('/images/icons_svg/receipt-nav-bar.svg') no-repeat !important;
+    background-size: 23px 23px !important;
+}
+
+.ui-btn.ui-btn-active.ui-icon-mail::after {
+    background: url('/images/icons_svg/receipt-nav-bar-active.svg') no-repeat !important;
+    background-size: 23px 23px !important;
+}
+
+.ui-icon-user::after {
+    background: url('/images/icons_svg/person_outline-nav-bar.svg') no-repeat !important;
+    background-size: 23px 23px !important;
+}
+
+.ui-btn.ui-btn-active.ui-icon-user::after {
+    background: url('/images/icons_svg/person_outline-nav-bar-active.svg') no-repeat !important;
+    background-size: 23px 23px !important;
+}
