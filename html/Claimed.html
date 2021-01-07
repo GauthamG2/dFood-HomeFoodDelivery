@@ -12,6 +12,11 @@
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
+    <script>
+        $(function () {
+            $("#includedContent").load("footer.html");
+        });
+    </script>
 
     <style>
         .ui-page {
@@ -39,10 +44,17 @@
         }
 
         .paragraphGame {
-            margin-top: -150px;
+            margin-top: -280px;
             text-align: center;
             font-family: 'Open Sans';
             color:#FF8717;
+            font-weight: bolder;
+        }
+        .paragraphGameSub{
+            margin-top: -10px;
+            text-align: center;
+            font-family: 'Open Sans';
+            color:black;
             font-weight: bolder;
         }
 
@@ -51,23 +63,29 @@
             margin-left: 20%;
             margin-right: 20%;
         }
-    </style>
 
+    </style>
 </head>
 <body>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    <div> <img class="centerCake" src="themes/images/Cake.png" style="border-radius: 50%;">
+    <div data-role="page" id="points" data-theme="d">
+        <div data-role="header" data-position="fixed">
+            <h1> Claim </h1>
+            <!-- <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> -->
+        </div>
+    <div> 
+        <img class="centerCake" src="themes/images/Cake.png" style="border-radius: 50%; margin-top: 250px;">
     </div>
-
-    <div style="margin-top: -100px;">
     
     <h6 style="text-align: center; font-weight: normal; font-family: 'Open Sans';">The discount points have been added. 
     </br>Please check the view cart page. </h6>
     <h1 class='paragraphGame'>Congratualations!</h1>
-    </div>
+    <h6 class='paragraphGameSub'>The discount points have been added. 
+    </br>Please check the view cart page. </h6>
+
+
+
+
+      <!-- Adding Footer -->
+      <div id="includedContent"></div>
 </body>
 </html>

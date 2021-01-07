@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/layer.css"/>
+		<style>
+		.container { margin: 150px auto; max-width: 960px; }
+			.btn{
+				width: 120px;
+				height: 36px;
+				line-height: 36px;
+				text-align: center;
+				border-radius: 4px;
+				background: #1e90ff;
+				margin: 10px 0 0 30px;
+				color: #fff;
+			}
+			.mt10{
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="btn"><a href="javascript:;" id="confirm">Confirm</a></div>
+	</div>
+		<!--<div class="m-toptip">aaaaa</div>-->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+		<script src="js/mobileLayer.js"></script>
+		<script>
+			
+			$("#confirm").on("click",function(){
+				$.confirm('Confirm Message','jQueryScript',function(){
+					console.log('ok')
+				},function(){
+					console.log('cncle')
+				})
+			})
+		
+</script>
+	</body>
+</html>

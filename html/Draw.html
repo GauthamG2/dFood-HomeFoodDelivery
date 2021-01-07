@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Draw</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="js/forget_password.js"></script>
+    <link rel="stylesheet" href="themes/myTheme1.css" />
+    <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#includedContent").load("footer.html");
+        });
+    </script>
+
+    <style>
+        /* .ui-page {
+            background: transparent url(themes/images/Claim.png);
+        } */
+
+        .centerDessert {
+            position: relative;
+            left: 50%;
+            top: 50%;
+            margin-top: 150px;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 500;
+            height: 300;
+        }
+    </style>
+</head>
+
+<body>
+    <div data-role="page" id="points" data-theme="d">
+        <div data-role="header" data-position="fixed">
+            <h1> Draw </h1>
+            <!-- <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> -->
+        </div>
+
+        <div>
+        </br>
+            <h1
+                style="background-color: peachpuff; color: #FB752C; text-align: center; margin-top: 10px; font-family: 'Open Sans';">
+                Spin for a Dessert!
+
+                </br>
+                
+                <h4 style="margin-left: 10%; margin-right: 10%; margin-bottom: auto; font-family: 'Open Sans'; font-size: small;">Click
+                    the Spin button to win a dessert. 
+                </br>
+                The dessert will be added with your order :)
+                </h4>
+        </div>
+<form>
+        <!-- <div class="centerCake"> -->
+
+            <div class="roulette" style="display:none; margin-left: 10%; margin-right: 10%; width: 90%; margin-top: 30px;">
+            <!-- <div class="roulette" style="display:none; position: relative; margin-top: 30px; "> -->
+
+
+                <img src="themes/images/1.jpeg" width="300" height="300" />
+                <img src="themes/images/6.jpg" width="300" height="300" />
+
+                <img src="themes/images/2.jpeg" width="300" height="300" />
+                <img src="themes/images/6.jpg" width="300" height="300" />
+
+                <img src="themes/images/3.jpeg" width="300" height="300" />
+                <img src="themes/images/6.jpg" width="300" height="300" />
+
+                <img src="themes/images/4.jpeg" width="300" height="300" />
+                <img src="themes/images/6.jpg" width="300" height="300" />
+
+                <img src="themes/images/5.jpg" width="300" height="300" />
+                <img src="themes/images/6.jpg" width="300" height="300" />
+
+            </div>
+        <!-- </div> -->
+</form>
+        <!-- <button id="go">Go</button> -->
+        <button id="go"
+            style="background-color:#FB752C; color:white; margin: 0 auto auto; width: 35%; border-radius: 10px; font-family: 'Open Sans'; margin-top: 20px;">SPIN
+            !</button>
+
+            <button id="retun"
+            style="background-color:#FB752C; color:white; margin: 0 auto; width: 45%; border-radius: 10px; font-family: 'Open Sans'; margin-top: 10px;  font-size: x-small;">Return Home</button>
+
+        <!-- Adding Footer -->
+        <div id="includedContent"></div>
+
+</body>
+<script src="js/spin.js" charset="utf-8"></script>
+
+</html>
