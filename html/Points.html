@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Points</title>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
+    <title>DFood Home Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="js/forget_password.js"></script>
-    <link rel="stylesheet" href="themes/myTheme1.css" />
-    <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="../css/myTheme1.css"/>
+    <link rel="stylesheet" href="../css/home.css"/>
+    <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css"/>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css"/>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 
     <script>
         $(function () {
@@ -189,7 +188,8 @@
 
         <div class="points">
             <h3>TOTAL AVAILABLE POINTS</h3>
-            <h1>10.4</h1>
+        
+            <h3><textarea class="points" style="width: 35%; margin-left: auto; margin-right: auto; height:30px; margin-top: -15px;">10.4</textarea></h3>
         </div>
 
         <div data-role="main" class="border-main">
@@ -257,6 +257,8 @@
         </div>
     </div>
     <div id="includedContent"></div>
+
+
     <script>
 
         function increaseValue() {
@@ -274,6 +276,7 @@
             document.getElementById('number').value = value;
         }
     </script>
+
 
 </body>
 

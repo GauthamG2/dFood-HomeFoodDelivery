@@ -5,8 +5,7 @@
     <title>Claim</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="js/forget_password.js"></script>
-    <link rel="stylesheet" href="themes/myTheme1.css" />
+    <link rel="stylesheet" href="../css/myTheme1.css" />
     <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -51,6 +50,18 @@
             margin-left: 20%;
             margin-right: 20%;
         }
+
+        @media screen and (min-width:1024px)and (max-width:1024px) and (orientation:landscape) {
+    .ui-page {
+        background-image: url("../images/Cake.png");
+        background-size: cover;
+    }
+@media screen and (min-width:768px) and (max-width:768px) and (orientation:portrait) {
+    .ui-page {
+        background-image: url("../images/Cake.png");
+        background-size: cover;
+    }
+}}
     </style>
 
 </head>
@@ -65,7 +76,7 @@
     </br>
     </br>
     </br>
-    <div> <img class="centerCake" src="themes/images/Cake.png" style="border-radius: 50%;">
+    <div> <img class="centerCake" src="../images/Cake.png" style="border-radius: 50%;">
     </div>
 
     <div>

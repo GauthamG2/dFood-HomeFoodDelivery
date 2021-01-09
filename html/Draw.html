@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Draw</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="js/forget_password.js"></script>
-    <link rel="stylesheet" href="themes/myTheme1.css" />
+    <link rel="stylesheet" href="../css/myTheme1.css" />
     <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
     <script>
         $(function () {
             $("#includedContent").load("footer.html");
@@ -22,7 +19,6 @@
         /* .ui-page {
             background: transparent url(themes/images/Claim.png);
         } */
-
         .centerDessert {
             position: relative;
             left: 50%;
@@ -33,67 +29,93 @@
             width: 500;
             height: 300;
         }
+
+        
+
+        @media (orientation: landscape) and (max-device-width : 1024px){
+            #cd{
+            display:none;
+            margin-left:50%;
+            margin-right: 10%;
+            width: 90%;
+            margin-top: 30px;
+        }
+
+    }
+        @media screen and (max-device-width : 1024px) {
+    
+            #cd{
+            display:none;
+            margin-left:10%;
+            margin-right: 10%;
+            width: 90%;
+            margin-top: 30px;
+        }
+
+        }
+
+    
+        
     </style>
 </head>
 
 <body>
-    <div data-role="page" id="points" data-theme="d">
+    <div data-role="page" id="draw" data-theme="d">
         <div data-role="header" data-position="fixed">
             <h1> Draw </h1>
             <!-- <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> -->
         </div>
 
         <div>
-        </br>
+            </br>
             <h1
                 style="background-color: peachpuff; color: #FB752C; text-align: center; margin-top: 10px; font-family: 'Open Sans';">
                 Spin for a Dessert!
-
                 </br>
-                
-                <h4 style="margin-left: 10%; margin-right: 10%; margin-bottom: auto; font-family: 'Open Sans'; font-size: small;">Click
-                    the Spin button to win a dessert. 
-                </br>
-                The dessert will be added with your order :)
+            
+                <h4
+                    style="margin-left: auto; margin-right: auto; margin-bottom: auto; font-family: 'Open Sans'; font-size: small; text-align: center;">
+                    Click
+                    the Spin button to win a dessert.
+                    </br>
+                    The dessert will be added with your order :)
                 </h4>
         </div>
-<form>
-        <!-- <div class="centerCake"> -->
+        <form>
+            <!-- <div class="centerCake"> -->
+            <!-- <div class="roulette"> -->
+                <!-- <div class="cd"> -->
 
-            <div class="roulette" style="display:none; margin-left: 10%; margin-right: 10%; width: 90%; margin-top: 30px;">
-            <!-- <div class="roulette" style="display:none; position: relative; margin-top: 30px; "> -->
-
-
-                <img src="themes/images/1.jpeg" width="300" height="300" />
-                <img src="themes/images/6.jpg" width="300" height="300" />
-
-                <img src="themes/images/2.jpeg" width="300" height="300" />
-                <img src="themes/images/6.jpg" width="300" height="300" />
-
-                <img src="themes/images/3.jpeg" width="300" height="300" />
-                <img src="themes/images/6.jpg" width="300" height="300" />
-
-                <img src="themes/images/4.jpeg" width="300" height="300" />
-                <img src="themes/images/6.jpg" width="300" height="300" />
-
-                <img src="themes/images/5.jpg" width="300" height="300" />
-                <img src="themes/images/6.jpg" width="300" height="300" />
-
+                <!-- <div class="roulette" style="display:none; margin-left: 10%; margin-right: 10%; width: 90%; margin-top: 30px;"> -->
+                <!-- <div class="roulette" style="display:none; position: relative; margin-top: 30px; "> -->
+<div id="cd" class="roulette">
+                <img src="../images/1.jpeg" width="300" height="300" />
+                <img src="../images/6.jpg" width="300" height="300" />
+                <img src="../images/2.jpeg" width="300" height="300" />
+                <img src="../images/6.jpg" width="300" height="300" />
+                <img src="../images/3.jpeg" width="300" height="300" />
+                <img src="../images/6.jpg" width="300" height="300" />
+                <img src="../images/4.jpeg" width="300" height="300" />
+                <img src="../images/6.jpg" width="300" height="300" />
+                <img src="../images/5.jpg" width="300" height="300" />
+                <img src="../images/6.jpg" width="300" height="300" />
+            <!-- </div> -->
             </div>
-        <!-- </div> -->
-</form>
+            <!-- </div> -->
+        </form>
         <!-- <button id="go">Go</button> -->
         <button id="go"
             style="background-color:#FB752C; color:white; margin: 0 auto auto; width: 35%; border-radius: 10px; font-family: 'Open Sans'; margin-top: 20px;">SPIN
             !</button>
 
-            <button id="retun"
-            style="background-color:#FB752C; color:white; margin: 0 auto; width: 45%; border-radius: 10px; font-family: 'Open Sans'; margin-top: 10px;  font-size: x-small;">Return Home</button>
+        <button id="retun"
+            style="background-color:#FB752C; color:white; margin: 0 auto; width: 45%; border-radius: 10px; font-family: 'Open Sans'; margin-top: 10px;  font-size: x-small;">Return
+            Home</button>
 
         <!-- Adding Footer -->
         <div id="includedContent"></div>
 
-</body>
-<script src="js/spin.js" charset="utf-8"></script>
+        <script src="../js/spin.js" charset="utf-8"></script>
 
+</body>
 </html>
