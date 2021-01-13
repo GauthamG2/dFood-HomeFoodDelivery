@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dFood</title>
+<link rel="stylesheet" href="../css/myTheme1.css" />
+<link rel="stylesheet" href="../css/promotion.css" />
+<link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+
+<script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+<script src="../js/cart.js"></script>
+
+<script>
+    $(function() {
+        $("#includedContent").load("footer.html");
+    });
+</script>
+<style>
+    .ui-btn,
+    label.ui-btn {
+        font-weight: bold;
+        border-width: 1px;
+        border: 3px solid #FB752C !important;
+        background-color: transparent;
+    }
+    
+    form {
+        width: 100px;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 10px;
+    }
+    
+    .value-button {
+        width: 20px;
+        background: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    .value-button:hover {
+        cursor: pointer;
+    }
+    
+    form #decrease {
+        border: 1px solid #FB752C !important;
+        background-color: transparent;
+        border-radius: 10px 0 0 8px;
+        margin: 15px 1px 0 0;
+    }
+    
+    form #increase {
+        border: 1px solid #FB752C !important;
+        background-color: transparent;
+        border-radius: 0 8px 8px 0;
+        margin-top: 15px;
+        margin-left: 7px;
+    }
+    
+    form #input-wrap {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    input#number {
+        text-align: center;
+    }
+    
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+</style>
+</head>
+
+<body>
+    <h1>ddd</h1>
+    <div data-role="page" id="payment" data-theme="d" style="text-align: center; ">
+        <div data-role="header" data-position="fixed">
+            <h1>ssss</h1>
+            <h1>Cart
+                <a data-rel="back" target="_self">   
+                    <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> </a>
+                <a href="#" class="ui-btn-right" style="font-size: 20px; margin-top: 35px; background-color: transparent ; text-decoration: none;">Clear</a>
+            </h1>
+        </div>
+        <div>
+            <h2 style="text-align: center; font-weight: normal;">By <strong style="font-weight: bold;"> MoMo </strong>
+            </h2>
+            <h3 style="text-align: center; font-weight: normal;  margin-top: -15px; font-size: 17px;"> To <strong style="font-style: italic; font-weight: 100; font-size: 17px;"> No 6, Ramakrishna Garden, Colombo 06
+					</strong>
+            </h3>
+        </div>
+
+        <div id="FR" style="margin-left: 10px; margin-right: 10px; padding: 10px;">
+            <ul data-role="listview" data-split-icon="delete" data-inset="true" style="border-width: 1px !important; ">
+                <div style=" border: 1px solid #FB752C !important; border-radius: 8px; ">
+                    <p style="font-size: 16px; font-weight: bold; text-align: left; padding-left: 10px; margin-bottom: 10px;">
+                        Food Name
+                    </p>
+                    <fieldset class="ui-grid-a">
+                        <div class="ui-block-a" style="width: 40%;">
+                            <p style="padding-left: 25px; font-size: 16px; text-align: left; margin: 0">Quantity</p>
+                            <p style="padding-left: 25px; font-size: 16px; font-weight: bold; text-align: left; margin-top:5px;">
+                                LKR 450
+                            </p>
+                        </div>
+                        <div class="ui-block-b" style="width: 20%; margin-top: -18px; ">
+                            <form style="margin-left: 10px;">
+                                <div class="ui-block-a" style="width: 30%">
+                                    <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                                </div>
+                                <div class="ui-block-b" style="width: 40%">
+                                    <input type="number" id="number" value="1" />
+                                </div>
+                                <div class="ui-block-c" style="width: 30%">
+                                    <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                                </div>
+                            </form>
+                        </div>
+                        <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop"><img src="../images/icons/Icon material-delete.png" style="float: right; margin-right: 20px; "> </a>
+                    </fieldset>
+                </div>
+            </ul>
+            <div data-role="popup" id="purchase" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+                <h3>Confirm</h3>
+                <p>Are you sure, <br> Do you want to clear the cart? </p>
+                <a href="index.html" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Cancel
+					</a>
+                <a href="index.html" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Yes</a>
+            </div>
+        </div>
+
+        <div id="FR" style="margin-left: 10px; margin-right: 10px;">
+            <fieldset class="ui-grid-a">
+                <div class="ui-block-a" style="width: 70%; text-align: left;">
+                    <p style="padding-left: 10px; font-size: 15px; ">Sub total</p>
+                    <p style="padding-left: 10px; font-size: 15px; margin-top: -10px;">Delivery charge</p>
+                    <p style="padding-left: 10px; font-size: 15px; font-weight: bold; margin-top: -10px;">Total</p>
+                    <p style="padding-left: 10px; font-size: 15px;">Payment method</p>
+                </div>
+                <div class="ui-block-b" style="width: 30%; text-align: right;">
+                    <p id="sub-total" style="padding-left: 10px; font-size: 16px; ">00.00</p>
+                    <p id="service-charges" style="padding-left: 10px; font-size: 16px; margin-top: -10px;">00.00</p>
+                    <p id="total-price" style="padding-left: 10px; font-size: 16px; font-weight: bold; margin-top: -10px;">00.00</p>
+                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop"><img src="../images/icons/card.png" style="float: right; margin-top: -5px;"> </a>
+                </div>
+            </fieldset>
+
+            <p class="paragraph" style="margin-top:15px; text-align:center">You'll earn <b id="orderPoints">0</b> points for this order!</p>
+
+            <fieldset class="ui-grid-a">
+                <div class="ui-block-a" style="width: 50%; text-align: left;">
+                    <button class="submit-button" style=" background-color: transparent !important; color:  #FB752C  !important; border-width: 1px !important; width: 90%; margin: 0 auto; margin-top: 40px; font-size: 15px;" id="RedeemPoints">Redeem Points</button>
+                </div>
+                <div class="ui-block-b" style="width: 50%; text-align: right;">
+                    <button class="submit-button" style=" background-color: transparent !important; color:  #FB752C !important; border-width: 1px !important; width: 90%; margin: 0 auto; margin-top: 40px; font-size: 15px;" id="AddPromoCode">Add Promo Code</button>
+                </div>
+            </fieldset>
+            <button class="submit-button" style="background-color: #FB752C; color: white !important; border-width: 1px !important; width: 50%; margin: 0 auto; margin-top: 40px;" id="PlaceOrder">Place Order</button>
+        </div>
+    </div>
+
+    <!-- This is the script that connects the form to StripeCheckout -->
+    <!-- Code Section A Grab the booking form and initialise the stripe checkout form -->
+
+    <script>
+        jQuery(function($) {
+            var $form = $('#frmBooking');
+            var handler = StripeCheckout.configure({
+                key: 'pk_test_cp21BcECf4kMMUbSlRlZlsMo',
+                token: function(token) {
+                    // Use the token to create the charge with a server-side script.
+                    // You can access the token ID with `token.id`
+
+                    //This will be printed when the transaction is successful. To charge, server side scripting is required.
+                    if (token.id) {
+                        $("#thankyouPayment").html("Thank you, your payment was successful!");
+
+                        //You can also use the following code to re-submit the form content to another file for further processing.
+                        //Don't forget to add action to your form
+                        //$form.get(0).submit();
+
+                        //Or save form data locally, using local storage.
+                    }
+                }
+            });
+
+
+            $('#PlaceOrder').on('click', function(e) {
+                // Code Section B  Open Checkout with further options
+                handler.open({
+                    name: 'Payment',
+                    currency: 'gbp',
+                    description: $('#item_name').val(),
+                    amount: $('#total_value').val() * 100
+                });
+                e.preventDefault();
+            });
+
+            // Code Section C  Close Checkout on page navigation
+            $(window).on('popstate', function() {
+                handler.close();
+            });
+        });
+    </script>
+
+
+    <div id="includedContent"></div>
+</body>
+
+</html>

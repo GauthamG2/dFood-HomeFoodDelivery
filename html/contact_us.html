@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>dFood | Contact Us </title>
+    <link rel="icon" href="../images/logo.png" type="image/gif">
+    <link rel="icon" href="../images/logo.png" type="image/gif">
+    <link rel="stylesheet" href="../css/myTheme1.css" />
+    <link rel="stylesheet" href="../css/promotion.css" />
+    <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <script>
+        $(function() {
+            $("#includedContent").load("footer.html");
+        });
+    </script>
+
+    <style>
+     
+        .ui-btn {
+            text-decoration: none !important;
+        }
+        
+        .ui-btn-active {
+            cursor: pointer;
+        }
+        
+        .ui-btn-icon-notext .ui-btn-inner .ui-icon {
+            background-color: #FB752C;
+        }
+
+        a{
+            margin: 15px;
+        }
+
+        h4{
+            margin:1px; 
+            text-align:left; 
+            font-weight:bold; 
+            font-size: 20px; 
+            font-size: 16px;
+        }
+
+        #FR{
+            margin: 30px 20px; 
+  
+
+        }
+    </style>
+</head>
+
+<body>
+    <div data-role="page" id="payment" data-theme="d" style="text-align: center; ">
+        <div data-role="header" data-position="fixed">
+            <h1>Contact Us <a data-rel="back"  target="_self">    <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> </a></h1>
+        </div>
+        <div>
+
+            <div id="FR">
+                <h4> Drop a message </h4>
+                <form action="https://formspree.io/f/mvovverd" method="POST">   
+       
+                <label style=" text-align:left; margin: 12px 0px 2px 0px; font-size: 14px;" >Name*</label>
+                <input style="font-size: 14px;" type="text" name="name" placeholder="Enter name"  required/>
+                <label style=" text-align:left; margin: 12px 0px 2px 0px; font-size: 14px;" >Email*</label>
+                <input style="font-size: 14px;" type="email" name="email" placeholder="Enter email" required />
+                <label style=" text-align:left; margin: 12px 0px 2px 0px; font-size: 14px;" for="message" >Message*</label>
+                <textarea name="message" id="textarea-1" required></textarea>
+                <button class="submit-button" style="font-weight: normal; border-radius: 10px; width: 40%; margin: 0 auto; margin-top: 20px; background-color: #FB752C; color:white" id="SendMessage" onclick="submitBTN_validate()">Send</button>
+                </form>
+            </div>
+            <div id="FR" >
+                <h4 style="margin: 1px 1px 13px 1px ;" > Contact us through </h4>
+                <a href="#"><img src="../images/icons/Icon awesome-phone-alt.png" class="ui-li-icon ui-corner-none"></a>
+                <a href="https://www.messenger.com/" target="_blank"><img src="../images/icons/Icon simple-messenger.png" class="ui-li-icon ui-corner-none"></a>
+                <a href="https://mail.google.com/" target="_blank"><img src="../images/icons/Icon material-email.png" class="ui-li-icon ui-corner-none"></a>
+            </div>
+            <div id="FR"> 
+                <h4 style="margin: 1px 1px 13px 1px ;"> Follow us on </h4>
+                <a href="https://www.facebook.com/" target="_blank"><img src="../images/icons/Rectangle 298.png" class="ui-li-icon ui-corner-none"></a>
+                <a href="https://www.instagram.com/" target="_blank"><img src="../images/icons/Rectangle 297.png" class="ui-li-icon ui-corner-none"></a>
+                <a href="https://twitter.com/" target="_blank"><img src="../images/icons/Icon ionic-logo-twitter.png" class="ui-li-icon ui-corner-none"></a>
+            </div>
+
+        </div>
+
+               <!-- Adding Tab-bar -->
+        <div data-role="footer" data-position="fixed" data-theme="e">
+            <div data-role="navbar" data-theme="e">
+                <ul>
+                    <li><a href="/html/Home.html" target="_self" data-icon="home">Home</a></li>
+                    <li><a href="/html/favourites.html" target="_self" data-icon="heart">Favourites</a></li>
+                    <li><a href="/html/my_orders.html" target="_self" data-icon="mail">My Orders</a></li>
+                    <li><a href="/html/account.html" target="_self" data-icon="user">Account</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+
+   
+</body>
+
+</html>

@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Sign up </title>
+		<title>dFood | Sign up </title>
 
 		<meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-	
+  <link rel="icon" href="../images/logo.png" type="image/gif">
   <link rel="stylesheet" href="../css/myTheme1.css" />
   <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
@@ -37,6 +37,10 @@ img {
 
 }
 
+a{
+    text-decoration: none;
+}
+
 	
         </style>
     </head>
@@ -44,7 +48,7 @@ img {
 	
 	<div data-role="page" id="pageone" data-theme="d">
 			<div data-role="header" data-position="fixed">
-				<h1> Sign Up </h1>
+				<h1 > Sign Up <a  data-rel="back"  target="_self">    <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left;margin-top: 0; "> </a> </h1>
             </div>
             <div>
             <img src="../images/logo.png" class="center" id="logoProfile" width=250 height="145">
@@ -302,8 +306,12 @@ img {
 		window.location.href = "privacy_policy.html";				
 	});
 
-      
 
+    
+      
+    // $("#signup-btn").click(function(){
+	// 	window.location.href = "vendor_home.html";				
+	// });
 
     
 

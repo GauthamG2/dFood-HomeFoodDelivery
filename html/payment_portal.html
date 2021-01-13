@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>dFood</title>
+    <link rel="stylesheet" href="../css/myTheme1.css" />
+    <link rel="stylesheet" href="../css/promotion.css" />
+    <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+
+    <script src="../js/payment.js"></script>
+
+    <script>
+        $(function() {
+            $("#includedContent").load("footer.html");
+        });
+    </script>
+
+    <style>
+        .ui-body-d,
+        .ui-page-theme-d .ui-body-inherit,
+        html .ui-bar-d .ui-body-inherit,
+        html .ui-body-d .ui-body-inherit,
+        html body .ui-group-theme-d .ui-body-inherit,
+        html .ui-panel-page-container-d {
+            background-color: #FFFFFF/*{d-body-background-color}*/
+            ;
+            border-color: #6772E5;
+            text-shadow: 0/*{d-body-shadow-x}*/
+            0/*{d-body-shadow-y}*/
+            0/*{d-body-shadow-radius}*/
+            #f3f3f3/*{d-body-shadow-color}*/
+            ;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div data-role="page" id="payment" data-theme="d" style="text-align: center; ">
+        <div data-role="header" data-position="fixed">
+
+            <h1>Payment Portal
+                <a data-rel="back"  target="_self">    
+                    <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> </a>
+            </h1>
+        </div>
+        <div id="FR" style="margin-left: 10px; margin-right: 10px; border-color: #6772E5;">
+
+            <h4 style="color: #6772E5; margin:1px; text-align: center; font-weight:bold; font-size: 100px;"> Stripe </h4>
+            <div style="margin-bottom: 10px; margin-top: 10px;">
+
+                <p style=" text-align:left; margin: 10px 5px 2px 0px; font-size: 16px;"> Name on the card </p>
+                <input type="text" name="name" id="Name" placeholder="Name" />
+
+                <p style=" text-align:left; margin: 10px 5px 2px 0px; font-size: 16px;"> Card number </p>
+                <input type="number" name="cardNumber" id="CardNumber" placeholder="xxxx-xxxx-xxxx-xxxx" />
+
+                <div style="width: 45%; float: left;margin-left: 0px;">
+                    <p style=" text-align:left; margin: 10px 5px 2px 0px; font-size: 16px;"> Exp. date </p>
+                    <input type="text" name="expDate" id="ExpDate" placeholder="MM-YY" />
+                </div>
+                <div style="width: 45%; float: right;margin-right: 0px;">
+                    <p style=" text-align:left; margin: 10px 5px 2px 0px; font-size: 16px;"> CVV </p>
+                    <input type="text" name="cvv" id="Cvv" placeholder="000" />
+                </div>
+            </div>
+            <button class="submit-button" style="width: 70%; background-color: #6772E5; border-radius:10px; color:white; margin: 0 auto; margin-top: 100px;" id="paymentProceed">Proceed Checkout </button>
+        </div>
+
+           <!-- Adding Tab-bar -->
+           <div data-role="footer" data-position="fixed" data-theme="e">
+            <div data-role="navbar" data-theme="e">
+                <ul>
+                    <li><a href="/html/Home.html" target="_self" data-icon="home">Home</a></li>
+                    <li><a href="/html/favourites.html" target="_self" data-icon="heart">Favourites</a></li>
+                    <li><a href="/html/my_orders.html" target="_self" data-icon="mail">My Orders</a></li>
+                    <li><a href="/html/account.html" target="_self" data-icon="user">Account</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- This is the script that connects the form to StripeCheckout -->
+    <!-- Code Section A Grab the booking form and initialise the stripe checkout form -->
+
+    <script>
+        jQuery(function($) {
+            var $form = $('#frmBooking');
+            var handler = StripeCheckout.configure({
+                key: 'pk_test_cp21BcECf4kMMUbSlRlZlsMo',
+                token: function(token) {
+                    // Use the token to create the charge with a server-side script.
+                    // You can access the token ID with `token.id`
+
+                    //This will be printed when the transaction is successful. To charge, server side scripting is required.
+                    if (token.id) {
+                        $("#thankyouPayment").html("Thank you, your payment was successful!");
+
+                        //You can also use the following code to re-submit the form content to another file for further processing.
+                        //Don't forget to add action to your form
+                        //$form.get(0).submit();
+
+                        //Or save form data locally, using local storage.
+                    }
+                }
+            });
+
+
+            $('#paymentProceed').on('click', function(e) {
+                // Code Section B  Open Checkout with further options
+                handler.open({
+                    name: 'Payment',
+                    currency: 'gbp',
+                    description: $('#item_name').val(),
+                    amount: $('#total_value').val() * 100
+                });
+                e.preventDefault();
+            });
+
+            // Code Section C  Close Checkout on page navigation
+            $(window).on('popstate', function() {
+                handler.close();
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

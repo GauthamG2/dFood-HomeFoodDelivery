@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>dFood</title>
+    <link rel="stylesheet" href="../css/myTheme1.css" />
+    <link rel="stylesheet" href="../css/promotion.css" />
+    <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script>
+        $(function() {
+            $("#includedContent").load("footer.html");
+        });
+    </script>
+    <style type="text/css">
+      
+        
+        .profile-pic {
+            max-width: 200px;
+            max-height: 200px;
+            display: block;
+        }
+        
+        .file-upload {
+            display: none;
+        }
+        
+        .circle {
+            border-radius: 1000px !important;
+            overflow: hidden;
+            width: 128px;
+            height: 128px;
+            border: 3px solid #FB752C;
+            ;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: auto;
+            margin-top: 10px;
+        }
+        
+        .p-image {
+            color: #FB752C;
+            transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+        }
+        
+        .p-image:hover {
+            transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+        }
+        
+        .upload-button {
+            font-size: 1.2em;
+        }
+        
+        .upload-button:hover {
+            transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+            color: #999;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    <div data-role="page" id="payment" data-theme="d" style="text-align: center; ">
+        <div data-role="header" data-position="fixed">
+            <h1>Edit Profile <a data-rel="back"  target="_self">    
+                <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> </a></h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <form method="POST" class="input-form" name="vform" onsubmit="return ValidateForm()">
+
+                <div id="FR" style="margin-top: 5px;">
+
+                    <div class="row">
+                        <div class="small-12 medium-2 large-2 columns">
+                            <div id="FR" style=" width: 40%; margin: 0 auto; margin-top: -5px; border-width: 2px;">
+                                <div class="circle" style=" margin: auto; margin-top: -5px;">
+                                    <!-- User Profile Image -->
+                                    <img class="profile-pic" src="../images/profilepic.png">
+                                </div>
+                                <div class="p-image" style="margin-bottom: 5px !important;">
+                                    <i class="fa fa-camera upload-button"></i>
+                                    <input class="file-upload" type="file" accept="image/*" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="text-align: left; font-size: 15px;">
+                        <label for="fullname" style="font-size: 14px; margin-bottom: 5px !important;">Full Name</label>
+                        <input style="font-size: 14px;" type="text" name="username" placeholder="Enter your name" />
+                        <div id="username_error"></div>
+
+                        <label for="Email" style="font-size: 14px; margin-bottom: 5px !important;">Email</label>
+                        <input style="font-size: 14px;" type="email" name="email" placeholder="Enter your email" />
+                        <div id="email_error"></div>
+
+                        <label for="dob" style="font-size: 14px; margin-bottom: 5px !important;">Date of Birth</label>
+                        <input style="font-size: 14px;" type="date" id="birthday" name="birthday" placeholder="Select your birthday" />
+
+                        <label for="phonenumber" style="font-size: 14px; margin-bottom: 5px !important;">Phone Number</label>
+                        <input style="font-size: 14px;" type="number" id="phonenumber" max="10" placeholder="Enter your phone number" />
+                    </div>
+
+                </div>
+            </form>
+            <button style="width: 40%; margin: 0 auto; margin-top: 10px; color: white; background-color:  #FB752C; font-weight: normal; " class="submit-button" id="save" type="submit" name="register" onclick="submitBTN_validate()">Save</button>
+        </div>
+
+           <!-- Adding Tab-bar -->
+           <div data-role="footer" data-position="fixed" data-theme="e">
+            <div data-role="navbar" data-theme="e">
+                <ul>
+                    <li><a href="/html/Home.html" target="_self" data-icon="home">Home</a></li>
+                    <li><a href="/html/favourites.html" target="_self" data-icon="heart">Favourites</a></li>
+                    <li><a href="/html/my_orders.html" target="_self" data-icon="mail">My Orders</a></li>
+                    <li><a href="/html/account.html" target="_self" data-icon="user">Account</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <script>
+	
+        $("#save").click(function(){
+            window.location.href = "profile.html";				
+        });
+    
+        
+    
+
+</script>
+
+
+   
+</body>
+
+</html>

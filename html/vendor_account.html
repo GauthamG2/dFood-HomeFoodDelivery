@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>dFood</title>
+    <link rel="stylesheet" href="../css/myTheme1.css" />
+
+
+    <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+
+
+    <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+    <script>
+        $(function() {
+            $("#includedContent").load("footer.html");
+        });
+    </script>
+
+
+    <style>
+        .ui-btn,
+        label.ui-btn {
+            color: #08204C !important;
+            font-weight: normal !important;
+            border-width: 1px;
+            border: 1px solid #FB752C !important;
+            background-color: transparent !important;
+        }
+        
+        .ui-btn {
+            text-decoration: none !important;
+        }
+        
+        .ui-btn-active {
+            cursor: pointer;
+        }
+        
+        .ui-btn-icon-notext .ui-btn-inner .ui-icon {
+            background-color: #FB752C;
+        }
+
+  
+    </style>
+
+
+
+</head>
+
+<body>
+    <div data-role="page" id="payment" data-theme="d" style="text-align: center; ">
+        <div data-role="header" data-position="fixed">
+            <h1>Account</h1>
+        </div>
+
+        <div style="margin-left: 10px; margin-right: 10px;">
+            <br>
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <a href="#"><img src="../images/icons/Icon material-account-box.png" class="ui-li-icon ui-corner-none">PROFILE</a>
+                </li>
+            </ul>
+            <br>
+            <hr style="  height:4px; border-width:0; background-color:#FB752C;">
+            <br>
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <a href="#" id="review"><img src="../images/icons/Icon material-rate-review.png" class="ui-li-icon ui-corner-none">REVIEW AND COMMENTS</a>
+                </li>
+            </ul>
+            <br>
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <a href="#"><img src="../images/icons/Icon simple-cashapp.png" class="ui-li-icon ui-corner-none">PAYMENT</a>
+                </li>
+            </ul>
+            <br>
+            <hr style="  height:4px; border-width:0; background-color:#FB752C;">
+            <br>
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <a href="#"><img src="../images/icons/Icon feather-phone.png" class="ui-li-icon ui-corner-none">CONTACT US</a>
+                </li>
+            </ul>
+            <br>
+            <hr style="  height:4px; border-width:0; background-color:#FB752C;">
+            <br>
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <a href="#" id="signout"><img src="../images/icons/Icon open-account-logout.png" class="ui-li-icon ui-corner-none">SIGN OUT</a>
+                </li>
+            </ul>
+      
+
+        </div>
+    </div>
+
+
+    <script>
+	
+	
+	
+	
+
+	
+        $("#review").click(function(){
+            window.location.href = "vendor_review.html";				
+        });
+    
+        $("#signout").click(function(){
+            window.location.href = "signin.html";				
+        });
+
+        </script>
+         
+    <div id="includedContent"></div>
+</body>
+
+</html>

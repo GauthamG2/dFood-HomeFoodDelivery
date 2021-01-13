@@ -1,374 +1,372 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Sign up </title>
 
-		<meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-	
-  <link rel="stylesheet" href="../css/myTheme1.css" />
-  <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
-  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> 
-  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> 
- 
-		
-		<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' 
-        integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
-    
-        <style type="text/css">
-            .submit-button{
-                margin-top: 30px;
-                margin-bottom: 40px;
-            }
+<head>
+    <title>dFood | Sign up </title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="../images/logo.png" type="image/gif">
+    <link rel="stylesheet" href="../css/myTheme1.css" />
+    <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
 
 
-#FR {
-  border-style: solid;
-			border-color: #FB752C;
-            border-radius: 8px; 
-            padding: 15px ; 
-
-}
+    <script src="../js/connect.js"></script>
 
 
-          
-
-	
-
-
-.profile-pic {
-    max-width: 200px;
-    max-height: 200px;
-    display: block;
-}
-
-.file-upload {
-    display: none;
-}
-
-
-.circle {
-    border-radius: 1000px !important;
-    overflow: hidden;
-    width: 128px;
-    height: 128px;
-    border: 3px solid #FB752C;;
-   
-}
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  margin: auto;
- margin-top:10px;
-}
-.p-image {
-
-  
-  color: #FB752C;
-  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
-}
-.p-image:hover {
-  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
-}
-.upload-button {
-  font-size: 1.2em;
-}
-
-.upload-button:hover {
-  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
-  color: #999;
-}
-
-        </style>
-    </head>
-	<body>
-	
-	<div data-role="page" id="pageone" data-theme="d">
-			<div data-role="header" data-position="fixed">
-				<h1> Sign Up </h1>
-            </div>
-            <div>
-
-	<img src="../images/logo.png" class="center" id="logoProfile" width=250 height="145">
-	
-    </div>
-
-
- 
-	  <div data-role="main" class="ui-content" >
-        <form method="POST" class="input-form" name="vform" onsubmit="return ValidateForm()" >
-
-<div id="FR" > 
-
-<div class="row">
-   <div class="small-12 medium-2 large-2 columns">
-     <div class="circle" style=" margin: auto; margin: auto;">
-       <!-- User Profile Image -->
-       <img class="profile-pic" src="../images/profilepic.png">
-
-  
-     </div>
-
-     <div class="p-image" >
-       <i class="fa fa-camera upload-button" ></i>
-        <input class="file-upload" type="file" accept="image/*"/>
-     </div>
-
-         </div> 
-         </div>
-            <label for="fullname">Full Name</label>
-            <input type="text" name="username" placeholder="Enter your name"/>
-            <div id="username_error"></div>
-
-            <label for="Email">Email</label>
-            <input type="email" name="email" placeholder="Enter your email"/>
-            <div id="email_error"></div>
-
-            <label for="phonenumber">Phone Number</label>
-            <input type="number" id="phonenumber" max="10" placeholder="Enter your phone number"/>
-
-         
-
-            <label for="address">Address</label>
-            <input type="text" name="surname" placeholder="Enter address"/>
-
-            <label for="dob">Date of Birth</label>
-            <input type="date" id="birthday" name="birthday" placeholder="Select your birthday"/>
-
-
-            <!-- Add profile video -->
-
-            <label for="ps">Password</label>
-            <input type="password" name="password" placeholder="Enter password"/>
-            
-            <label for="ps">Confirm Password</label>
-            <input type="password" name="password_confirm" placeholder="Re enter your password"/>
-            <div id="password_error"></div>
-</div> 
-            <div style="text-align: center">	
-                    <p> By Signing Up, you agree to our <br> 
-                    <a href="#" id="TC">Terms & Conditions </a> and <a href="#" id="PP">Privacy Policy</a> <p>
-            
-            <button class="submit-button"  id="signup-btn" type="submit" name="register" onclick="submitBTN_validate()">Sign up</button>
-
-            
-            <div style="text-align: center">	
-                    <p> Already have an account? <br> 
-                    <a href="#" id="SI">Sign In </a> <p>
+    <style type="text/css">
+        .submit-button {
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
         
-        </form>
+        #FR {
+            border-style: solid;
+            border-color: #FB752C;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .profile-pic {
+            max-width: 200px;
+            max-height: 200px;
+            display: block;
+        }
+        
+        .file-upload {
+            display: none;
+        }
+        
+        .circle {
+            border-radius: 1000px !important;
+            overflow: hidden;
+            width: 128px;
+            height: 128px;
+            border: 3px solid #FB752C;
+            ;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: auto;
+            margin-top: 10px;
+        }
+        
+        .p-image {
+            color: #FB752C;
+            transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+        }
+        
+        .p-image:hover {
+            transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+        }
+        
+        .upload-button {
+            font-size: 1.2em;
+        }
+        
+        .upload-button:hover {
+            transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+            color: #999;
+		}
+		a{
+			text-decoration: none;
+			}
+    </style>
+</head>
+
+<body>
+
+    <div data-role="page" id="pageone" data-theme="d">
+        <div data-role="header" data-position="fixed">
+			<h1> Sign Up <a data-rel="back" target="_self">   <img src="../images/icons/Icon ionic-ios-arrow-back.png" 
+				style="float: left; margin-top: 0; ">  </a>  </h1>
+        </div>
+        <div>
+            <img src="../images/logo.png" class="center" id="logoProfile" width=250 height="145">
         </div>
 
-	  </div>
+        <div data-role="main" class="ui-content" style="padding-top: 0px;">
+            <form method="POST" class="input-form" name="vform" onsubmit="return ValidateForm()">
 
-	 
-	</div>
-	<script>
-        // select form elements
-        var username = document.forms['vform']['username'];
-        var email = document.forms['vform']['email'];
-        var password = document.forms['vform']['password'];
-        var password_confirm = document.forms['vform']['password_confirm'];
- 
+                <div id="FR">
 
-        // select error display elements
-        var username_error = document.getElementById('username_error');
-        var email_error = document.getElementById('email_error');
-        var password_error = document.getElementById('password_error');
+                    <div class="row">
+                        <div class="small-12 medium-2 large-2 columns">
+                            <div id="FR" style=" width: 40%; margin: 0 auto; margin-top: -5px; border-width: 2px;">
+                                <div class="circle" style=" margin: auto; margin-top: -5px;">
+                                    <!-- User Profile Image -->
+                                    <img class="profile-pic" src="../images/profilepic.png">
+                                </div>
+                                <div class="p-image" style="margin: 0 auto; margin-bottom: 5px !important; ">
+                                    <i class="fa fa-camera upload-button" style="margin-left: 60px;"></i>
+                                    <input class="file-upload" type="file" accept="image/*" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <label for="fullname">Full Name</label>
+                    <input type="text" name="username" id="full_name" placeholder="Enter your name" />
+                    <div id="username_error"></div>
 
-        // setup blur events to catch the validation after focus out
-        username.addEventListener('blur', nameVerify, true);
-        email.addEventListener('blur', emailVerify, true);
-        password_confirm.addEventListener('blur', passwordVerify, true);
+                    <label for="Email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email" />
+                    <div id="email_error"></div>
 
-        function ValidateForm() {
-            // Username validation
-            if (username.value == "") {
-                username.style.border = "1px solid red";
-                username_error.style.color = "red";
-                username_error.textContent = "Username is required";
-                username.focus();
-                return false;
-            }else{
-                return true;
+                    <label for="phonenumber">Phone Number</label>
+                    <input type="number" id="phonenumber" placeholder="Enter your phone number" />
+
+                    <label for="address">Address</label>
+                    <input type="text" name="surname" id="address" placeholder="Enter address" />
+
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="birthday" name="birthday" placeholder="Select your birthday" />
+
+                    <label for="ps">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter password" />
+
+                    <label for="ps">Confirm Password</label>
+                    <input type="password" name="password_confirm" id="confirm_password" placeholder="Re enter your password" />
+                    <div id="password_error"></div>
+                </div>
+
+                <div style="text-align: center">
+                    <p> By Signing Up, you agree to our <br> <a href="#" id="TC">Terms & Conditions </a> and <a href="#" id="PP">Privacy Policy</a> </p>
+
+                    <button class="submit-button" id="signup_btn" type="submit" name="register" style="width: 50%; margin: 0 auto; background-color: #FB752C; color: white; font-weight: normal;" onclick="submitBTN_validate()">Sign up</button>
+
+                    <div style="text-align: center">
+                        <p> Already have an account? <br> <a href="#" id="SI">Sign In </a> </p>
+                    </div>
+            </form>
+            </div>
+
+        </div>
+
+        <script>
+            // select form elements
+            var username = document.forms['vform']['username'];
+            var email = document.forms['vform']['email'];
+            var password = document.forms['vform']['password'];
+            var password_confirm = document.forms['vform']['password_confirm'];
+
+
+            // select error display elements
+            var username_error = document.getElementById('username_error');
+            var email_error = document.getElementById('email_error');
+            var password_error = document.getElementById('password_error');
+
+            // setup blur events to catch the validation after focus out
+            username.addEventListener('blur', nameVerify, true);
+            email.addEventListener('blur', emailVerify, true);
+            password_confirm.addEventListener('blur', passwordVerify, true);
+
+            function ValidateForm() {
+                // Username validation
+                if (username.value == "") {
+                    username.style.border = "1px solid red";
+					username_error.style.color = "red";
+					username_error.style.fontSize = "14px";
+			        username_error.style.marginBottom = "10px";
+                    username_error.textContent = "Username is required";
+                    username.focus();
+                    return false;
+                } else {
+                    return true;
+                }
+
+                // regex to validate the email address
+                var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+                // Email validation
+                if (email.value == "") {
+                    email.style.border = "1px solid red";
+					email_error.style.color = "red";
+					email_error.style.fontSize = "14px";
+			        email_error.style.marginBottom = "10px";
+                    email_error.textContent = "Email is required";
+                    email.focus();
+                    return false;
+                } else if (!re.test(email.value)) {
+                    email.style.border = "1px solid red";
+					email_error.style.color = "red";
+					email_error.style.fontSize = "14px";
+			        email_error.style.marginBottom = "10px";
+                    email_error.textContent = "Invalid email, please re-enter";
+                    email.focus();
+                    return false;
+                } else {
+                    return true;
+                }
+
+                // Password validation
+                if (password.value == "") {
+                    password.style.border = "1px solid red";
+					password_error.style.color = "red";
+					password_error.style.fontSize = "14px";
+			        password_error.style.marginBottom = "10px";
+                    password_error.textContent = "Password is required";
+                    password.focus();
+                    return false;
+                } else if (password.value.length < 6) {
+                    password.style.border = "1px solid red";
+					password_error.style.color = "red";
+					password_error.style.fontSize = "14px";
+			        password_error.style.marginBottom = "10px";
+                    password_error.textContent = "Password must be at least 6 characters long";
+                    password.focus();
+                    return false;
+                } else if (password.value != password_confirm.value) {
+                    password_confirm.style.border = "1px solid red";
+					password_error.style.color = "red";
+					password_error.style.fontSize = "14px";
+			        password_error.style.marginBottom = "10px";
+                    password_error.textContent = "Passwords do not match";
+                    password_confirm.focus();
+                    return false;
+                } else {
+                    return true;
+                }
             }
 
-
-
-            // regex to validate the email address
-            var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-
-            // Email validation
-            if (email.value == "") {
-                email.style.border = "1px solid red";
-                email_error.style.color = "red";
-                email_error.textContent = "Email is required";
-                email.focus();
-                return false;
-            } else if (!re.test(email.value)) {
-                email.style.border = "1px solid red";
-                email_error.style.color = "red";
-                email_error.textContent = "Invalid email, please re-enter";
-                email.focus();
-                return false;
-            }else{
-                return true;
+            // event handler functions
+            function nameVerify() {
+                if (username.value == "") {
+                    username.style.border = "1px solid red";
+					username_error.style.color = "red";
+					username_error.style.fontSize = "14px";
+			        username_error.style.marginBottom = "10px";
+                    username_error.textContent = "Username is required";
+                    return false;
+                } else {
+                    username.style.border = "1px solid #5cb85c";
+                    username_error.innerHTML = "";
+                    return true;
+                }
             }
 
-            // Password validation
-            if (password.value == "") {
-                password.style.border = "1px solid red";
-                password_error.style.color = "red";
-                password_error.textContent = "Password is required";
-                password.focus();
-                return false;
-            } else if (password.value.length < 6) {
-                password.style.border = "1px solid red";
-                password_error.style.color = "red";
-                password_error.textContent = "Password must be at least 6 characters long";
-                password.focus();
-                return false;
-            } else if (password.value != password_confirm.value) {
-                password_confirm.style.border = "1px solid red";
-                password_error.style.color = "red";
-                password_error.textContent = "Passwords do not match";
-                password_confirm.focus();
-                return false;
-            }else{
-                return true;
+            function emailVerify() {
+                // regex to validate the email address
+                var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+                if (email.value == "") {
+                    email.style.border = "1px solid red";
+					email_error.style.color = "red";
+					email_error.style.fontSize = "14px";
+			        email_error.style.marginBottom = "10px";
+                    email_error.textContent = "Email is required";
+                    return false;
+                } else if (!re.test(email.value)) {
+                    email.style.border = "1px solid red";
+					email_error.style.color = "red";
+					email_error.style.fontSize = "14px";
+			        email_error.style.marginBottom = "10px";
+                    email_error.textContent = "Invalid email, please re-enter";
+                    return false;
+                } else {
+                    email.style.border = "1px solid #5cb85c";
+                    email_error.innerHTML = "";
+                    return true;
+                }
             }
 
-        }
-
-        // event handler functions
-        function nameVerify() {
-            if (username.value == "") {
-                username.style.border = "1px solid red";
-                username_error.style.color = "red";
-                username_error.textContent = "Username is required";
-                return false;
-            } else {
-                username.style.border = "1px solid #5cb85c";
-                username_error.innerHTML = "";
-                return true;
+            function passwordVerify() {
+                if (password.value == "") {
+                    password.style.border = "1px solid red";
+					password_error.style.color = "red";
+					password_error.style.fontSize = "14px";
+			        password_error.style.marginBottom = "10px";
+                    password_error.textContent = "Password is required";
+                    return false;
+                } else if (password.value.length < 6) {
+                    password.style.border = "1px solid red";
+					password_error.style.color = "red";
+					password_error.style.fontSize = "14px";
+			        password_error.style.marginBottom = "10px";
+                    password_error.textContent = "Password must be at least 6 characters long";
+                    return false;
+                } else if (password.value != password_confirm.value) {
+                    password_confirm.style.border = "1px solid red";
+					password_error.style.color = "red";
+					password_error.style.fontSize = "14px";
+			        password_error.style.marginBottom = "10px";
+                    password_error.textContent = "Passwords do not match";
+                    return false;
+                } else {
+                    password_confirm.style.border = "1px solid #5cb85c";
+                    password.style.border = "1px solid #5cb85c";
+                    password_error.innerHTML = "";
+                    return true;
+                }
             }
-        }
+
+            $(document).ready(function() {
 
 
-        
-        function emailVerify() {
-            // regex to validate the email address
-            var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-            
-            if (email.value == "") {
-                email.style.border = "1px solid red";
-                email_error.style.color = "red";
-                email_error.textContent = "Email is required";
-                return false;
-            } else if (!re.test(email.value)) {
-                email.style.border = "1px solid red";
-                email_error.style.color = "red";
-                email_error.textContent = "Invalid email, please re-enter";
-                return false;
-            } else {
-                email.style.border = "1px solid #5cb85c";
-                email_error.innerHTML = "";
-                return true;
+                var readURL = function(input) {
+                    if (input.files && input.files[0]) {
+                        var reader = new FileReader();
+
+                        reader.onload = function(e) {
+                            $('.profile-pic').attr('src', e.target.result);
+                        }
+
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
+
+                $(".file-upload").on('change', function() {
+                    readURL(this);
+                });
+
+                $(".upload-button").on('click', function() {
+                    $(".file-upload").click();
+                });
+            });
+
+            $("#SI").click(function() {
+                window.location.href = "signin.html";
+            });
+
+            $("#TC").click(function() {
+                window.location.href = "terms_conditions.html";
+            });
+
+
+            $("#PP").click(function() {
+                window.location.href = "privacy_policy.html";
+            });
+
+            function submitBTN_validate() {
+
+                var name_validate = nameVerify();
+
+                var email_validate = emailVerify();
+
+                var password_validate = passwordVerify();
+
+                var form_validate = ValidateForm();
+
+
+                if (name_validate && email_validate && password_validate) {
+                    signUp()
+                }
             }
-        }
-
-        function passwordVerify() {
-            if (password.value == "") {
-                password.style.border = "1px solid red";
-                password_error.style.color = "red";
-                password_error.textContent = "Password is required";
-                return false;
-            } else if (password.value.length < 6) {
-                password.style.border = "1px solid red";
-                password_error.style.color = "red";
-                password_error.textContent = "Password must be at least 6 characters long";
-                return false;
-            } else if (password.value != password_confirm.value) {
-                password_confirm.style.border = "1px solid red";
-                password_error.style.color = "red";
-                password_error.textContent = "Passwords do not match";
-                return false;
-            } else {
-                password_confirm.style.border = "1px solid #5cb85c";
-                password.style.border = "1px solid #5cb85c";
-                password_error.innerHTML = "";
-                return true;
-            }
-        }
-
-
-        $(document).ready(function() {
-
-    
-var readURL = function(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('.profile-pic').attr('src', e.target.result);
-        }
-
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-
-
-$(".file-upload").on('change', function(){
-    readURL(this);
-});
-
-$(".upload-button").on('click', function() {
-   $(".file-upload").click();
-});
-});
-
-        $("#SI").click(function(){
-		window.location.href = "signin.html";				
-	});
-
-    $("#TC").click(function(){
-		window.location.href = "terms_conditions.html";				
-	});
-
-
-    $("#PP").click(function(){
-		window.location.href = "privacy_policy.html";				
-	});
-
-        
-    
-
-    function submitBTN_validate(){
-
-            var name_validate=nameVerify();
-
-            var email_validate=emailVerify();
-
-            var password_validate=passwordVerify();
-
-            var form_validate=ValidateForm();
-
-
-if(name_validate && email_validate &&  password_validate ){
-
-        window.location.href = "index.html";	
-}
-
-
-}
-    
-
-	</script>
+        </script>
 
 
 
-	</body>
+
+</body>
+
 </html>
-

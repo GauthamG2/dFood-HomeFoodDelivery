@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Promotion</title>
+		<title> dFood | Promotion</title>
+		<link rel="icon" href="../images/logo.png" type="image/gif">
 		<link rel="stylesheet" href="../css/myTheme1.css" />
 
 		<link rel="stylesheet" href="../css/promotion.css" />
@@ -19,43 +20,68 @@
 	
 		<script> 
 			$(function(){
-			  $("#includedContent").load("footer.html"); 
+			  $("#footer").load("footer.html"); 
 			});
 			</script> 
 
 	</head>
 	<body>
-		<div data-role="page" id="qr-scanner" data-theme="d" style="text-align: center; ">
+		<div data-role="page" id="qr-scanner" data-theme="d">
 			<div data-role="header" data-position="fixed">
-				<h1>Promotion </h1>
+				<h1>Promotion 
+					<a data-rel="back"  target="_self">    
+						<img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> </a> </h1>
 			</div>
-			<div data-role="main" class="ui-content" >
-				<div class="slideshow-container">
-					<div class="mySlides fade">
-						<img src="../images/promo1.png" style="width:100%">
-					</div>
-					<div class="mySlides fade">
-						<img src="../images/promo.png" style="width:100%">
-					</div>
-					<div class="mySlides fade">
-						<img src="../images/promo3.png" style="width:100%">
-					</div>
+			<div class="slideshow-container">
+				<div class="mySlides fade" style="margin:0">
+					<img src="../images/promo_1.png" style="width:100%; ">
 				</div>
-				<br>
-				<div style="text-align:center; ">
-					<span class="dot"></span> 
-					<span class="dot"></span> 
-					<span class="dot"></span> 
+				<div class="mySlides fade">
+					<img src="../images/promo_2.png" style="width:100%">
 				</div>
+				<div class="mySlides fade">
+					<img src="../images/promo_3.png" style="width:100%">
+				</div>
+			</div>
+			<br>
+			<div style="text-align:center; margin-top: -20px;">
+				<span class="dot"></span> 
+				<span class="dot"></span> 
+				<span class="dot"></span> 
+			</div>
+
+			<div data-role="main" class="ui-content"  style="padding: 20px auto 40px auto;">
+			
 		
 				<div id="FR" >
-					<h4 style="margin:1px; text-align:left; font-weight:bold; font-size: 20px;"> Add promotions </h4>
-					<p style=" text-align:left; margin: 12px 0px 2px 0px;"> Promo code </p>
-					<input type="text" name="promo" placeholder="Enter promo code"/>
-					<button class="submit-button" style="background-color: #FB752C; color:white; margin-top:25px; " class="ui-btn ui-corner-all ui-mini" id="LogingBtn" onclick="submitBTN_validate()">Add </button>
-					<hr style="height:4px;border-width:0; color:#FB752C;;background-color:#FB752C;">
-					<button class="submit-button" style="background-color: #FB752C; color:white;" class="ui-btn ui-corner-all ui-mini" id="scan">Scan QR code </button>
+					<h4 style="margin:1px; font-weight:bold; font-size: 20px;"> Add promotions </h4>
+					<label style="  margin: 12px 0px 2px 0px;"> Promo code </label>
+					  
+					<input type="text"  name="promo" placeholder="Enter promo code" required />
+					
+
+					<a href="#addpromo" data-rel="popup" data-position-to="window" data-transition="pop">
+						<button class="btn" style=" margin-top:25px; " class="ui-btn ui-corner-all ui-mini" id="LogingBtn" 
+					>Add </button>
+				
+					</a>
+						
+					
+					<hr id="line">
+					<button class="btn" class="ui-btn ui-corner-all ui-mini" id="scan">Scan QR code </button>
+					<button class="btn" style="margin: 40px auto 0 auto ; width: 60%; " class="ui-btn ui-corner-all ui-mini" id="rewards"> Claim Rewards </button>
+			
 				</div>
+
+				<div data-role="popup" id="addpromo" data-theme="a" data-overlay-theme="b" class="ui-content" >
+					<h3>Success</h3>
+					<p style="margin-top: 20px"> Your promo code has been <br> successfully added</p>
+					<hr style="margin: 15px auto;">
+					
+					<a href="../html/cart.html" target="_self"  class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini"
+					style="color: #FB752C;;">OK</a>
+				</div>
+
             </div>
 			
 			
@@ -88,9 +114,22 @@
 
 		</script>
 
+ <!-- Adding Tab-bar -->
+ <div id="footer"></div>
 
+    <!-- Adding Tab-bar -->
+	<div data-role="footer" data-position="fixed" data-theme="e">
+		<div data-role="navbar" data-theme="e">
+			<ul>
+				<li><a href="/html/Home.html" target="_self" data-icon="home">Home</a></li>
+				<li><a href="/html/favourites.html" target="_self" data-icon="heart">Favourites</a></li>
+				<li><a href="/html/my_orders.html" target="_self" data-icon="mail">My Orders</a></li>
+				<li><a href="/html/account.html" target="_self" data-icon="user">Account</a></li>
+			</ul>
+		</div>
+	</div>
 
 		</div>
-	<div id="includedContent"></div>
+
 	</body>
 </html>
