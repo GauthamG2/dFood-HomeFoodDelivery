@@ -44,7 +44,7 @@ if(reviews.length>0){
 
         <div id="FR" style="margin-top: 10px;" >
         <div> 
-				<div style="display:inline-block; vertical-align:top">
+				<div id="ordered-food-image-container" style="display:inline-block; vertical-align:top">
 					<img id="image" src="../images/pancake.jpg">
 				</div>
 					<div style="display:inline-block; margin: 15px 0 0 15px;">

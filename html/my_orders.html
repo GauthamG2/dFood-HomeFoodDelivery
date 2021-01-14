@@ -19,18 +19,14 @@
 		<script src="../js/my_orders.js"> </script>
 		<script src="../js/myorder_viewcomment.js"> </script>
 
-		<script>
-			$(function() {
-			    $("#includedContent").load("footer.html");
-			});
-		</script>
 
 		<style>
 			#FR {
-			border-style: solid;
-			border-color: #FB752C;
-			border-radius: 8px; 
-			padding: 15px ; 
+				background-color: white;
+				border: 1px solid #fb752c;
+				border-radius: 8px; 
+				padding: 15px ;
+				margin: 10px; 
 			}
 			#image{
 			width: 6em; 
@@ -39,9 +35,12 @@
 			border-radius: 8px;
 			}
 			#rate{
-			width: 35%; 
-			padding: 5px; 
-			margin: 15px auto auto auto;
+				height: 44px;
+				width: 160px; 
+				padding: 5px; 
+				margin: 15px auto auto auto;
+				border-radius: 8px;
+				font-size: 16px;
 			}
 			/* Rating Star Widgets Style */
 			.rating-stars ul {
@@ -59,6 +58,7 @@
 			.rating-stars ul > li.star > i.fa {
 			font-size:1.8em; /* Change the size of the stars */
 			color:#ccc; /* Color on idle state */
+			
 			}
 			/* Hover state of the stars */
 			.rating-stars ul > li.star.hover > i.fa {
@@ -68,76 +68,119 @@
 			.rating-stars ul > li.star.selected > i.fa {
 			color:#FF912C;
 			}
-			.text-center {text-align:center;}
+			.text-center {
+				text-align:center;
+			}
+
+			/* Media query */
+
+			/* iPhone 5/SE portrait */
+			@media screen and (min-width: 320px)and (max-width: 320px) and (orientation: portrait) {
+				#FR{
+					text-align-last:center;
+				}
+				#ordered-food-image-container{
+					margin-left: 28%;
+				}
+			}
+
+			/* iPad portrait */
+			@media screen and (min-width: 768px)and (max-width: 1366px) and (orientation: portrait) {
+				#FR {
+					margin-left: 100px;
+					margin-right: 100px;
+				}
+			}
+
+			/* iPad landscape */
+			@media screen and (min-width: 768px)and (max-width: 1366px) and (orientation: landscape) {
+				#FR {
+					margin-left: 150px;
+					margin-right: 150px;
+				}
+			}
+			
 		</style>
+
+		<!-- Adding footer -->
+		<script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+		</script>
+		<script> 
+			$(function(){
+				$("#footer").load("footer.html"); 
+			});
+		</script> 
 	</head>
 	<body>
 		<div data-role="page" id="payment" data-theme="d" >
-		<div data-role="header" data-position="fixed">
-			<h1>My Orders
-				<a data-rel="back"  target="_self">    
-					<img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> </a>
-			</h1>
-		</div>
-		<div data-role="main" class="ui-content" >
-			<div id="FR"  >
-			<div> 
-				<div style="display:inline-block; vertical-align:top">
-					<img id="image" src="../images/pancake.jpg">
-				</div>
-					<div style="display:inline-block; margin: 15px 0 0 15px;">
-					<h4 style="margin: auto"> Your order in Momo </h4>
-					<p style="margin: 5px auto 0 auto;"> Ordered on 05/07/2020 <br> LKR 2,340.00 </p>
+			<div data-role="header" data-position="fixed">
+				<h1>My Orders
+					<a data-rel="back"  target="_self">    
+						<img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> </a>
+				</h1>
+			</div>
+			<div data-role="main" class="ui-content" >
+				<div id="FR">
+					<div> 
+						<div id="ordered-food-image-container" style="display:inline-block; vertical-align:top">
+							<img id="image" src="../images/pancake.jpg">
+						</div>
+
+						<div style="display:inline-block; margin: 15px 0 0 15px;">
+							<h4 style="margin: auto"> Your order in Momo </h4>
+							<p style="margin: 5px auto 0 auto;"> Ordered on 05/07/2020 <br> LKR 2,340.00 </p>
+						</div>
+					</div>	
+
+					<div class='rating-stars text-center'>
+						<ul id='stars'>
+							<li class='star' title='Poor' data-value='1'>
+								<i class='fa fa-star fa-fw'></i>
+							</li>
+							<li class='star' title='Fair' data-value='2'>
+								<i class='fa fa-star fa-fw'></i>
+							</li>
+							<li class='star' title='Good' data-value='3'>
+								<i class='fa fa-star fa-fw'></i>
+							</li>
+							<li class='star' title='Excellent' data-value='4'>
+								<i class='fa fa-star fa-fw'></i>
+							</li>
+							<li class='star' title='WOW!!!' data-value='5'>
+								<i class='fa fa-star fa-fw'></i>
+							</li>
+						</ul>
 					</div>
 					
-			</div>	
-			
+					<div>
+						<form>
+							<textarea rows="4" cols="50" id="user_comment" placeholder="Enter your comment here!"></textarea>
+						</form>
+						<button id="rate"  class="ui-btn ui-corner-all ui-mini" onclick="writeUserData()">Review Order </button>
+					</div>
+				</div>
 
-				<div class='rating-stars text-center'>
-					<ul id='stars'>
-						<li class='star' title='Poor' data-value='1'>
-							<i class='fa fa-star fa-fw'></i>
-						</li>
-						<li class='star' title='Fair' data-value='2'>
-							<i class='fa fa-star fa-fw'></i>
-						</li>
-						<li class='star' title='Good' data-value='3'>
-							<i class='fa fa-star fa-fw'></i>
-						</li>
-						<li class='star' title='Excellent' data-value='4'>
-							<i class='fa fa-star fa-fw'></i>
-						</li>
-						<li class='star' title='WOW!!!' data-value='5'>
-							<i class='fa fa-star fa-fw'></i>
-						</li>
+
+				<div id="repeat"></div>
+			</div>
+
+			<!-- Adding Footer -->
+			<div id="footer"></div>
+
+			<!-- Adding Tab-bar -->
+			<div data-role="footer" data-position="fixed" data-theme="e">
+				<div data-role="navbar" data-theme="e">
+					<ul>
+						<li><a href="/html/Home.html" target="_self" data-icon="home">Home</a></li>
+						<li><a href="/html/favourites.html" target="_self" data-icon="heart">Favourites</a></li>
+						<li><a href="/html/my_orders.html" target="_self" data-icon="mail">My Orders</a></li>
+						<li><a href="/html/account.html" target="_self" data-icon="user">Account</a></li>
 					</ul>
 				</div>
-				
-				<div>  
-					<textarea rows="4" cols="50" id="user_comment" placeholder="Enter your comment here"> </textarea>
-
-					<button id="rate"  class="ui-btn ui-corner-all ui-mini" onclick="writeUserData()">Review order </button>
-				</div>
-
-
-
 			</div>
-
-
-			<div id="repeat">
-			
-			</div>
-		   <!-- Adding Tab-bar -->
-		   <div data-role="footer" data-position="fixed" data-theme="e">
-            <div data-role="navbar" data-theme="e">
-                <ul>
-                    <li><a href="/html/Home.html" target="_self" data-icon="home">Home</a></li>
-                    <li><a href="/html/favourites.html" target="_self" data-icon="heart">Favourites</a></li>
-                    <li><a href="/html/my_orders.html" target="_self" data-icon="mail">My Orders</a></li>
-                    <li><a href="/html/account.html" target="_self" data-icon="user">Account</a></li>
-                </ul>
-            </div>
-        </div>
 		</div>
 	</body>
 </html>

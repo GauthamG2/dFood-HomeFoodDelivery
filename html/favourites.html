@@ -17,6 +17,7 @@
     <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src= "https://smtpjs.com/v3/smtp.js"></script>
 
     <style>
         /* This is for inside the card elements */
@@ -67,7 +68,9 @@
         $(function(){
             $("#footer").load("footer.html"); 
         });
-    </script> 
+    </script>
+
+    
 
 </head>
 <body>
@@ -76,9 +79,22 @@
             <h1>Favourites <a data-rel="back"  target="_self">    
                 <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> </a> </h1>
             <div>
-                <a href="#"  class="ui-btn-right" style="font-size: 16px;">Share</a>
+                
+                <a href="#popupEmail" data-rel="popup" class="ui-btn-right" style="font-size: 16px;">Share</a>
             </div>
-            
+            <!-- This is for enter email address -->
+
+            <div data-role="popup" id="popupEmail" class="ui-content" data-position-to="selector" data-overlay-theme="b" style="height: 150px; width: 300px;">
+                <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <!-- <p>This is a popup with the <code>ui-content</code> class added to the popup container.</p> -->
+
+                <label for="Email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter a email address." required/>
+                    <div id="email_error"></div>
+                
+                <button class="submit-button" id="btn-share-via-email" type="submit" name="register" 
+                        style="margin: 0 auto; margin-top: 20px; width: 50%;" onclick="submitBTN_validate()">Send</button>
+            </div>
         </div>
 
         <div data-role="main" class="ui-content" data-theme="d" style="padding: 0px;">
@@ -86,9 +102,10 @@
             <div class="top-button-div ui-responsive" style="height:80px;">
                 <div>
                     <a href="#popupPadded" data-rel="popup" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right  ui-icon-carat-d "
-                        style="top:15px; margin-left: 20px; border: 1px solid #FB752C !important; background-color: white; color: #FB752C; width:100px; cursor: pointer;">Sort & Filter
+                        style="top:15px; margin-left: 30px; border: 1px solid #FB752C !important; background-color: white; color: #FB752C; width:100px; cursor: pointer;">Sort & Filter
                     </a>
                 </div>
+                <!-- 
                 <div class="ui-btn-right" style="top: 80px; margin-right: 10px;">
                     <form>
                         <fieldset data-role="controlgroup" data-iconpos="right">
@@ -96,7 +113,7 @@
                             <label for="checkbox-a">Select All</label>
                         </fieldset>
                     </form>
-                </div>
+                </div> -->
             </div>
 
             <div data-role="popup" id="popupPadded" class="ui-content" data-position-to="window" data-overlay-theme="b" style="height: 350px; width: 300px;">
@@ -204,5 +221,93 @@
             </div>
         </div>
     </div>
+
+    <!-- Share via email -->
+    <script>
+        // select error display elements
+        var email_error = document.getElementById('email_error');
+
+        // setup blur events to catch the validation after focus outemail.addEventListener('blur', emailVerify, true);
+
+        function ValidateForm() {
+            // regex to validate the email address
+            var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+            // Email validation
+            if (email.value == "") {
+                email.style.border = "1px solid red";
+                email_error.style.color = "red";
+                email_error.style.fontSize = "14px";
+                email_error.style.marginBottom = "10px";
+                email_error.textContent = "Email is required";
+                email.focus();
+                return false;
+            } else if (!re.test(email.value)) {
+                email.style.border = "1px solid red";
+                email_error.style.color = "red";
+                email_error.style.fontSize = "14px";
+                email_error.style.marginBottom = "10px";
+                email_error.textContent = "Invalid email, please re-enter";
+                email.focus();
+                return false;
+            } else {
+                return true;
+            }
+
+        }
+
+        
+
+        function emailVerify() {
+                // regex to validate the email address
+                var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+                if (email.value == "") {
+                    email.style.border = "1px solid red";
+					email_error.style.color = "red";
+					email_error.style.fontSize = "14px";
+			        email_error.style.marginBottom = "10px";
+                    email_error.textContent = "Email is required";
+                    return false;
+                } else if (!re.test(email.value)) {
+                    email.style.border = "1px solid red";
+					email_error.style.color = "red";
+					email_error.style.fontSize = "14px";
+			        email_error.style.marginBottom = "10px";
+                    email_error.textContent = "Invalid email, please re-enter";
+                    return false;
+                } else {
+                    email.style.border = "1px solid #5cb85c";
+                    email_error.innerHTML = "";
+                    return true;
+                }
+            }
+
+            function submitBTN_validate() {
+                var email_validate = emailVerify();
+
+                if (email_validate) {
+                    sendEmail()
+                }
+            }
+
+            function sendEmail() {
+                // window.open('mailto:test@example.com?subject=subject&body=body'); // Simple html method
+                // Using SMTP 
+                Email.send({ 
+                    Host: "smtp.gmail.com", 
+                    Username: "sender@email_address.com", 
+                    Password: "Enter your password", 
+                    To: '#email', 
+                    From: "sender@email_address.com", 
+                    Subject: "Sending Email using javascript", 
+                    Body: "Well that was easy!!", 
+                }) 
+                    .then(function (message) { 
+                    alert("mail sent successfully") 
+                    });
+            }
+            
+    </script>
 </body>
 </html>

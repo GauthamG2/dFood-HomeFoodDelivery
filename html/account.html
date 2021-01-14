@@ -17,13 +17,14 @@
 			});
 		</script>
 		<style>
-			#profile, #payment, #promotion, #points, #contact ,#signout {
+			#profile, #payment, #promotion, #points, #contact , .signout {
 			color: #08204C !important;
 			font-weight: normal !important;
 			border-width: 1px;
 			border: 1px solid #FB752C !important;
 			background-color: transparent !important;
 			}
+
 		</style>
 	</head>
 	<body>
@@ -69,14 +70,27 @@
 				<br>
 				<ul data-role="listview" data-inset="true">
 					<li>
-						<a href="#" id="signout"><img src="../images/icons/Icon open-account-logout.png" class="ui-li-icon ui-corner-none" >SIGN OUT</a>
+						<a href="#signout" class="signout" data-rel="popup" data-position-to="window" data-transition="pop" ><img src="../images/icons/Icon open-account-logout.png" class="ui-li-icon ui-corner-none" >SIGN OUT</a>
 					</li>
 				</ul>
 			</div>
+
+			<div data-role="popup" id="signout" data-theme="a" data-overlay-theme="b" class="ui-content" style="padding: 16px 50px;" >
+				<h3>Alert</h3>
+				<p style="margin-top: 20px"> Are you sure, <br> Do you want to Sign Out? </p>
+				
+				<hr style="margin: 15px auto; ">
+				
+				<a   data-rel="back" target="_self"  class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini"
+				style="color: #FB752C;font-size: 15px;">Cancel</a>
+				<a href="../html/signin.html" target="_self"  class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini"
+				style="color: #FB752C;font-size: 15px;">Yes</a>
+			</div>
+
 			<!-- Adding Tab-bar -->
 			<div data-role="footer" data-position="fixed" data-theme="e">
 				<div data-role="navbar" data-theme="e">
-					<ul>
+					<ul >
 						<li><a href="/html/Home.html" target="_self" data-icon="home">Home</a></li>
 						<li><a href="/html/favourites.html" target="_self" data-icon="heart">Favourites</a></li>
 						<li><a href="/html/my_orders.html" target="_self" data-icon="mail">My Orders</a></li>
@@ -105,11 +119,6 @@
 			$("#contact").click(function(){
 			    window.location.href = "contact_us.html";				
 			});
-			
-			$("#signout").click(function(){
-			    window.location.href = "signin.html";				
-			});
-			
 			
 		</script> 
 	</body>

@@ -117,16 +117,35 @@ function renderFoodItem() {
          <div style="display:inline-block; vertical-align:top">
                 <h2 style="padding: 10px; margin: 10px; margin-block-start: 0em; margin-block-end: 0em;">${foo.name}</h2> </div> 
                 
-                <div style="display:inline-block; float:right; padding: 7px 28px 0 0 ;">
-                <a href="#" id="share">  
-                <img src="../images/icons/IconShare.png" class="ui-li-icon ui-corner-none" > </a>
+                <div style="display:inline-block; float:right; padding: 15px 30px 0 0 ;">
+
+                <div style="padding:5px;
+                            background-color: #ffffff;
+                            background-repeat:no-repeat;
+                            border-radius: 4px;
+                            border: 1px solid #FB752C !important;
+                            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .25), 0 3px 5px 0 rgba(0, 0, 0, .2) !important;
+                            color: #FB752C;">
+                <a href="#" id="share" style=" padding:5px"><i class="fas fa-external-link-alt"></i></a></li> <!-- Share --> 
+                </div>
+                
+                
                 </div>
 
                 <p style="padding: 0px; margin: 20px; margin-block-start: 0em; margin-block-end: 0em;">
                 ${foo.description}</p>
 
-                <a href="#popupPadded" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" style="margin-left:20px;
-                padding: 7px;" >
+                <a id="btn-view-rating" href="#popupPadded" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" 
+                    style=" background-color: #ffffff;
+                            background-repeat:no-repeat;
+                            border: 1px solid #FB752C !important ;
+                            color: #FB752C;
+                            border-radius: 4px;
+                            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .25), 0 3px 5px 0 rgba(0, 0, 0, .2) !important;
+                            transition: 0.6s;
+                            margin-top: 18px;
+                            margin-left:22px;
+                            padding: 7px;" >
                     
                       ${foo.rating} <span >★</span> </a>
                 <span class="right" style="padding: 8px; margin: 20px; margin-block-start: 1em; margin-block-end: 0em;">LKR ${foo.price}.00</span>`
