@@ -151,115 +151,68 @@
             </div>
             <div>
                 <hr style="background-color: #FB752C;">
+                <div class="ui-block-a " style="padding: 10px;">
+                    <div class="ui-body ui-body-d shadow" style="background-color: #ffffff; border: none ; border-radius: 10px; padding: 10px; box-shadow: #070707;box-shadow: 0 0 10px #8a795d;">
+                        <div>
+                            <div class="favHeart">
+                                <a href="#" id="hamburger" target="_self">
+                                    <img id="dofav" class="favourite" data-state="false" style="position: absolute;right: 1rem;top: 1rem;" src="/images/icons_svg/Icon feather-heart.svg" align="right" />
+                                    <!-- <img id="fav" style="position: absolute;right: 2rem;top: 2rem;" src="Icons/favorite-black-24dp.svg" width="26" height="26" align="right" /> -->
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#" target="_self">
+
+                                    <img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui" src="/images/Food_Images/7_Oreo_Milkshake.jpg" height="100%" width="100%" style="border-radius: 10px; object-fit: cover;" /></a>
+                            </div>
+                        </div>
+
+                        <fieldset class="ui-grid-a">
+                            <div class="ui-block-a" style="width: 100% !important;">
+                                <h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;">Oreo Milkshake
+                                </h3>
+                                <div class="ui-block-a" style="width: 100% !important;">
+                                    <div style="width: 70%; float:left;margin-left: 0px">
+                                        <h4 style="text-align: left !important;margin:5px !important;margin-left: 0px !important;width: 100% !important;font-weight: 500;">
+                                            LKR 300.00</h4>
+                                    </div>
+
+                                    <div class="column right" style="padding-right: 0px!important;">
+                                        <h4 class="rating-star"> 4.9
+                                            <span style="color: #FB752C">★</span></h4>
+                                    </div>
+                                    <!--<div class="column right" style="padding-left: 1px!important;">
+            <img id="star" style="margin-top: 3px;height: 24px!important;" src="Icons/star-black-24dp.svg"/>
+            </div>-->
+                                </div>
+                        </fieldset>
+                        </div>
+                    </div>
+                    <hr>
+
+
+                </div>
+
+
+                <!-- Adding Footer -->
+                <div id="footer"></div>
+
+                <!-- Adding Tab-bar -->
+                <div data-role="footer" data-position="fixed" data-theme="e">
+                    <div data-role="navbar" data-theme="e">
+                        <ul>
+                            <li><a href="/html/Home.html" target="_self" data-icon="home">Home</a></li>
+                            <li><a href="/html/favourites.html" target="_self" data-icon="heart">Favourites</a></li>
+                            <li><a href="/html/my_orders.html" target="_self" data-icon="mail">My Orders</a></li>
+                            <li><a href="/html/account.html" target="_self" data-icon="user">Account</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <div class="ui-grid-a my-breakpoint ui-responsive" style="margin: 10px;" id="favourite-list">
-            </div>
-
-            
-        </div>
-        <!-- Adding Footer -->
-        <!-- <div id="footer"></div>--> 
-
-        <!-- Adding Tab-bar -->
-        <div data-role="footer" data-position="fixed" data-theme="e">
-            <div data-role="navbar" data-theme="e">
-                <ul>
-                    <li><a href="/html/Home.html" target="_self" data-icon="home">Home</a></li>
-                    <li><a href="/html/favourites.html" target="_self" data-icon="heart">Favourites</a></li>
-                    <li><a href="/html/my_orders.html" target="_self" data-icon="mail">My Orders</a></li>
-                    <li><a href="/html/account.html" target="_self" data-icon="user">Account</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Share via email -->
-        <script>
-            // select error display elements
-            var email_error = document.getElementById('email_error');
-
-            // setup blur events to catch the validation after focus outemail.addEventListener('blur', emailVerify, true);
-
-            function ValidateForm() {
-                // regex to validate the email address
-                var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-
-                // Email validation
-                if (email.value == "") {
-                    email.style.border = "1px solid red";
-                    email_error.style.color = "red";
-                    email_error.style.fontSize = "14px";
-                    email_error.style.marginBottom = "10px";
-                    email_error.textContent = "Email is required";
-                    email.focus();
-                    return false;
-                } else if (!re.test(email.value)) {
-                    email.style.border = "1px solid red";
-                    email_error.style.color = "red";
-                    email_error.style.fontSize = "14px";
-                    email_error.style.marginBottom = "10px";
-                    email_error.textContent = "Invalid email, please re-enter";
-                    email.focus();
-                    return false;
-                } else {
-                    return true;
-                }
-
-            }
 
 
 
-            function emailVerify() {
-                // regex to validate the email address
-                var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-
-                if (email.value == "") {
-                    email.style.border = "1px solid red";
-                    email_error.style.color = "red";
-                    email_error.style.fontSize = "14px";
-                    email_error.style.marginBottom = "10px";
-                    email_error.textContent = "Email is required";
-                    return false;
-                } else if (!re.test(email.value)) {
-                    email.style.border = "1px solid red";
-                    email_error.style.color = "red";
-                    email_error.style.fontSize = "14px";
-                    email_error.style.marginBottom = "10px";
-                    email_error.textContent = "Invalid email, please re-enter";
-                    return false;
-                } else {
-                    email.style.border = "1px solid #5cb85c";
-                    email_error.innerHTML = "";
-                    return true;
-                }
-            }
-
-            function submitBTN_validate() {
-                var email_validate = emailVerify();
-
-                if (email_validate) {
-                    sendEmail()
-                }
-            }
-
-            function sendEmail() {
-                // window.open('mailto:test@example.com?subject=subject&body=body'); // Simple html method
-                // Using SMTP 
-                Email.send({
-                        Host: "smtp.gmail.com",
-                        Username: "sender@email_address.com",
-                        Password: "Enter your password",
-                        To: $('#email'),
-                        From: "sender@email_address.com",
-                        Subject: "Sending Email using javascript",
-                        Body: "Well that was easy!!",
-                    })
-                    .then(function(message) {
-                        alert("mail sent successfully")
-                    });
-            }
-        </script>
-    </div>
 </body>
 
 </html>

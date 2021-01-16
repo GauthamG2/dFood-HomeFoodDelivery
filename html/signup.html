@@ -35,22 +35,12 @@
             padding: 15px;
         }
         
-        .profile-pic {
-            max-width: 200px;
-            max-height: 200px;
-            display: block;
-        }
-        
-        .file-upload {
-            display: none;
-        }
-        
         .circle {
-            border-radius: 1000px !important;
+            border-radius: 50% !important;
             overflow: hidden;
             width: 128px;
             height: 128px;
-            border: 3px solid #FB752C;
+            border: 2px solid #FB752C;
             ;
         }
         
@@ -59,7 +49,7 @@
             height: auto;
             display: block;
             margin: auto;
-            margin-top: 10px;
+            margin-top: 15px;
         }
         
         .p-image {
@@ -71,17 +61,86 @@
             transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
         }
         
-        .upload-button {
-            font-size: 1.2em;
-        }
-        
-        .upload-button:hover {
-            transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
-            color: #999;
-		}
 		a{
 			text-decoration: none;
-			}
+        }
+
+        /* Avatar uplaod CSS */
+        section {
+            position: relative;
+            height: 150px;
+            width: 150px;
+        }
+
+        #user-avatar {
+            height: inherit;
+            width: inherit;
+            border: 3px solid #FB752C;
+            border-radius: 50%;
+            transition: ease-out 200ms;
+        }
+
+        input {
+            display: none;
+        }
+
+        label span[role="button"] {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 40px;
+            width: 40px;
+            background-color: #ffffff;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+                0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+            transition: ease-out 200ms;
+            cursor: pointer;
+        }
+
+        label span:hover,
+        label span:focus {
+            box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+            background-color: #ffffff;
+        }
+
+        .fa {
+            color: #FB752C;
+        }
+
+        /* To remove iput field on avatar update */
+        .ui-body-f, .ui-page-theme-f .ui-body-inherit, html .ui-bar-f .ui-body-inherit,
+        html .ui-body-f .ui-body-inherit, html body .ui-group-theme-f .ui-body-inherit,
+        html .ui-panel-page-container-f {
+            visibility: hidden;
+        }
+        
+        /* Media query */
+        @media all and (max-width: 35em) {}
+
+        /* iPhone 5/SE portrait */
+        @media screen and (min-width: 320px)and (max-width: 320px) and (orientation: portrait) {}
+
+
+        /* iPad portrait */
+        @media screen and (min-width: 768px)and (max-width: 1366px) and (orientation: portrait) {
+            #FR {
+                margin-left: 100px;
+                margin-right: 100px;
+            }
+        }
+
+        /* iPad landscape */
+        @media screen and (min-width: 768px)and (max-width: 1366px) and (orientation: landscape) {
+            #FR {
+                margin-left: 100px;
+                margin-right: 100px;
+            }
+        }
+        
     </style>
 </head>
 
@@ -102,45 +161,66 @@
                 <div id="FR">
 
                     <div class="row">
-                        <div class="small-12 medium-2 large-2 columns">
-                            <div id="FR" style=" width: 40%; margin: 0 auto; margin-top: -5px; border-width: 2px;">
-                                <div class="circle" style=" margin: auto; margin-top: -5px;">
-                                    <!-- User Profile Image -->
-                                    <img class="profile-pic" src="../images/profilepic.png">
+                        <div class="small-12 medium-2 large-2 columns" align="center">
+                            <div id="FR" style="width: 170px; margin-bottom: 10px; border-width: 0px;">
+
+                                <!-- <div class="circle" style=" margin: auto; margin-top: -5px;">
+                                     User Profile Image
+                                    <img class="profile-pic" src="../images/icons_svg/Icon-avatar-upload.svg">
                                 </div>
-                                <div class="p-image" style="margin: 0 auto; margin-bottom: 5px !important; ">
-                                    <i class="fa fa-camera upload-button" style="margin-left: 60px;"></i>
-                                    <input class="file-upload" type="file" accept="image/*" />
-                                </div>
+                                
+                                <div class="p-image">
+                                    <i class="fa fa-camera upload-button"></i>
+                                    <label class="file-upload" >
+                                        <input class="file-upload" type="file" id="fileToUpload" accept="image/*"/>
+                                    </label>
+                                </div> -->
+
+                                <section data-theme="f">
+                                    <div id="user-avatar" aria-label="user avatar">
+                                        <img src="../images/icons_svg/Icon-avatar-upload.svg">
+                                    </div>
+                                    
+                                    <input class="upload" type="file" name="upload" id="upload" style="visibility: hidden;" accept="image/*" data-theme="f"/>
+                                    
+                                    <label for="upload" >
+                                        <span role="button" tabindex="0" aria-label="upload user profile">
+                                        <i class="fa fa-camera upload-button"></i>
+                                        </span>
+                                    </label>
+                                </section>
                             </div>
                         </div>
                     </div>
-                    <label for="fullname">Full Name</label>
-                    <input type="text" name="username" id="full_name" placeholder="Enter your name" />
-                    <div id="username_error"></div>
+                    <div style="padding-top: 10px;">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" name="username" id="full_name" placeholder="Enter your name" />
+                        <div id="username_error"></div>
 
-                    <label for="Email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Enter your email" />
-                    <div id="email_error"></div>
+                        <label for="Email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Enter your email" />
+                        <div id="email_error"></div>
 
-                    <label for="phonenumber">Phone Number</label>
-                    <input type="number" id="phonenumber" placeholder="Enter your phone number" />
+                        <label for="phonenumber">Phone Number</label>
+                        <input type="number" id="phonenumber" placeholder="Enter your phone number" />
 
-                    <label for="address">Address</label>
-                    <input type="text" name="surname" id="address" placeholder="Enter address" />
+                        <label for="address">Address</label>
+                        <input type="text" name="surname" id="address" placeholder="Enter address" />
 
-                    <label for="dob">Date of Birth</label>
-                    <input type="date" id="birthday" name="birthday" placeholder="Select your birthday" />
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="birthday" name="birthday" placeholder="Select your birthday" />
 
-                    <label for="ps">Password</label>
-                    <input type="password" name="password" id="password" placeholder="Enter password" />
+                        <label for="ps">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Enter password" />
 
-                    <label for="ps">Confirm Password</label>
-                    <input type="password" name="password_confirm" id="confirm_password" placeholder="Re enter your password" />
-                    <div id="password_error"></div>
+                        <label for="ps">Confirm Password</label>
+                        <input type="password" name="password_confirm" id="confirm_password" placeholder="Re enter your password" />
+                        <div id="password_error"></div>
+                    </div>
+                    
                 </div>
 
-                <div style="text-align: center">
+                <div style="padding:10px; text-align: center">
                     <p> By Signing Up, you agree to our <br> <a href="#" id="TC">Terms & Conditions </a> and <a href="#" id="PP">Privacy Policy</a> </p>
 
                     <button class="submit-button" id="signup_btn" type="submit" name="register" style="width: 50%; margin: 0 auto; background-color: #FB752C; color: white; font-weight: normal;" onclick="submitBTN_validate()">Sign up</button>
@@ -148,6 +228,7 @@
                     <div style="text-align: center">
                         <p> Already have an account? <br> <a href="#" id="SI">Sign In </a> </p>
                     </div>
+                </div>
             </form>
             </div>
 
@@ -362,11 +443,30 @@
                     signUp()
                 }
             }
+
+            const AVATAR = document.querySelector("#user-avatar");
+            const INPUT = document.querySelector("#upload");
+            const BTN = document.querySelector('span[role="button"]');
+
+            const handleUpload = event => {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.readAsDataURL(file);
+            reader.onloadend = () => {
+                const imageBuffer = reader.result;
+                AVATAR.style.background = `url(${imageBuffer}) center center/cover`;
+            };
+            };
+
+            INPUT.addEventListener("change", handleUpload);
+
+            BTN.addEventListener("keypress", event => {
+            if (event.key === " " || event.key === "Enter") {
+                BTN.click();
+            }
+            });
         </script>
-
-
-
-
 </body>
 
 </html>

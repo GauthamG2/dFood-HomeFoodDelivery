@@ -1,84 +1,99 @@
 #FR {
     border: 2px solid #fb752c;
     background-color: white;
-    border-radius: 8px; 
-    padding:15px;
-  
-    }
-    /* Slideshow container */
-    .slideshow-container {
+    border-radius: 8px;
+    padding: 15px;
+}
+
+
+/* Slideshow container */
+
+.slideshow-container {
     max-width: auto;
     position: relative;
     margin: auto;
-    }
-    /* The dots/bullets/indicators */
-    .dot {
+}
+
+
+/* The dots/bullets/indicators */
+
+.dot {
     height: 10px;
     width: 10px;
     margin: 0 1px;
     border-width: 15px;
     border-color: #FB752C;
-    background-color:#bbb;
+    background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
-    }
-    .active {
+}
+
+.active {
     background-color: #FB752C;
-    }
+}
 
-    #line{
-        height:3px;
-        border-width:0; 
-        color:#FB752C;
-        background-color:#FB752C; 
-        margin: 10px 0 10px 0 ;
-    }
+#line {
+    height: 3px;
+    border-width: 0;
+    color: #FB752C;
+    background-color: #FB752C;
+    margin: 10px 0 10px 0;
+}
 
-    a{
-        text-decoration: none;
-    }
+a {
+    text-decoration: none;
+}
 
-    #btn{
-        background-color: #FB752C; 
-        color:white;
-    }
+#btn {
+    background-color: #FB752C;
+    color: white;
+}
 
-    #addpromo{
-        padding: 20px 40px;
-        text-align: center;
-    }
+#addpromo {
+    padding: 20px 40px;
+    text-align: center;
+}
 
-    /* Media query */
-    @media all and (max-width: 35em) {
-        .slideshow-container, img {
-            max-height: 180px;
-        }
-    }
 
-    /* iPhone 5/SE portrait */
-    @media screen and (min-width: 320px)and (max-width: 320px) and (orientation: portrait) {
-       
-    }
+/* Media query */
 
-    /* iPad portrait */
-    @media screen and (min-width: 768px)and (max-width: 1366px) and (orientation: portrait) {
-        .slideshow-container, img {
-            max-height: 375px;
-        }
-        #FR {
-            margin-left: 100px;
-            margin-right: 100px;
-        }
+@media all and (max-width: 35em) {
+    .slideshow-container,
+    img {
+        max-height: 180px;
     }
+}
 
-    /* iPad landscape */
-    @media screen and (min-width: 768px)and (max-width: 1366px) and (orientation: landscape) {
-        .slideshow-container, img {
-            max-height: 375px;
-        }
-        #FR {
-            margin-left: 100px;
-            margin-right: 100px;
-        }
+
+/* iPhone 5/SE portrait */
+
+@media screen and (min-width: 320px)and (max-width: 320px) and (orientation: portrait) {}
+
+
+/* iPad portrait */
+
+@media screen and (min-width: 768px)and (max-width: 1366px) and (orientation: portrait) {
+    .slideshow-container,
+    img {
+        max-height: 375px;
     }
+    #FR {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}
+
+
+/* iPad landscape */
+
+@media screen and (min-width: 768px)and (max-width: 1366px) and (orientation: landscape) {
+    .slideshow-container,
+    img {
+        max-height: 375px;
+    }
+    #FR {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}

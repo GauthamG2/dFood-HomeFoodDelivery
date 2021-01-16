@@ -1,7 +1,7 @@
 // Array for food items
 
 var foodItem = [{
-        id: 1,
+        id: '1',
         name: 'Fruit Pancake',
         price: 225,
         foodPicture: '../images/Food_Images/1_Fruit_Pancake.jpg',
@@ -10,7 +10,7 @@ var foodItem = [{
         quantity: 1
     },
     {
-        id: 2,
+        id: '2',
         name: 'Mushroom Salad',
         price: 250,
         foodPicture: '../images/Food_Images/2_Mushroom_Salad.jpg',
@@ -19,16 +19,16 @@ var foodItem = [{
         quantity: 1
     },
     {
-        id: 3,
+        id: '3',
         name: 'Fresh Fruit Bread',
-        price: 150, 
+        price: 150,
         foodPicture: '../images/Food_Images/4_Protein_Platter.jpg',
         description: 'Fresh Fruit Bread is an earthy taste reminiscent of yeast.',
         rating: '4.5',
         quantity: 1
     },
     {
-        id: 4,
+        id: '4',
         name: 'Protein Platter',
         price: 375,
         foodPicture: '../images/Food_Images/3_Fresh_fruit_Bred.jpeg',
@@ -37,7 +37,7 @@ var foodItem = [{
         quantity: 1
     },
     {
-        id: 5,
+        id: '5',
         name: 'Chinese Soup',
         price: 375,
         foodPicture: '../images/Food_Images/5_Chinese_Soup.jpg',
@@ -46,7 +46,7 @@ var foodItem = [{
         quantity: 1
     },
     {
-        id: 6,
+        id: '6',
         name: 'Chicken Kothu',
         price: 280,
         foodPicture: '../images/Food_Images/6_Chicken_Kothu.png',
@@ -55,7 +55,7 @@ var foodItem = [{
         quantity: 1
     },
     {
-        id: 7,
+        id: '7',
         name: 'Oreo Milkshake',
         price: 300,
         foodPicture: '../images/Food_Images/7_Oreo_Milkshake.jpg',
@@ -64,7 +64,7 @@ var foodItem = [{
         quantity: 1
     },
     {
-        id: 8,
+        id: '8',
         name: 'Rice and Curry',
         price: 320,
         foodPicture: '../images/Food_Images/8_Rice_and_Curry.jpg',
@@ -118,7 +118,6 @@ function renderFoodItem() {
                 <h2 style="padding: 10px; margin: 10px; margin-block-start: 0em; margin-block-end: 0em;">${foo.name}</h2> </div> 
                 
                 <div style="display:inline-block; float:right; padding: 15px 30px 0 0 ;">
-
                 <div style="padding:5px;
                             background-color: #ffffff;
                             background-repeat:no-repeat;
@@ -128,49 +127,52 @@ function renderFoodItem() {
                             color: #FB752C;">
                 <a href="#" id="share" style=" padding:5px"><i class="fas fa-external-link-alt"></i></a></li> <!-- Share --> 
                 </div>
-                
-                
+
+
                 </div>
 
                 <p style="padding: 0px; margin: 20px; margin-block-start: 0em; margin-block-end: 0em;">
                 ${foo.description}</p>
 
                 <a id="btn-view-rating" href="#popupPadded" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" 
-                    style=" background-color: #ffffff;
-                            background-repeat:no-repeat;
-                            border: 1px solid #FB752C !important ;
-                            color: #FB752C;
-                            border-radius: 4px;
-                            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .25), 0 3px 5px 0 rgba(0, 0, 0, .2) !important;
-                            transition: 0.6s;
-                            margin-top: 18px;
-                            margin-left:22px;
-                            padding: 7px;" >
-                    
-                      ${foo.rating} <span >★</span> </a>
+                style=" background-color: #ffffff;
+                        background-repeat:no-repeat;
+                        border: 1px solid #FB752C !important ;
+                        color: #FB752C;
+                        border-radius: 4px;
+                        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .25), 0 3px 5px 0 rgba(0, 0, 0, .2) !important;
+                        transition: 0.6s;
+                        margin-top: 18px;
+                        margin-left:22px;
+                        padding: 7px;" >
+                
+                  ${foo.rating} <span >★</span> </a>
                 <span class="right" style="padding: 8px; margin: 20px; margin-block-start: 1em; margin-block-end: 0em;">LKR ${foo.price}.00</span>`
             }
         })
         $('#food-details').append(renderHtml);
+        $('#food-id').text(foodId);
     }
 }
 
 // Adding items to the cart 
 
-function addToCart(id) {
+function addToCart() {
     //debugger
     var quantityNumber = $('#number').val();
+    console.log(foodId);
     var x = 0;
     cart = JSON.parse(sessionStorage.getItem('cart'));
+    console.log(cart);
     foodId = JSON.parse(sessionStorage.getItem('foodId'));
     foodItem.forEach(function(item) {
-        if (item.id == id) {
+        if (item.id == foodId) {
             items = {
                     foodId: item.id,
                     foodName: item.name,
                     price: item.price,
                     quantity: quantityNumber,
-                    totalPrice: 0
+                    totalprice: quantityNumber * item.price
                 }
                 //debugger
             cart.push(items);

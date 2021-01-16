@@ -20,10 +20,10 @@ $(document).on('pageinit', '#qr-scanner', function () {
       video.srcObject.getTracks().forEach(track => {
         track.stop();
       });
-
       qrResult.hidden = false;
       canvasElement.hidden = true;
       //   btnScanQR.hidden = false;
+      document.location.href = "../html/cart.html"
     }
   };
 

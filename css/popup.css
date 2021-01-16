@@ -1,0 +1,16 @@
+.container { margin: 150px auto; 
+    max-width: 960px; 
+}
+			.btn{
+                color: aliceblue;
+				width: 120px;
+				height: 36px;
+				line-height: 36px;
+				text-align: center;
+				border-radius: 4px;
+				background: #FB752C;
+				margin: 10px 0 0 30px;
+			}
+			.mt10{
+				margin-top: 10px;
+			}

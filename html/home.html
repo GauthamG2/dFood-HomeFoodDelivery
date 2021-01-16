@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title> DFood | Home </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../images/logo.png" type="image/gif">
 
-    <link rel="stylesheet" href="../css/myTheme1.css"/>
-    <link rel="stylesheet" href="../css/home.css"/>
-    <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css"/>
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css"/>
+    <link rel="stylesheet" href="../css/myTheme1.css" />
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 
@@ -17,20 +18,18 @@
     <script src="../js/home.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel = "icon" type = "image/png" href ="/images/logo/logo_blue_icon.ico"> 
+    <link rel="icon" type="image/png" href="/images/logo/logo_blue_icon.ico">
 
     <!-- Adding footer -->
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.js"
-        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
     </script>
-    <script> 
-        $(function(){
-            $("#footer").load("footer.html"); 
+    <script>
+        $(function() {
+            $("#footer").load("footer.html");
         });
-    </script> 
+    </script>
 </head>
+
 <body>
     <!-- This is a 'Home' page -->
     <div data-role="page" id="home" data-theme="d">
@@ -39,9 +38,9 @@
         </div>
         <div data-role="main" class="ui-content" data-theme="d" style="padding: 0px;">
             <!-- This is a search bar -->
-                <div data-role="fieldcontain" style="padding: 20px;">
-                    <input type="search" name="search-2" id="search-2" placeholder="Search.." value="" />
-                </div>
+            <div data-role="fieldcontain" style="padding: 20px;">
+                <input type="search" name="search-2" id="search-2" placeholder="Search.." value="" />
+            </div>
 
             <!-- This is a slideshow -->
             <div class="slideshow-container ui-responsive">
@@ -49,8 +48,7 @@
                 <div class="mySlides fade">
                     <!-- If number text needed -->
                     <!-- <div class="numbertext">1 / 3</div> -->
-                    <img src="/images/Food_Images/Home_Banner/1_Home_Banner.jpg"
-                        style="width:100%; height: 320px; object-fit: cover">
+                    <img src="/images/Food_Images/Home_Banner/1_Home_Banner.jpg" style="width:100%; height: 320px; object-fit: cover">
                     <!-- If caption needed -->
                     <!-- <div class="text">Caption Three</div> -->
                 </div>
@@ -58,8 +56,7 @@
                 <div class="mySlides fade">
                     <!-- If number text needed -->
                     <!-- <div class="numbertext">2 / 3</div> -->
-                    <img src="/images/Food_Images/Home_Banner/5_Home_Banner.jpg"
-                        style="width:100%; height: 320px; object-fit: cover">
+                    <img src="/images/Food_Images/Home_Banner/5_Home_Banner.jpg" style="width:100%; height: 320px; object-fit: cover">
                     <!-- If caption needed -->
                     <!-- <div class="text">Caption Three</div> -->
                 </div>
@@ -67,8 +64,7 @@
                 <div class="mySlides fade">
                     <!-- If number text needed -->
                     <!-- <div class="numbertext">3 / 3</div> -->
-                    <img src="/images/Food_Images/Home_Banner/3_Home_Banner.jpg"
-                        style="width:100%; height: 320px; object-fit: cover">
+                    <img src="/images/Food_Images/Home_Banner/3_Home_Banner.jpg" style="width:100%; height: 320px; object-fit: cover">
                     <!-- If caption needed -->
                     <!-- <div class="text">Caption Three</div> -->
                 </div>
@@ -110,32 +106,27 @@
 
             <div class="ui-grid-a my-breakpoint ui-responsive" style="margin: 10px;">
 
-                <!-- raw 1 column 1 (1)-->
                 <div class="ui-block-a " style="padding: 10px;">
-                    <div class="ui-body ui-body-d shadow"
-                        style="background-color: #ffffff; border: none ; border-radius: 10px;padding: 10px;box-shadow: 0 0 10px #8a795d;">
+                    <div class="ui-body ui-body-d shadow" style="background-color: #ffffff; border: none ; border-radius: 10px;padding: 10px;box-shadow: 0 0 10px #8a795d;">
                         <div>
                             <div class="favHeart">
                                 <a href="#" id="hamburger" target="_self">
-                                    <img id="dofav" style="position: absolute;right: 1rem;top: 1rem;"
-                                        src="/images/icons_svg/Icon feather-heart-1.svg" 
-                                        align="right"/>
+                                    <img id="dofav" class="favourite" data-state="false" style="position: absolute;right: 1rem;top: 1rem;" src="/images/icons_svg/Icon feather-heart-1.svg" align="right" />
                                     <!-- <img id="fav" style="position: absolute;right: 2rem;top: 2rem;" src="Icons/favorite-black-24dp.svg" width="26" height="26" align="right" /> -->
                                 </a>
                             </div>
 
-                            <div onclick="goToFood(1)">
+                            <div onclick="goToFood(1)" data-item-id="1">
                                 <a href="#" target="_self">
-                                <img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui"
-                                    src="/images/Food_Images/1_Fruit_Pancake.jpg" height="100%"
-                                    width="100%" style="border-radius: 10px; object-fit: cover"/></a>
-                                    </div>
+                                    <img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui" src="/images/Food_Images/1_Fruit_Pancake.jpg" height="100%" width="100%" style="border-radius: 10px; object-fit: cover" />
+                                </a>
+                            </div>
                         </div>
 
                         <fieldset class="ui-grid-a">
                             <div class="ui-block-a" style="width: 100% !important;">
-                                <h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;">Fruit
-                                    Pancacke</h3>
+                                <h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;">Fruit Pancacke
+                                </h3>
                                 <div class="ui-block-a" style="width: 100% !important;">
                                     <div style="width: 70%; float:left;margin-left: 0px">
                                         <h4 style="text-align: left !important;margin:5px !important;margin-left: 0px !important;width: 100% !important;font-weight: 500;">
@@ -143,7 +134,7 @@
                                     </div>
 
                                     <div class="column right" style="padding-right: 0px!important;">
-                                        <h4 class="rating-star"> 4.8 
+                                        <h4 class="rating-star"> 4.8
                                             <span style="color: #FB752C">★</span></h4>
                                     </div>
                                     <!--<div class="column right" style="padding-left: 1px!important;">
@@ -151,331 +142,298 @@
                                     </div>-->
                                 </div>
                         </fieldset>
-                    </div>
-                </div>
-
-                <!-- raw 1 column 2 (2)-->
-                <div class="ui-block-b " style="padding: 10px;">
-                    <div class="ui-body ui-body-d shadow"
-                        style="background-color: #ffffff; border: none ; border-radius: 10px; padding: 10px; box-shadow: #070707;box-shadow: 0 0 10px #8a795d;">
-                        <div>
-                            <div class="favHeart">
-                                <a href="#" id="hamburger" target="_self">
-                                    <img id="dofav" style="position: absolute;right: 1rem;top: 1rem;"
-                                        src="/images/icons_svg/Icon feather-heart-1.svg"
-                                        align="right"/>
-                                    <!-- <img id="fav" style="position: absolute;right: 2rem;top: 2rem;" src="Icons/favorite-black-24dp.svg" width="26" height="26" align="right" /> -->
-                                </a>
-                            </div>
-
-                            <div onclick="goToFood(2)">
-                                <a href="#" target="_self">
-                                <img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui"
-                                    src="/images/Food_Images/2_Mushroom_Salad.jpg" height="100%"
-                                    width="100%" style="border-radius: 10px; object-fit: cover"/>
-                            </a>
-                            </div>
                         </div>
+                    </div>
 
-                        <fieldset class="ui-grid-a">
-                            <div class="ui-block-b" style="width: 100% !important;">
-                                <h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;">Mushroom
-                                    Salad</h3>
+                    <!-- raw 1 column 2 (2)-->
+                    <div class="ui-block-b " style="padding: 10px;">
+                        <div class="ui-body ui-body-d shadow" style="background-color: #ffffff; border: none ; border-radius: 10px; padding: 10px; box-shadow: #070707;box-shadow: 0 0 10px #8a795d;">
+                            <div>
+                                <div class="favHeart">
+                                    <a href="#" id="hamburger" target="_self">
+                                        <img id="dofav" class="favourite" data-state="false" style="position: absolute;right: 1rem;top: 1rem;" src="/images/icons_svg/Icon feather-heart-1.svg" align="right" />
+                                        <!-- <img id="fav" style="position: absolute;right: 2rem;top: 2rem;" src="Icons/favorite-black-24dp.svg" width="26" height="26" align="right" /> -->
+                                    </a>
+                                </div>
+
+                                <div onclick="goToFood(2)" data-item-id="2">
+                                    <a href="#" target="_self">
+                                        <img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui" src="/images/Food_Images/2_Mushroom_Salad.jpg" height="100%" width="100%" style="border-radius: 10px; object-fit: cover" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            <fieldset class="ui-grid-a">
                                 <div class="ui-block-b" style="width: 100% !important;">
-                                    <div style="width: 70%; float:left;margin-left: 0px">
-                                        <h4 style="text-align: left !important;margin:5px !important;margin-left: 0px !important;width: 100% !important;font-weight: 500;">
-                                            LKR 250.00</h4>
-                                    </div>
+                                    <h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;">Mushroom Salad
+                                    </h3>
+                                    <div class="ui-block-b" style="width: 100% !important;">
+                                        <div style="width: 70%; float:left;margin-left: 0px">
+                                            <h4 style="text-align: left !important;margin:5px !important;margin-left: 0px !important;width: 100% !important;font-weight: 500;">
+                                                LKR 250.00</h4>
+                                        </div>
 
-                                    <div class="column right" style="padding-right: 0px!important;">
-                                        <h4 class="rating-star"> 4.4 
-                                            <span style="color: #FB752C">★</span></h4>
-                                    </div>
-                                    <!--<div class="column right" style="padding-left: 1px!important;">
+                                        <div class="column right" style="padding-right: 0px!important;">
+                                            <h4 class="rating-star"> 4.4
+                                                <span style="color: #FB752C">★</span></h4>
+                                        </div>
+                                        <!--<div class="column right" style="padding-left: 1px!important;">
                                     <img id="star" style="margin-top: 3px;height: 24px!important;" src="Icons/star-black-24dp.svg"/>
                                     </div>-->
-                                </div>
-                        </fieldset>
-                    </div>
-                </div>
-
-                <!-- raw 2 column 1 (3)-->
-                <div class="ui-block-a " style="padding: 10px;">
-                    <div class="ui-body ui-body-d shadow"
-                        style="background-color: #ffffff; border: none ; border-radius: 10px; padding: 10px; box-shadow: #070707;box-shadow: 0 0 10px #8a795d;">
-                        <div>
-                            <div class="favHeart">
-                                <a href="#" id="hamburger" target="_self">
-                                    <img id="dofav" style="position: absolute;right: 1rem;top: 1rem;"
-                                        src="/images/icons_svg/Icon feather-heart-1.svg"
-                                        align="right"/>
-                                    <!-- <img id="fav" style="position: absolute;right: 2rem;top: 2rem;" src="Icons/favorite-black-24dp.svg" width="26" height="26" align="right" /> -->
-                                </a>
+                                    </div>
+                            </fieldset>
                             </div>
-
-                            <div onclick="goToFood(3)">
-                                <a href="#" target="_self">
-                                <img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui"
-                                                            src="/images/Food_Images/4_Protein_Platter.jpg" height="100%"
-                                                            width="100%" style="border-radius: 10px; object-fit: cover"/></a>
-                        </div>
-                                                        </div>
-
-                        <fieldset class="ui-grid-a">
-                            <div class="ui-block-a" style="width: 100% !important;">
-                                <h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;">Fresh Fruit
-                                    Bread</h3>
-                                <div class="ui-block-a" style="width: 100% !important;">
-                                    <div style="width: 70%; float:left;margin-left: 0px">
-                                        <h4 style="text-align: left !important;margin:5px !important;margin-left: 0px !important;width: 100% !important;font-weight: 500;">
-                                            LKR 150.00</h4>
-                                    </div>
-
-                                    <div class="column right" style="padding-right: 0px!important;">
-                                        <h4 class="rating-star"> 4.4 
-                                            <span style="color: #FB752C">★</span></h4>
-                                    </div>
-                                    <!--<div class="column right" style="padding-left: 1px!important;">
-                                    <img id="star" style="margin-top: 3px;height: 24px!important;" src="Icons/star-black-24dp.svg"/>
-                                    </div>-->
-                                </div>
-                        </fieldset>
-                    </div>
-                </div>
-
-                <!-- raw 2 column 2 (4)-->
-                <div class="ui-block-b" style="padding: 10px;">
-                    <div class="ui-body ui-body-d shadow"
-                        style="background-color: #ffffff; border: none ; border-radius: 10px; padding: 10px; box-shadow: #070707;box-shadow: 0 0 10px #8a795d;">
-                        <div>
-                            <div class="favHeart">
-                                <a href="#" id="hamburger" target="_self">
-                                    <img id="dofav" style="position: absolute;right: 1rem;top: 1rem;"
-                                        src="/images/icons_svg/Icon feather-heart-1.svg"
-                                        align="right"/>
-                                    <!-- <img id="fav" style="position: absolute;right: 2rem;top: 2rem;" src="Icons/favorite-black-24dp.svg" width="26" height="26" align="right" /> -->
-                                </a>
-                            </div>
-
-                            <div onclick="goToFood(4)">
-                                <a href="#" target="_self">
-                                <img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui"
-                                    src="/images/Food_Images/3_Fresh_fruit_Bred.jpeg" height="100%"
-                                    width="100%" style="border-radius: 10px; object-fit: cover"/></a>
-                                    </div>
                         </div>
 
-                        <fieldset class="ui-grid-a">
-                            <div class="ui-block-b" style="width: 100% !important;">
-                                <h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;">Protein
-                                    Platter</h3>
-                                <div class="ui-block-b" style="width: 100% !important;">
-                                    <div style="width: 70%; float:left;margin-left: 0px">
-                                        <h4 style="text-align: left !important;margin:5px !important;margin-left: 0px !important;width: 100% !important;font-weight: 500;">
-                                            LKR 375.00</h4>
+                        <!-- raw 2 column 1 (3)-->
+                        <div class="ui-block-a " style="padding: 10px;">
+                            <div class="ui-body ui-body-d shadow" style="background-color: #ffffff; border: none ; border-radius: 10px; padding: 10px; box-shadow: #070707;box-shadow: 0 0 10px #8a795d;">
+                                <div>
+                                    <div class="favHeart">
+                                        <a href="#" id="hamburger" target="_self">
+                                            <img id="dofav" class="favourite" data-state="false" style="position: absolute;right: 1rem;top: 1rem;" src="/images/icons_svg/Icon feather-heart-1.svg" align="right" />
+                                            <!-- <img id="fav" style="position: absolute;right: 2rem;top: 2rem;" src="Icons/favorite-black-24dp.svg" width="26" height="26" align="right" /> -->
+                                        </a>
                                     </div>
 
-                                    <div class="column right" style="padding-right: 0px!important;">
-                                        <h4 class="rating-star"> 4.5 
-                                            <span style="color: #FB752C">★</span></h4>
+                                    <div onclick="goToFood(3)" data-item-id="3">
+                                        <a href="#" target="_self">
+                                            <img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui" src="/images/Food_Images/4_Protein_Platter.jpg" height="100%" width="100%" style="border-radius: 10px; object-fit: cover" /></a>
                                     </div>
-                                    <!--<div class="column right" style="padding-left: 1px!important;">
+                                </div>
+
+                                <fieldset class="ui-grid-a">
+                                    <div class="ui-block-a" style="width: 100% !important;">
+                                        <h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;">Fresh Fruit Bread
+                                        </h3>
+                                        <div class="ui-block-a" style="width: 100% !important;">
+                                            <div style="width: 70%; float:left;margin-left: 0px">
+                                                <h4 style="text-align: left !important;margin:5px !important;margin-left: 0px !important;width: 100% !important;font-weight: 500;">
+                                                    LKR 150.00</h4>
+                                            </div>
+
+                                            <div class="column right" style="padding-right: 0px!important;">
+                                                <h4 class="rating-star"> 4.4
+                                                    <span style="color: #FB752C">★</span></h4>
+                                            </div>
+                                            <!--<div class="column right" style="padding-left: 1px!important;">
                                     <img id="star" style="margin-top: 3px;height: 24px!important;" src="Icons/star-black-24dp.svg"/>
                                     </div>-->
+                                        </div>
+                                </fieldset>
                                 </div>
-                        </fieldset>
-                    </div>
-                </div>
-
-                <!-- raw 3 column 1 (5)-->
-                <div class="ui-block-a " style="padding: 10px;">
-                    <div class="ui-body ui-body-d shadow"
-                        style="background-color: #ffffff; border: none ; border-radius: 10px; padding: 10px; box-shadow: #070707;box-shadow: 0 0 10px #8a795d;">
-                        <div>
-                            <div class="favHeart">
-                                <a href="#" id="hamburger" target="_self">
-                                    <img id="dofav" style="position: absolute;right: 1rem;top: 1rem;"
-                                        src="/images/icons_svg/Icon feather-heart-1.svg"
-                                        align="right"/>
-                                    <!-- <img id="fav" style="position: absolute;right: 2rem;top: 2rem;" src="Icons/favorite-black-24dp.svg" width="26" height="26" align="right" /> -->
-                                </a>
                             </div>
 
-                            <div onclick="goToFood(5)">
-                                <a href="#" target="_self">
-                                <img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui"
-                                                            src="/images/Food_Images/5_Chinese_Soup.jpg" height="100%"
-                                                            width="100%" style="border-radius: 10px; object-fit: cover"/></a>
-                        </div>
-                                                        </div>
+                            <!-- raw 2 column 2 (4)-->
+                            <div class="ui-block-b" style="padding: 10px;">
+                                <div class="ui-body ui-body-d shadow" style="background-color: #ffffff; border: none ; border-radius: 10px; padding: 10px; box-shadow: #070707;box-shadow: 0 0 10px #8a795d;">
+                                    <div>
+                                        <div class="favHeart">
+                                            <a href="#" id="hamburger" target="_self">
+                                                <img id="dofav" class="favourite" data-state="false" style="position: absolute;right: 1rem;top: 1rem;" src="/images/icons_svg/Icon feather-heart-1.svg" align="right" />
+                                                <!-- <img id="fav" style="position: absolute;right: 2rem;top: 2rem;" src="Icons/favorite-black-24dp.svg" width="26" height="26" align="right" /> -->
+                                            </a>
+                                        </div>
 
-                        <fieldset class="ui-grid-a">
-                            <div class="ui-block-a" style="width: 100% !important;">
-                                <h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;">Chinese
-                                    Soup</h3>
-                                <div class="ui-block-a" style="width: 100% !important;">
-                                    <div style="width: 70%; float:left;margin-left: 0px">
-                                        <h4 style="text-align: left !important;margin:5px !important;margin-left: 0px !important;width: 100% !important;font-weight: 500;">
-                                            LKR 375.00</h4>
+                                        <div onclick="goToFood(4)" data-item-id="4">
+                                            <a href="#" target="_self">
+                                                <img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui" src="/images/Food_Images/3_Fresh_fruit_Bred.jpeg" height="100%" width="100%" style="border-radius: 10px; object-fit: cover" /></a>
+                                        </div>
                                     </div>
 
-                                    <div class="column right" style="padding-right: 0px!important;">
-                                        <h4 class="rating-star"> 4.2 
-                                            <span style="color: #FB752C">★</span></h4>
-                                    </div>
-                                    <!--<div class="column right" style="padding-left: 1px!important;">
+                                    <fieldset class="ui-grid-a">
+                                        <div class="ui-block-b" style="width: 100% !important;">
+                                            <h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;">Protein Platter
+                                            </h3>
+                                            <div class="ui-block-b" style="width: 100% !important;">
+                                                <div style="width: 70%; float:left;margin-left: 0px">
+                                                    <h4 style="text-align: left !important;margin:5px !important;margin-left: 0px !important;width: 100% !important;font-weight: 500;">
+                                                        LKR 375.00</h4>
+                                                </div>
+
+                                                <div class="column right" style="padding-right: 0px!important;">
+                                                    <h4 class="rating-star"> 4.5
+                                                        <span style="color: #FB752C">★</span></h4>
+                                                </div>
+                                                <!--<div class="column right" style="padding-left: 1px!important;">
                                     <img id="star" style="margin-top: 3px;height: 24px!important;" src="Icons/star-black-24dp.svg"/>
                                     </div>-->
+                                            </div>
+                                    </fieldset>
+                                    </div>
                                 </div>
-                        </fieldset>
-                    </div>
-                </div>
-                <!-- raw 3 column 2 (6)-->
-                <div class="ui-block-b " style="padding: 10px;">
-                    <div class="ui-body ui-body-d shadow"
-                        style="background-color: #ffffff; border: none ; border-radius: 10px; padding: 10px; box-shadow: #070707;box-shadow: 0 0 10px #8a795d;">
-                        <div>
-                            <div class="favHeart">
-                                <a href="#" id="hamburger" target="_self">
-                                    <img id="dofav" style="position: absolute;right: 1rem;top: 1rem;"
-                                        src="/images/icons_svg/Icon feather-heart-1.svg"
-                                        align="right"/>
-                                    <!-- <img id="fav" style="position: absolute;right: 2rem;top: 2rem;" src="Icons/favorite-black-24dp.svg" width="26" height="26" align="right" /> -->
-                                </a>
-                            </div>
 
-                            <div onclick="goToFood(6)">
-                                <a href="#" target="_self">
-                                <img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui"
-                                                            src="/images/Food_Images/6_Chicken_Kothu.png" height="100%"
-                                                            width="100%" style="border-radius: 10px; object-fit: cover;"/></a>
-                        </div>
-                                                        </div>
+                                <!-- raw 3 column 1 (5)-->
+                                <div class="ui-block-a " style="padding: 10px;">
+                                    <div class="ui-body ui-body-d shadow" style="background-color: #ffffff; border: none ; border-radius: 10px; padding: 10px; box-shadow: #070707;box-shadow: 0 0 10px #8a795d;">
+                                        <div>
+                                            <div class="favHeart">
+                                                <a href="#" id="hamburger" target="_self">
+                                                    <img id="dofav" class="favourite" data-state="false" style="position: absolute;right: 1rem;top: 1rem;" src="/images/icons_svg/Icon feather-heart-1.svg" align="right" />
+                                                    <!-- <img id="fav" style="position: absolute;right: 2rem;top: 2rem;" src="Icons/favorite-black-24dp.svg" width="26" height="26" align="right" /> -->
+                                                </a>
+                                            </div>
 
-                        <fieldset class="ui-grid-a">
-                            <div class="ui-block-b" style="width: 100% !important;">
-                                <h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;">Chicken
-                                    Kothu</h3>
-                                <div class="ui-block-b" style="width: 100% !important;">
-                                    <div style="width: 70%; float:left;margin-left: 0px">
-                                        <h4 style="text-align: left !important;margin:5px !important;margin-left: 0px !important;width: 100% !important;font-weight: 500;">
-                                            LKR 280.00</h4>
-                                    </div>
+                                            <div onclick="goToFood(5)" data-item-id="5">
+                                                <a href="#" target="_self">
+                                                    <img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui" src="/images/Food_Images/5_Chinese_Soup.jpg" height="100%" width="100%" style="border-radius: 10px; object-fit: cover" /></a>
+                                            </div>
+                                        </div>
 
-                                    <div class="column right" style="padding-right: 0px!important;">
-                                        <h4 class="rating-star"> 4.3 
-                                            <span style="color: #FB752C">★</span></h4>
-                                    </div>
-                                    <!--<div class="column right" style="padding-left: 1px!important;">
+                                        <fieldset class="ui-grid-a">
+                                            <div class="ui-block-a" style="width: 100% !important;">
+                                                <h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;">Chinese Soup
+                                                </h3>
+                                                <div class="ui-block-a" style="width: 100% !important;">
+                                                    <div style="width: 70%; float:left;margin-left: 0px">
+                                                        <h4 style="text-align: left !important;margin:5px !important;margin-left: 0px !important;width: 100% !important;font-weight: 500;">
+                                                            LKR 375.00</h4>
+                                                    </div>
+
+                                                    <div class="column right" style="padding-right: 0px!important;">
+                                                        <h4 class="rating-star"> 4.2
+                                                            <span style="color: #FB752C">★</span></h4>
+                                                    </div>
+                                                    <!--<div class="column right" style="padding-left: 1px!important;">
                                     <img id="star" style="margin-top: 3px;height: 24px!important;" src="Icons/star-black-24dp.svg"/>
                                     </div>-->
-                                </div>
-                        </fieldset>
-                    </div>
-                </div>
-                <!-- raw 4 column 1 (7)-->
-                <div class="ui-block-a " style="padding: 10px;">
-                    <div class="ui-body ui-body-d shadow"
-                        style="background-color: #ffffff; border: none ; border-radius: 10px; padding: 10px; box-shadow: #070707;box-shadow: 0 0 10px #8a795d;">
-                        <div>
-                            <div class="favHeart">
-                                <a href="#" id="hamburger" target="_self">
-                                    <img id="dofav" style="position: absolute;right: 1rem;top: 1rem;"
-                                        src="/images/icons_svg/Icon feather-heart-1.svg"
-                                        align="right"/>
-                                    <!-- <img id="fav" style="position: absolute;right: 2rem;top: 2rem;" src="Icons/favorite-black-24dp.svg" width="26" height="26" align="right" /> -->
-                                </a>
-                            </div>
-                            <div onclick="goToFood(7)">
-                                <a href="#" target="_self">
-                                
-                                <img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui"
-                                                            src="/images/Food_Images/7_Oreo_Milkshake.jpg" height="100%"
-                                                            width="100%" style="border-radius: 10px; object-fit: cover;"/></a>
-                        </div>
+                                                </div>
+                                        </fieldset>
+                                        </div>
+                                    </div>
+                                    <!-- raw 3 column 2 (6)-->
+                                    <div class="ui-block-b " style="padding: 10px;">
+                                        <div class="ui-body ui-body-d shadow" style="background-color: #ffffff; border: none ; border-radius: 10px; padding: 10px; box-shadow: #070707;box-shadow: 0 0 10px #8a795d;">
+                                            <div>
+                                                <div class="favHeart">
+                                                    <a href="#" id="hamburger" target="_self">
+                                                        <img id="dofav" class="favourite" data-state="false" style="position: absolute;right: 1rem;top: 1rem;" src="/images/icons_svg/Icon feather-heart-1.svg" align="right" />
+                                                        <!-- <img id="fav" style="position: absolute;right: 2rem;top: 2rem;" src="Icons/favorite-black-24dp.svg" width="26" height="26" align="right" /> -->
+                                                    </a>
+                                                </div>
+
+                                                <div onclick="goToFood(6)" data-item-id="6">
+                                                    <a href="#" target="_self">
+                                                        <img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui" src="/images/Food_Images/6_Chicken_Kothu.png" height="100%" width="100%" style="border-radius: 10px; object-fit: cover;" /></a>
+                                                </div>
+                                            </div>
+
+                                            <fieldset class="ui-grid-a">
+                                                <div class="ui-block-b" style="width: 100% !important;">
+                                                    <h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;">Chicken Kothu
+                                                    </h3>
+                                                    <div class="ui-block-b" style="width: 100% !important;">
+                                                        <div style="width: 70%; float:left;margin-left: 0px">
+                                                            <h4 style="text-align: left !important;margin:5px !important;margin-left: 0px !important;width: 100% !important;font-weight: 500;">
+                                                                LKR 280.00</h4>
                                                         </div>
 
-                        <fieldset class="ui-grid-a">
-                            <div class="ui-block-a" style="width: 100% !important;">
-                                <h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;">Oreo
-                                    Milkshake</h3>
-                                <div class="ui-block-a" style="width: 100% !important;">
-                                    <div style="width: 70%; float:left;margin-left: 0px">
-                                        <h4 style="text-align: left !important;margin:5px !important;margin-left: 0px !important;width: 100% !important;font-weight: 500;">
-                                            LKR 300.00</h4>
-                                    </div>
-
-                                    <div class="column right" style="padding-right: 0px!important;">
-                                        <h4 class="rating-star"> 4.9 
-                                            <span style="color: #FB752C">★</span></h4>
-                                    </div>
-                                    <!--<div class="column right" style="padding-left: 1px!important;">
+                                                        <div class="column right" style="padding-right: 0px!important;">
+                                                            <h4 class="rating-star"> 4.3
+                                                                <span style="color: #FB752C">★</span></h4>
+                                                        </div>
+                                                        <!--<div class="column right" style="padding-left: 1px!important;">
                                     <img id="star" style="margin-top: 3px;height: 24px!important;" src="Icons/star-black-24dp.svg"/>
                                     </div>-->
-                                </div>
-                        </fieldset>
-                    </div>
-                </div>
-                <!-- raw 4 column 2 (8)-->
-                <div class="ui-block-b " style="padding: 10px;">
-                    <div class="ui-body ui-body-d shadow"
-                        style="background-color: #ffffff; border: none ; border-radius: 10px; padding: 10px; box-shadow: #070707;box-shadow: 0 0 10px #8a795d;">
-                        <div>
-                            <div class="favHeart">
-                                <a href="#" id="hamburger" target="_self">
-                                    <img id="dofav" style="position: absolute;right: 1rem;top: 1rem;"
-                                        src="/images/icons_svg/Icon feather-heart-1.svg"
-                                        align="right"/>
-                                    <!-- <img id="fav" style="position: absolute;right: 2rem;top: 2rem;" src="Icons/favorite-black-24dp.svg" width="26" height="26" align="right" /> -->
-                                </a>
-                            </div>
+                                                    </div>
+                                            </fieldset>
+                                            </div>
+                                        </div>
+                                        <!-- raw 4 column 1 (7)-->
+                                        <div class="ui-block-a " style="padding: 10px;">
+                                            <div class="ui-body ui-body-d shadow" style="background-color: #ffffff; border: none ; border-radius: 10px; padding: 10px; box-shadow: #070707;box-shadow: 0 0 10px #8a795d;">
+                                                <div>
+                                                    <div class="favHeart">
+                                                        <a href="#" id="hamburger" target="_self">
+                                                            <img id="dofav" class="favourite" data-state="false" style="position: absolute;right: 1rem;top: 1rem;" src="/images/icons_svg/Icon feather-heart-1.svg" align="right" />
+                                                            <!-- <img id="fav" style="position: absolute;right: 2rem;top: 2rem;" src="Icons/favorite-black-24dp.svg" width="26" height="26" align="right" /> -->
+                                                        </a>
+                                                    </div>
+                                                    <div onclick="goToFood(7)" data-item-id="7">
+                                                        <a href="#" target="_self">
 
-                            <div onclick="goToFood(8)">
-                                <a href="#" target="_self">
-                                
-                                <img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui"
-                                                            src="/images/Food_Images/8_Rice_and_Curry.jpg" height="100%"
-                                                            width="100%" style="border-radius: 10px; object-fit: cover"/></a>
-                       </div>
+                                                            <img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui" src="/images/Food_Images/7_Oreo_Milkshake.jpg" height="100%" width="100%" style="border-radius: 10px; object-fit: cover;" /></a>
+                                                    </div>
+                                                </div>
+
+                                                <fieldset class="ui-grid-a">
+                                                    <div class="ui-block-a" style="width: 100% !important;">
+                                                        <h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;">Oreo Milkshake
+                                                        </h3>
+                                                        <div class="ui-block-a" style="width: 100% !important;">
+                                                            <div style="width: 70%; float:left;margin-left: 0px">
+                                                                <h4 style="text-align: left !important;margin:5px !important;margin-left: 0px !important;width: 100% !important;font-weight: 500;">
+                                                                    LKR 300.00</h4>
+                                                            </div>
+
+                                                            <div class="column right" style="padding-right: 0px!important;">
+                                                                <h4 class="rating-star"> 4.9
+                                                                    <span style="color: #FB752C">★</span></h4>
+                                                            </div>
+                                                            <!--<div class="column right" style="padding-left: 1px!important;">
+                                    <img id="star" style="margin-top: 3px;height: 24px!important;" src="Icons/star-black-24dp.svg"/>
+                                    </div>-->
+                                                        </div>
+                                                </fieldset>
+                                                </div>
+                                            </div>
+                                            <!-- raw 4 column 2 (8)-->
+                                            <div class="ui-block-b " style="padding: 10px;">
+                                                <div class="ui-body ui-body-d shadow" style="background-color: #ffffff; border: none ; border-radius: 10px; padding: 10px; box-shadow: #070707;box-shadow: 0 0 10px #8a795d;">
+                                                    <div>
+                                                        <div class="favHeart">
+                                                            <a href="#" id="hamburger" target="_self">
+                                                                <img id="dofav" class="favourite" data-state="false" data-state="false" style="position: absolute;right: 1rem;top: 1rem;" src="/images/icons_svg/Icon feather-heart-1.svg" align="right" />
+                                                                <!-- <img id="fav" style="position: absolute;right: 2rem;top: 2rem;" src="Icons/favorite-black-24dp.svg" width="26" height="26" align="right" /> -->
+                                                            </a>
                                                         </div>
 
-                        <fieldset class="ui-grid-a">
-                            <div class="ui-block-b" style="width: 100% !important;">
-                                <h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;">Rice and
-                                    Curry</h3>
-                                <div class="ui-block-b" style="width: 100% !important;">
-                                    <div style="width: 70%; float:left;margin-left: 0px">
-                                        <h4 style="text-align: left !important;margin:5px !important;margin-left: 0px !important;width: 100% !important;font-weight: 500;">
-                                            LKR 300.00</h4>
-                                    </div>
+                                                        <div onclick="goToFood(8)" data-item-id="8">
+                                                            <a href="#" target="_self">
 
-                                    <div class="column right" style="padding-right: 0px!important;">
-                                        <h4 class="rating-star"> 4.7 
-                                            <span style="color: #FB752C">★</span></h4>
-                                    </div>
-                                    <!--<div class="column right" style="padding-left: 1px!important;">
+                                                                <img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui" src="/images/Food_Images/8_Rice_and_Curry.jpg" height="100%" width="100%" style="border-radius: 10px; object-fit: cover" /></a>
+                                                        </div>
+                                                    </div>
+
+                                                    <fieldset class="ui-grid-a">
+                                                        <div class="ui-block-b" style="width: 100% !important;">
+                                                            <h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;">Rice and Curry
+                                                            </h3>
+                                                            <div class="ui-block-b" style="width: 100% !important;">
+                                                                <div style="width: 70%; float:left;margin-left: 0px">
+                                                                    <h4 style="text-align: left !important;margin:5px !important;margin-left: 0px !important;width: 100% !important;font-weight: 500;">
+                                                                        LKR 300.00</h4>
+                                                                </div>
+
+                                                                <div class="column right" style="padding-right: 0px!important;">
+                                                                    <h4 class="rating-star"> 4.7
+                                                                        <span style="color: #FB752C">★</span></h4>
+                                                                </div>
+                                                                <!--<div class="column right" style="padding-left: 1px!important;">
                                     <img id="star" style="margin-top: 3px;height: 24px!important;" src="Icons/star-black-24dp.svg"/>
                                     </div>-->
-                                </div>
-                        </fieldset>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Adding Footer -->
-        <div id="footer"></div>
+                                                            </div>
+                                                    </fieldset>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Adding Footer -->
+                                        <div id="footer"></div>
 
-        <!-- Adding Tab-bar -->
-        <div data-role="footer" data-position="fixed" data-theme="e">
-            <div data-role="navbar" data-theme="e">
-                <ul>
-                    <li><a href="/html/Home.html" target="_self" data-icon="home">Home</a></li>
-                    <li><a href="/html/favourites.html" target="_self" data-icon="heart">Favourites</a></li>
-                    <li><a href="/html/my_orders.html" target="_self" data-icon="mail">My Orders</a></li>
-                    <li><a href="/html/account.html" target="_self" data-icon="user">Account</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+                                        <!-- Adding Tab-bar -->
+                                        <div data-role="footer" data-position="fixed" data-theme="e">
+                                            <div data-role="navbar" data-theme="e">
+                                                <ul>
+                                                    <li><a href="/html/Home.html" target="_self" data-icon="home">Home</a></li>
+                                                    <li><a href="/html/favourites.html" target="_self" data-icon="heart">Favourites</a></li>
+                                                    <li><a href="/html/my_orders.html" target="_self" data-icon="mail">My Orders</a></li>
+                                                    <li><a href="/html/account.html" target="_self" data-icon="user">Account</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+    
 </body>
+
 </html>

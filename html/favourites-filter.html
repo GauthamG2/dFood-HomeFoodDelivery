@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title> dFood | Favourites Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../images/logo.png" type="image/gif">
+    <link rel="stylesheet" href="../css/myTheme1.css" />
+    <link rel="stylesheet" href="../css/custom-checkbox.css" />
+
+    <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script src="../js/favourite.js"></script>
+    <style>
+        /* This is for inside the card elements */
+
+        .shadow {
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .25), 0 3px 10px 0 rgba(0, 0, 0, .2) !important;
+        }
+
+        /* This is for card */
+
+        .img-ui {
+            height: 250px;
+        }
+
+        .ui-btn-right {
+            top: 50%;
+            padding: 10px;
+            background-color: transparent;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            color: #FB752C;
+            text-decoration: none;
+            overflow: hidden;
+            outline: none;
+            box-shadow: none;
+        }
+
+        /* Filter button icon-custom */
+
+        .ui-icon-carat-d:after {
+            background-image: url("/images/icons_svg/funnel-dollar-solid.svg") !important;
+            background-size: 18px 18px !important;
+            background-color: transparent;
+            content: #FB752C;
+            margin-right: 5px;
+        }
+
+        /* Fallback */
+
+        .ui-nosvg .ui-icon-carat-d:after {
+            background-image: url("/images/icons_svg/funnel-dollar-solid.svg") !important;
+        }
+    </style>
+
+    <!-- Adding footer -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <script>
+        $(function () {
+            $("#footer").load("footer.html");
+        });
+    </script>
+
+
+
+</head>
+
+<body>
+    <div data-role="page" id="Favourites" data-theme="d" style="text-align: center; ">
+        <div data-role="header" data-position="fixed">
+            <h1>Favourites
+                <a data-rel="back" target="_self">
+                    <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> </a>
+            </h1>
+            <div>
+                <a href="#popupEmail" data-rel="popup" class="ui-btn-right" style="font-size: 16px;">Share</a>
+            </div>
+            <!-- This is for enter email address -->
+
+            <div data-role="popup" id="popupEmail" class="ui-content" data-position-to="selector" data-overlay-theme="b"
+                style="height: 150px; width: 300px;">
+                <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext"
+                    class="ui-btn-right">Close</a>
+                <!-- <p>This is a popup with the <code>ui-content</code> class added to the popup container.</p> -->
+
+                <label for="Email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Enter a email address." required />
+                <div id="email_error"></div>
+
+                <button class="submit-button" id="btn-share-via-email" type="submit" name="register"
+                    style="margin: 0 auto; margin-top: 20px; width: 50%;" onclick="submitBTN_validate()">Send</button>
+            </div>
+        </div>
+
+        <div data-role="main" class="ui-content" data-theme="d" style="padding: 0px;">
+            <!-- Top button elements -->
+            <div class="top-button-div ui-responsive" style="height:80px;">
+                <div>
+                    <a href="#popupPadded" data-rel="popup"
+                        class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right  ui-icon-carat-d "
+                        style="top:15px; margin-left: 30px; border: 1px solid #FB752C !important; background-color: white; color: #FB752C; width:100px; cursor: pointer;">Sort
+                        & Filter
+                    </a>
+                </div>
+            
+            </div>
+
+            <div data-role="popup" id="popupPadded" class="ui-content" data-position-to="window" data-overlay-theme="b"
+                style="height: 350px; width: 300px;">
+                <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext"
+                    class="ui-btn-right">Close</a>
+                <!-- <p>This is a popup with the <code>ui-content</code> class added to the popup container.</p> -->
+                <div>
+                    <form>
+                        <fieldset data-role="controlgroup" data-iconpos="right" data-mini="true">
+                            <legend>Sort by Price</legend>
+                            <hr>
+                            <input type="radio" name="radio-choice-v-6" id="radio-choice-v-6a" value="on"
+                                data-theme="d">
+                            <label for="radio-choice-v-6a">Low to High</label>
+                            <input type="radio" name="radio-choice-v-6" id="radio-choice-v-6b" value="off"
+                                data-theme="d">
+                            <label for="radio-choice-v-6b">High to Low</label><br>
+                        </fieldset>
+                    </form>
+                </div>
+                <div>
+                    <form>
+                        <fieldset data-role="controlgroup" data-iconpos="right">
+                            <legend>Filter by Meal Type</legend>
+                            <hr>
+                            <input type="checkbox" name="checkbox-h-6a" id="checkbox-h-6a" data-mini="true"
+                                data-theme="d">
+                            <label for="checkbox-h-6a">Breakfast</label>
+                            <input type="checkbox" name="checkbox-h-6b" id="checkbox-h-6b" data-mini="true"
+                                data-theme="d">
+                            <label for="checkbox-h-6b">Lunch</label>
+                            <input type="checkbox" name="checkbox-h-6c" id="checkbox-h-6c" data-mini="true"
+                                data-theme="d">
+                            <label for="checkbox-h-6c">Dinner</label>
+                        </fieldset>
+                    </form>
+                </div>
+                <button class="submit-button" id="signup_btn" type="submit" name="register"
+                    style="margin: 0 auto; margin-top: 20px; width: 50%;" onclick="submit()">Submit</button>
+                    
+            </div>
+            <div>
+                <hr style="background-color: #FB752C;">
+            </div>
+
+            <div class="ui-grid-a my-breakpoint ui-responsive" style="margin: 10px;">
+
+                <div class="ui-block-a " style="padding: 10px;" id="favourite-list">
+
+                    <div class="ui-body ui-body-d shadow"
+                        style="background-color: #ffffff; border: none ; border-radius: 10px;padding: 10px;box-shadow: 0 0 10px #8a795d;">
+                        <div>
+                            <div class="favHeart">
+                                <a href="#" id="hamburger" target="_self">
+                                    <a href="#purchase" data-rel="popup" data-position-to="window"
+                                        data-transition="pop"><img src="../images/icons_svg/Icon feather-heart.svg"
+                                            style="position: absolute; right:1rem; top:1rem;">
+                                    </a>
+                                </a>
+                            </div>
+
+                            <a href="#" target="_self">
+                                <img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui"
+                                    src="../images/Food_Images/8_Rice_and_Curry" height="100%" width="100%"
+                                    style="border-radius: 10px;" /></a>
+                        </div>
+
+                        <fieldset class="ui-grid-a">
+                            <div class="ui-block-a" style="width: 110% !important;">
+                                <div class="ui-block-a" style="width: 80% !important;">
+                                    <h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;">Rice and Curry</h3>
+                                </div>
+
+                                <div class="ui-block-a" style="width: 100% !important;">
+                                    <div style="width: 70%; float:left;margin-left: 0px">
+                                        <h4 style="margin-top: 5px !important; text-align: left !important;margin:5px !important;margin-left: 0px !important;
+                                        width: 100% !important;font-weight: 500;">LKR 120.00</h4>
+                                        <h4 class="rating-star" style="text-align: left !important; margin-top: 5px;">
+                                            4.8<span style="color: #FB752C">★</span></h4>
+                                    </div>
+
+                                    <div class="column right" style="padding-left: 1px!important;"></div>
+                                </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="popup" id="purchase" data-theme="a" data-overlay-theme="b" class="ui-content"
+                style="max-width:340px; padding-bottom:2em;">
+                <h3>Confirm</h3>
+                <p>Are you sure, <br> Do you want to unfavourite the item ? </p>
+                <a href="index.html" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Cancel
+                </a>
+                <a href="index.html" data-rel="back"
+                    class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Yes</a>
+            </div>
+        </div>
+    
+
+    <!-- Adding Footer -->
+    <div id="footer"></div>
+
+    <!-- Adding Tab-bar -->
+    <div data-role="footer" data-position="fixed" data-theme="e">
+        <div data-role="navbar" data-theme="e">
+            <ul>
+                <li><a href="/html/Home.html" target="_self" data-icon="home">Home</a></li>
+                <li><a href="/html/favourites.html" target="_self" data-icon="heart">Favourites</a></li>
+                <li><a href="/html/my_orders.html" target="_self" data-icon="mail">My Orders</a></li>
+                <li><a href="/html/account.html" target="_self" data-icon="user">Account</a></li>
+            </ul>
+        </div>
+    </div>
+    </div>>
+
+
+    <!-- Share via email -->
+    <script>
+        // select error display elements
+        var email_error = document.getElementById('email_error');
+
+        // setup blur events to catch the validation after focus outemail.addEventListener('blur', emailVerify, true);
+
+        function ValidateForm() {
+            // regex to validate the email address
+            var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+            // Email validation
+            if (email.value == "") {
+                email.style.border = "1px solid red";
+                email_error.style.color = "red";
+                email_error.style.fontSize = "14px";
+                email_error.style.marginBottom = "10px";
+                email_error.textContent = "Email is required";
+                email.focus();
+                return false;
+            } else if (!re.test(email.value)) {
+                email.style.border = "1px solid red";
+                email_error.style.color = "red";
+                email_error.style.fontSize = "14px";
+                email_error.style.marginBottom = "10px";
+                email_error.textContent = "Invalid email, please re-enter";
+                email.focus();
+                return false;
+            } else {
+                return true;
+            }
+
+        }
+
+
+
+        function emailVerify() {
+            // regex to validate the email address
+            var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+            if (email.value == "") {
+                email.style.border = "1px solid red";
+                email_error.style.color = "red";
+                email_error.style.fontSize = "14px";
+                email_error.style.marginBottom = "10px";
+                email_error.textContent = "Email is required";
+                return false;
+            } else if (!re.test(email.value)) {
+                email.style.border = "1px solid red";
+                email_error.style.color = "red";
+                email_error.style.fontSize = "14px";
+                email_error.style.marginBottom = "10px";
+                email_error.textContent = "Invalid email, please re-enter";
+                return false;
+            } else {
+                email.style.border = "1px solid #5cb85c";
+                email_error.innerHTML = "";
+                return true;
+            }
+        }
+
+        function submitBTN_validate() {
+            var email_validate = emailVerify();
+
+            if (email_validate) {
+                sendEmail()
+            }
+        }
+
+        function sendEmail() {
+            // window.open('mailto:test@example.com?subject=subject&body=body'); // Simple html method
+            // Using SMTP 
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "sender@email_address.com",
+                Password: "Enter your password",
+                To: $('#email'),
+                From: "sender@email_address.com",
+                Subject: "Sending Email using javascript",
+                Body: "Well that was easy!!",
+            })
+                .then(function (message) {
+                    alert("mail sent successfully")
+                });
+        }
+
+        function submit() {
+			    document.location.href = "favourites-filter.html";
+			}
+    </script>
+</body>
+
+</html>

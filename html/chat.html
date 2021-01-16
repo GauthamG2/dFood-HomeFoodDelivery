@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Draw Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/myTheme1.css" />
+    <link rel="stylesheet" href="../css/custom-checkbox.css" />
+
+    <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  
+    <style>
+        .card-footer {
+            border-radius: 0 0 15px 15px !important;
+            border-top: 0 !important;
+        }
+
+        body {
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .container {
+            border: 2px solid #FB752C;
+            border-radius: 70px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .container1 {
+            border-radius: 10px;
+            margin-left: 5%;
+            margin-right: 5px;
+            background-color: #F7D0B9;
+            padding: 20px;
+            margin: 10px 0;
+        }
+
+        .darker {
+            border-color: #FB752C;
+        }
+
+        .container::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .container img {
+            float: left;
+            max-width: 60px;
+            width: 100%;
+            margin-right: 20px;
+            border-radius: 50%;
+        }
+
+        .container img.right {
+            float: right;
+            margin-left: 20px;
+            margin-right: 0;
+        }
+
+        .centerFood {
+            position: relative;
+            left: 50%;
+            top: 50%;
+            margin-top: 150px;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 500;
+            height: 300;
+        }
+    </style>
+
+    <!-- Adding footer -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <script>
+        $(function () {
+            $("#footer").load("footer.html");
+        });
+    </script>
+</head>
+
+<body>
+
+    <div data-role="page" id="points" data-theme="d" style="text-align: center; ">
+        <div data-role="header" data-position="fixed">
+            <h1>Chat
+                <a data-rel="back" target="_self">
+                    <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> </a>
+            </h1>
+        </div>
+        <div class="row">
+            <br>
+            <img src="../images/momo.png" alt="Avatar" class="right"
+                style="width:300px; height: 110px; margin-left: 50px;">
+            <br>
+            <p style="font-size: small; text-align: center;"> You are now chatting with Momo</p>
+            <p style="font-size: smaller; text-align: center;"> 18 October 2020</p>
+        </div>
+
+        <div style="margin-left: 5px; margin-right: 5px;">
+            <div>
+                <div class="container darker">
+                    <img src="../images/girl.png" alt="Avatar" class="right" style="width:20%;">
+                    <p style="text-align: right; font-size: smaller;">Hi there..</p>
+                </div>
+
+                <div class="container">
+                    <img src="../images/food.png" alt="Avatar" style="width:20%;">
+                    <p style="font-size: smaller;">Hello Kamala! How can we help you?</p>
+                </div>
+
+                <div class="container darker">
+                    <img src="../images/girl.png" alt="Avatar" class="right" style="width:20%;">
+                    <p style="text-align: right; font-size: smaller;">The item I have ordered from you is different from
+                        what I got</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chat-footer style" style="margin-left: 1px; margin-right: 1px;">
+            <div class="container1">
+                <input class="form-control" type="text" placeholder="Message" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Adding Footer -->
+    <div id="footer"></div>
+
+    <!-- Adding Tab-bar -->
+    <div data-role="footer" data-position="fixed" data-theme="e">
+        <div data-role="navbar" data-theme="e">
+            <ul>
+                <li><a href="/html/Home.html" data-icon="home">Home</a></li>
+                <li><a href="/html/favourites.html" data-icon="heart">Favourites</a></li>
+                <li><a href="/html/myOrders.html" data-icon="mail">My Orders</a></li>
+                <li><a href="/html/account.html" data-icon="user">Account</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

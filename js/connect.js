@@ -12,6 +12,7 @@
 
 
  function signUp() {
+     //debugger
      var database = firebase.database();
      console.log("Sign Up")
 
@@ -24,6 +25,7 @@
      var password_confirm = $('#password_confirm').val();
      var userId;
      var userObj = {};
+     var cart = [];
 
      firebase.database().ref('users/').push({
          fullName: fullName,
@@ -45,11 +47,13 @@
 
          }
 
-         window.location.href = "signin.html";
+
 
          sessionStorage.setItem('userobj', JSON.stringify(userObj));
          sessionStorage.setItem('cart', JSON.stringify(cart));
+         console.log(cart);
          console.log(sessionStorage.getItem('userobj'));
+         window.location.href = "home.html";
 
      }, (error) => {
          if (error) {
