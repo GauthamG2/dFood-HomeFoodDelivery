@@ -250,7 +250,7 @@
                             </form>
                         </div>
                         <p>
-                            <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-right ui-btn-inline ui-icon-addtocart" id="add-to-cart" onclick="addToCart()">Add to Cart</a>
+                            <a href="#successCart" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-right ui-btn-inline ui-icon-addtocart" id="add-to-cart">Add to Cart</a>
                         </p>
                         <p>
                             <a href="../html/cart.html" data-role="button" data-inline="true" style="width: 200px; border-radius: 10px;">View Cart</a>
@@ -258,6 +258,17 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Favourite list clearing pop up -->
+            <div data-role="popup" id="successCart" data-theme="a" data-overlay-theme="b" class="ui-content" style="padding: 16px 50px;">
+                <h3>Success</h3>
+                <p style="margin-top: 20px"> Succesfully added to the cart! </p>
+
+                <hr style="margin: 15px auto; ">
+
+                <a href="#" target="_self" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini" style="color: #FB752C;font-size: 15px;" onclick="addToCart()">OK</a>
+            </div>
+
             <!-- This is See All elements-->
             <div class="ui-block-b" style="padding: 10px;">
                 <div class="see-all" style="padding:10px; border:1px solid #FB752C !important; border-radius:8px">
@@ -288,7 +299,7 @@
                                         <div class="ui-block-a" style="width: 100% !important;">
                                             <div style="width: 70%; float:left;margin-left: 0px">
                                                 <h4 style="text-align: left !important;margin:5px !important;margin-left: 0px !important;width: 100% !important;font-weight: 500;">
-                                                    LKR 45o.00
+                                                    LKR 450.00
                                                 </h4>
                                             </div>
                                             <div class="column right" style="padding-right: 0px!important;">

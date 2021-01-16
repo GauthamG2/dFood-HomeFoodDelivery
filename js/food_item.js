@@ -166,21 +166,24 @@ function addToCart() {
     console.log(cart);
     foodId = JSON.parse(sessionStorage.getItem('foodId'));
     foodItem.forEach(function(item) {
-        if (item.id == foodId) {
-            items = {
-                    foodId: item.id,
-                    foodName: item.name,
-                    price: item.price,
-                    quantity: quantityNumber,
-                    totalprice: quantityNumber * item.price
-                }
-                //debugger
-            cart.push(items);
-        }
-    })
+            if (item.id == foodId) {
+                items = {
+                        foodId: item.id,
+                        foodName: item.name,
+                        price: item.price,
+                        quantity: quantityNumber,
+                        totalprice: quantityNumber * item.price
+                    }
+                    //debugger
+                cart.push(items);
+            }
+        })
+        //alert("This is alert box!");
+
     console.log(cart);
     sessionStorage.setItem('cart', JSON.stringify(cart));
     console.log(sessionStorage);
+    location.reload();
 
 }
 
