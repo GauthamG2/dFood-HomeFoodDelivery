@@ -1,4 +1,4 @@
-const foodItems = [{
+var foodItems = [{
         id: "1",
         name: "Fruit Pancake",
         price: 225,
@@ -72,7 +72,7 @@ const foodItems = [{
     },
 ];
 
-var items = []
+var favourites = []
 
 
 $(document).ready(function() {
@@ -80,6 +80,10 @@ $(document).ready(function() {
 });
 
 function getFavourites() {
+
+    // favourites = JSON.parse(sessionStorage.getItem('favourites'));
+    // console.log(favourites);
+    //debugger
     const items = sessionStorage.getItem("favourites");
 
     if (items !== null) return JSON.parse(items);
@@ -110,7 +114,7 @@ function renderFavItem() {
                 <div class="favHeart">
                     <a href="#" id="hamburger" target="_self">
                     
-                        <a onclick="removeItem('${item.id}')" data-rel="popup" data-position-to="window" data-transition="pop"><img src="../images/icons_svg/Icon feather-heart.svg" style="position: absolute; right:1rem; top:1rem;">
+                        <a class="favourite" onclick="removeItem('${item.id}')" data-rel="popup" data-position-to="window" data-transition="pop"><img src="../images/icons_svg/Icon feather-heart.svg" style="position: absolute; right:1rem; top:1rem;">
                         </a>
                     </a>
                 </div>
@@ -153,14 +157,10 @@ function renderFavItem() {
     }
 }
 
+// Clear all the items in the favourite list
 
-function removeItem(id) {
-
-    window.location.href = "favourite-removed.html";
-    // debugger
-    // console.log('removeItem')
-    // items = items.filter(function(item) { return item.foodId !== id });
-    // renderFavItem();
-    // sessionStorage.setItem('items', JSON.stringify(items));
-    // location.reload();
+function clearList() {
+    //debugger
+    sessionStorage.clear()
+    location.reload();
 }

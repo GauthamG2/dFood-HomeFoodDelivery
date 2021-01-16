@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    //debugger
     syncFavourite();
 
     $(".favourite").click((e) => {
@@ -30,6 +31,7 @@ function goToFood(foodId) {
  * @param {boolean} state
  */
 function setFavourite(id, state) {
+    //debugger
     const favourites = getFavourites();
     const isExists = favourites.some(
         (el) => el.user_id === 12 && el.food_id === id
@@ -37,8 +39,7 @@ function setFavourite(id, state) {
 
     if (isExists) {
         const items = favourites.map((item) =>
-            item.user_id === 12 && item.food_id === id ?
-            {...item, state: state } :
+            item.user_id === 12 && item.food_id === id ? {...item, state: state } :
             item
         );
         return sessionStorage.setItem("favourites", JSON.stringify(items));
@@ -55,6 +56,7 @@ function setFavourite(id, state) {
 }
 
 function getFavourites() {
+    //debugger
     const items = sessionStorage.getItem("favourites");
 
     if (items !== null) return JSON.parse(items);

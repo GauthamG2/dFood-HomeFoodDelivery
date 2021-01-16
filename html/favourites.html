@@ -84,7 +84,7 @@
                     <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> </a>
             </h1>
             <div>
-                <a href="#popupEmail" data-rel="popup" class="ui-btn-right" style="font-size: 16px;">Share</a>
+                <a href="#clear" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn-right" style="font-size: 18px;">Clear List</a>
             </div>
             <!-- This is for enter email address -->
 
@@ -103,8 +103,12 @@
         <div data-role="main" class="ui-content" data-theme="d" style="padding: 0px;">
             <!-- Top button elements -->
             <div class="top-button-div ui-responsive" style="height:80px;">
-                <div>
+                <div style="float: left;">
                     <a href="#popupPadded" data-rel="popup" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right  ui-icon-carat-d " style="top:15px; margin-left: 30px; border: 1px solid #FB752C !important; background-color: white; color: #FB752C; width:100px; cursor: pointer;">Sort & Filter
+                    </a>
+                </div>
+                <div style="float: right; padding-right: 20px;">
+                    <a href="#popupEmail" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-shadow ui-corner-all" style="top:15px; margin-left: 30px; border: 1px solid #FB752C !important; background-color: white; color: #FB752C; width:100px;">Share
                     </a>
                 </div>
                 <!-- 
@@ -118,6 +122,18 @@
                 </div> -->
             </div>
 
+            <!-- Favourite list clearing pop up -->
+            <div data-role="popup" id="clear" data-theme="a" data-overlay-theme="b" class="ui-content" style="padding: 16px 50px;">
+                <h3>Alert</h3>
+                <p style="margin-top: 20px"> Are you sure, <br> Do you want to clear the Favourite list? </p>
+
+                <hr style="margin: 15px auto; ">
+
+                <a data-rel="back" target="_self" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini" style="color: #FB752C;font-size: 15px;">Cancel</a>
+                <a href="#" target="_self" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini" style="color: #FB752C;font-size: 15px;" onclick="clearList()">Yes</a>
+            </div>
+
+            <!-- Sort and Filter pop up -->
             <div data-role="popup" id="popupPadded" class="ui-content" data-position-to="window" data-overlay-theme="b" style="height: 350px; width: 300px;">
                 <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
                 <!-- <p>This is a popup with the <code>ui-content</code> class added to the popup container.</p> -->
@@ -156,10 +172,10 @@
             <div class="ui-grid-a my-breakpoint ui-responsive" style="margin: 10px;" id="favourite-list">
             </div>
 
-            
+
         </div>
         <!-- Adding Footer -->
-        <!-- <div id="footer"></div>--> 
+        <!-- <div id="footer"></div>-->
 
         <!-- Adding Tab-bar -->
         <div data-role="footer" data-position="fixed" data-theme="e">
