@@ -82,16 +82,16 @@
         -webkit-appearance: none;
         margin: 0;
     }
-
     /* Media query */
+    
     @media all and (max-width: 35em) {
         #FR {
             margin-left: 15px;
             margin-right: 15px;
         }
-        
     }
     /* iPhone6/7/8 Plus landscape */
+    
     @media screen and (min-width: 414px)and (max-width: 736px) and (orientation: landscape) {
         #FR {
             margin-left: 80px;
@@ -99,6 +99,7 @@
         }
     }
     /* iPad portrait */
+    
     @media screen and (min-width: 768px)and (max-width: 1366px) and (orientation: portrait) {
         #FR {
             margin-left: 100px;
@@ -106,6 +107,7 @@
         }
     }
     /* iPad landscape */
+    
     @media screen and (min-width: 768px)and (max-width: 1366px) and (orientation: landscape) {
         #FR {
             margin-left: 100px;
@@ -233,11 +235,12 @@
 
 
             $('#PlaceOrder').on('click', function(e) {
+                debugger
                 // Code Section B  Open Checkout with further options
                 handler.open({
                     name: 'Stripe',
                     currency: 'LKR',
-                    description: $('#item_name').val(),
+                    description: $('#item_name').text(),
                     amount: $('#subTotal').val()
                 });
                 e.preventDefault();
@@ -249,13 +252,13 @@
             });
         });
 
-        $("#RedeemPoints").click(function(){
-				window.location.href = "points.html";				
-            });
-            
-            $("#AddPromoCode").click(function(){
-				window.location.href = "promotion.html";				
-			});
+        $("#RedeemPoints").click(function() {
+            window.location.href = "points.html";
+        });
+
+        $("#AddPromoCode").click(function() {
+            window.location.href = "promotion.html";
+        });
     </script>
 </body>
 

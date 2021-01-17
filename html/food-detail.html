@@ -16,8 +16,15 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+
+
     <script src="../js/food_item.js"></script>
     <script src="../js/view_comment.js"></script>
+
+
+    <!-- toast Links -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <style>
         /* This is for inside the card elements */
         
@@ -193,11 +200,11 @@
             value = isNaN(value) ? 0 : value;
             value < 1 ? value = 1 : '';
             value--;
-            if (value <= 0) {
-                value = 1;
-                document.getElementById('number').value = value;
-                location.reload;
-            }
+            // if (value <= 0) {
+            //     value = 1;
+            //     document.getElementById('number').value = value;
+            //     location.reload;
+            // }
             document.getElementById('number').value = value;
         }
 
@@ -256,7 +263,7 @@
                             </form>
                         </div>
                         <p>
-                            <a href="#successCart" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-right ui-btn-inline ui-icon-addtocart" id="add-to-cart">Add to Cart</a>
+                            <a href="#" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-right ui-btn-inline ui-icon-addtocart" id="add-to-cart" onclick="addToCart()">Add to Cart</a>
                         </p>
                         <p>
                             <a href="../html/cart.html" data-role="button" data-inline="true" style="width: 200px; border-radius: 10px;">View Cart</a>

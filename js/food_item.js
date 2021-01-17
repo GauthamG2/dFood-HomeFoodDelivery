@@ -158,34 +158,37 @@ function renderFoodItem() {
 // Adding items to the cart 
 
 function addToCart() {
-    //debugger
+    debugger
     var quantityNumber = $('#number').val();
+    if (quantityNumber != 0) {
+        console.log(foodId);
+        var x = 0;
+        cart = JSON.parse(sessionStorage.getItem('cart'));
+        console.log(cart);
+        foodId = JSON.parse(sessionStorage.getItem('foodId'));
+        foodItem.forEach(function(item) {
+                if (item.id == foodId) {
+                    items = {
+                            foodId: item.id,
+                            foodName: item.name,
+                            price: item.price,
+                            quantity: quantityNumber,
+                            totalprice: quantityNumber * item.price
+                        }
+                        //debugger
+                    cart.push(items);
+                }
+            })
+            //alert("This is alert box!");
 
-
-    console.log(foodId);
-    var x = 0;
-    cart = JSON.parse(sessionStorage.getItem('cart'));
-    console.log(cart);
-    foodId = JSON.parse(sessionStorage.getItem('foodId'));
-    foodItem.forEach(function(item) {
-            if (item.id == foodId) {
-                items = {
-                        foodId: item.id,
-                        foodName: item.name,
-                        price: item.price,
-                        quantity: quantityNumber,
-                        totalprice: quantityNumber * item.price
-                    }
-                    //debugger
-                cart.push(items);
-            }
-        })
-        //alert("This is alert box!");
-
-    console.log(cart);
-    sessionStorage.setItem('cart', JSON.stringify(cart));
-    console.log(sessionStorage);
-    location.reload();
+        console.log(cart);
+        sessionStorage.setItem('cart', JSON.stringify(cart));
+        console.log(sessionStorage);
+        toastr.success('Successfully added to cart', 'Success');
+        //location.reload();
+    } else {
+        toastr.error('Quantity should be more than 0', 'Error');
+    }
 }
 
 

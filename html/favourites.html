@@ -20,6 +20,10 @@
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
 
+    <!-- toast Links -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
     <script src="../js/favourite.js"></script>
     <style>
         /* This is for inside the card elements */
@@ -255,6 +259,8 @@
 
                 if (email_validate) {
                     sendEmail()
+                } else {
+                    toastr.error('Email sending failed!', 'Error');
                 }
             }
 
@@ -271,9 +277,10 @@
                         Body: "Well that was easy!!",
                     })
                     .then(function(message) {
-                        alert("mail sent successfully")
-                        location.reload();
+                        toastr.success('Email successfully sent!', 'Success');
+                        //location.reload();
                     });
+
             }
         </script>
     </div>
