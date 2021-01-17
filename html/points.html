@@ -5,29 +5,40 @@
     <meta charset="utf-8">
     <title>Points</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/myTheme1.css" />
+    <!-- <link rel="stylesheet" href="../css/myTheme1.css" />
     <link rel="stylesheet" href="../css/home.css" />
     <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/layer.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="../css/layer.css" />
     <link rel="stylesheet" href="../css/popup.css" />
+
+    <!-- Added by Gautham for changes  -->
+    <link rel="stylesheet" href="../css/myTheme1.css" />
+    <link rel="stylesheet" href="../css/promotion.css" />
+    <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <!-- -------------------------------------------- -->
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
     <script src="../js/popup.js"></script>
 
     <script>
-        $(function () {
+        $(function() {
             $("#includedContent").load("footer.html");
         });
 
-        $(document).ready(function () {
-            $("#redeem").click(function () {
+        $(document).ready(function() {
+            $("#redeem").click(function() {
                 $("#test3").val("56");
             });
         });
-
     </script>
 
     <style>
@@ -36,7 +47,7 @@
             color: #FF8717;
             font-family: 'Open Sans';
         }
-
+        
         .border-main {
             text-align: center;
             border-style: solid;
@@ -44,7 +55,7 @@
             margin: 20px 20px auto 20px;
             border-radius: 10px;
         }
-
+        
         .border-child {
             font-family: 'Open Sans';
             text-align: left;
@@ -54,12 +65,12 @@
             border-radius: 5px;
             border-width: thin;
         }
-
+        
         .text {
             margin-left: 30px;
             color: #08204C;
         }
-
+        
         .label {
             display: inline-block;
             /* border-style: solid;
@@ -69,7 +80,7 @@
             width: 55px;
             text-align: center;
         }
-
+        
         .label-value {
             display: inline-block;
             width: 30px;
@@ -79,7 +90,7 @@
             border-width: thin;
             pointer-events: auto;
         }
-
+        
         .overlay {
             position: fixed;
             display: none;
@@ -93,7 +104,7 @@
             z-index: 2;
             cursor: pointer;
         }
-
+        
         .verticle {
             margin: 0;
             position: relative;
@@ -101,7 +112,7 @@
             -ms-transform: translateY(-50%);
             transform: translateY(-50%);
         }
-
+        
         #footer {
             position: fixed;
             left: 0;
@@ -111,14 +122,14 @@
             color: white;
             text-align: center;
         }
-
+        
         form {
             width: 300px;
             margin: 0 auto;
             text-align: center;
             padding-top: 50px;
         }
-
+        
         .value-button {
             display: inline-block;
             border: 1px solid #ddd;
@@ -136,26 +147,26 @@
             -ms-user-select: none;
             user-select: none;
         }
-
+        
         .value-button:hover {
             cursor: pointer;
         }
-
+        
         form #decrease {
             margin-right: -4px;
             border-radius: 8px 0 0 8px;
         }
-
+        
         form #increase {
             margin-left: -4px;
             border-radius: 0 8px 8px 0;
         }
-
+        
         form #input-wrap {
             margin: 0px;
             padding: 0px;
         }
-
+        
         input#number {
             text-align: center;
             border: none;
@@ -165,19 +176,19 @@
             width: 40px;
             height: 40px;
         }
-
+        
         input[type=number]::-webkit-inner-spin-button,
         input[type=number]::-webkit-outer-spin-button {
             -webkit-aborder-mainearance: none;
             margin: 0;
         }
-
+        
         .points-text {
             font-size: x-small;
             margin-top: -10px;
             font-weight: bold;
         }
-
+        
         .redeem {
             background-color: #FB752C;
             color: white;
@@ -195,7 +206,7 @@
 <body>
     <div data-role="page" id="points" data-theme="d">
         <div data-role="header" data-position="fixed">
-            <h1>Points 
+            <h1>Points
                 <a data-rel="back" target="_self">
                     <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> </a>
             </h1>
@@ -204,22 +215,10 @@
         <div class="points">
             <h3>TOTAL AVAILABLE POINTS</h3>
 
-            <h3><textarea class="points" id="test3"
-                    style="width: 15%; margin-left: auto; margin-right: auto; height:20px; margin-top: -15px;">63</textarea>
+            <h3><textarea class="points" id="test3" style="width: 15%; margin-left: auto; margin-right: auto; height:20px; margin-top: -15px;">100</textarea>
             </h3>
         </div>
-
-        <div data-role="main" class="border-main">
-            <div class="border-child">
-                <div class='text'>
-                    <div>
-                        <p style="font-size: small;"> Order ID : 2020</h5>
-                    </div>
-                    <div>
-                        <p class="points-text">Points: 2.6</p>
-                    </div>
-                </div>
-            </div>
+        <div id="FR" style="padding: 10px; margin-left: 20px; margin-right: 20px;">
 
             <div class="border-child">
                 <div class='text'>
@@ -232,74 +231,52 @@
                 </div>
             </div>
 
-            <div class="border-child">
-                <div class='text'>
-                    <div>
-                        <p style="font-size: small;"> Order ID : 2020</h5>
-                    </div>
-                    <div>
-                        <p class="points-text">Points: 2.6</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="border-child">
-                <div class='text'>
-                    <div>
-                        <p style="font-size: small;"> Order ID : 2020</h5>
-                    </div>
-                    <div>
-                        <p class="points-text">Points: 2.6</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div data-role="main" class="border-main">
-            <div>
-                <span class="label-value" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</span>
-                <span class="label">
+            <div data-role="main" class="border-main">
+                <div>
+                    <span class="label-value" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</span>
+                    <span class="label">
                     <input type="number" id="number" value="0" />
                 </span>
-                <span class="label-value" id="increase" onclick="increaseValue()" value="Increase Value">+</span>
+                    <span class="label-value" id="increase" onclick="increaseValue()" value="Increase Value">+</span>
 
-                <div style="text-align:center;">
-                    <!-- <div class="btn"><a href="javascript:;" id="confirm">Redeem</a></div> -->
+                    <div style="text-align:center;">
+                        <!-- <div class="btn"><a href="javascript:;" id="confirm">Redeem</a></div> -->
 
-                    <a href="#addpromo" data-rel="popup" data-position-to="window" data-transition="pop">
+                        <a href="#addpromo" data-rel="popup" data-position-to="window" data-transition="pop">
 
-            
-                    <button id="redeem" name="redeem" style="width: 30%; margin-left: 35%;">Redeem</button>
-                
-                    </a>
+
+                            <button id="redeem" name="redeem" style="width: 30%; margin-left: 35%;">Redeem</button>
+
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div data-role="popup" id="addpromo" data-theme="a" data-overlay-theme="b" class="ui-content" >
-            <h3>Success!</h3>
-            <p style="margin-top: 20px"> Points have been redeemed<br> successfully</p>
-            <hr style="margin: 15px auto;">
-            
-            <a href="../html/cart.html" target="_self"  class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini"
-            style="color: #FB752C;">OK</a>
-        </div>
-    </div>
-    <div id="includedContent"></div>
+            <div data-role="popup" id="addpromo" data-theme="a" data-overlay-theme="b" class="ui-content">
+                <h3>Success!</h3>
+                <p style="margin-top: 20px"> Points have been redeemed<br> successfully</p>
+                <hr style="margin: 15px auto;">
 
-    <script>
-        function increaseValue() {
-            var value = parseInt(document.getElementById('number').value, 10);
-            value = isNaN(value) ? 0 : value;
-            value++;
-            document.getElementById('number').value = value;
-        }
-        function decreaseValue() {
-            var value = parseInt(document.getElementById('number').value, 10);
-            value = isNaN(value) ? 0 : value;
-            value < 1 ? value = 1 : '';
-            value--;
-            document.getElementById('number').value = value;
-        }
-    </script>
+                <a href="../html/cart.html" target="_self" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini" style="color: #FB752C;">OK</a>
+            </div>
+        </div>
+        <div id="includedContent"></div>
+
+        <script>
+            function increaseValue() {
+                var value = parseInt(document.getElementById('number').value, 10);
+                value = isNaN(value) ? 0 : value;
+                value++;
+                document.getElementById('number').value = value;
+            }
+
+            function decreaseValue() {
+                var value = parseInt(document.getElementById('number').value, 10);
+                value = isNaN(value) ? 0 : value;
+                value < 1 ? value = 1 : '';
+                value--;
+                document.getElementById('number').value = value;
+            }
+        </script>
 </body>
+
 </html>

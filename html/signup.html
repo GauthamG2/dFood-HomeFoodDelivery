@@ -1,16 +1,16 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 
 <head>
-    <title>dFood | Sign up </title>
+    <title>dFood | Sign up</title>
 
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="../images/logo.png" type="image/gif">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="../images/logo.png" type="image/gif" />
     <link rel="stylesheet" href="../css/myTheme1.css" />
     <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
@@ -18,9 +18,7 @@
     <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
 
-
     <script src="../js/connect.js"></script>
-
 
     <style type="text/css">
         .submit-button {
@@ -30,7 +28,7 @@
         
         #FR {
             border-style: solid;
-            border-color: #FB752C;
+            border-color: #fb752c;
             border-radius: 8px;
             padding: 15px;
         }
@@ -40,8 +38,7 @@
             overflow: hidden;
             width: 128px;
             height: 128px;
-            border: 2px solid #FB752C;
-            ;
+            border: 2px solid #fb752c;
         }
         
         img {
@@ -53,12 +50,12 @@
         }
         
         .p-image {
-            color: #FB752C;
-            transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+            color: #fb752c;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         
         .p-image:hover {
-            transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         
         a {
@@ -75,9 +72,10 @@
         #user-avatar {
             height: inherit;
             width: inherit;
-            border: 3px solid #FB752C;
+            border: 3px solid #fb752c;
             border-radius: 50%;
             transition: ease-out 200ms;
+            background: url("../images/icons_svg/Icon-avatar-lite.svg") center center / cover;
         }
         
         input {
@@ -106,7 +104,7 @@
         }
         
         .fa {
-            color: #FB752C;
+            color: #fb752c;
         }
         /* To remove iput field on avatar update */
         
@@ -123,10 +121,10 @@
         @media all and (max-width: 35em) {}
         /* iPhone 5/SE portrait */
         
-        @media screen and (min-width: 320px)and (max-width: 320px) and (orientation: portrait) {}
+        @media screen and (min-width: 320px) and (max-width: 320px) and (orientation: portrait) {}
         /* iPad portrait */
         
-        @media screen and (min-width: 768px)and (max-width: 1366px) and (orientation: portrait) {
+        @media screen and (min-width: 768px) and (max-width: 1366px) and (orientation: portrait) {
             #FR {
                 margin-left: 100px;
                 margin-right: 100px;
@@ -134,7 +132,7 @@
         }
         /* iPad landscape */
         
-        @media screen and (min-width: 768px)and (max-width: 1366px) and (orientation: landscape) {
+        @media screen and (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) {
             #FR {
                 margin-left: 100px;
                 margin-right: 100px;
@@ -144,26 +142,25 @@
 </head>
 
 <body>
-
     <div data-role="page" id="pageone" data-theme="d">
         <div data-role="header" data-position="fixed">
-            <h1> Sign Up
-                <a data-rel="back" target="_self"> <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; margin-top: 0; "> </a>
+            <h1>
+                Sign Up
+                <a data-rel="back" target="_self">
+                    <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; margin-top: 0" />
+                </a>
             </h1>
         </div>
         <div>
-            <img src="../images/logo.png" class="center" id="logoProfile" width=250 height="145">
+            <img src="../images/logo.png" class="center" id="logoProfile" width="250" height="145" />
         </div>
 
-        <div data-role="main" class="ui-content" style="padding-top: 0px;">
+        <div data-role="main" class="ui-content" style="padding-top: 0px">
             <form method="POST" class="input-form" name="vform" onsubmit="return ValidateForm()">
-
                 <div id="FR">
-
                     <div class="row">
                         <div class="small-12 medium-2 large-2 columns" align="center">
-                            <div id="FR" style="width: 170px; margin-bottom: 10px; border-width: 0px;">
-
+                            <div id="FR" style="width: 170px; margin-bottom: 10px; border-width: 0px">
                                 <!-- <div class="circle" style=" margin: auto; margin-top: -5px;">
                                      User Profile Image
                                     <img class="profile-pic" src="../images/icons_svg/Icon-avatar-upload.svg">
@@ -177,22 +174,24 @@
                                 </div> -->
 
                                 <section data-theme="f">
-                                    <div id="user-avatar" aria-label="user avatar">
-                                        <img src="../images/icons_svg/Icon-avatar-upload.svg">
-                                    </div>
+                                    <div id="user-avatar" aria-label="user avatar"></div>
 
-                                    <input class="upload" type="file" name="upload" id="upload" style="visibility: hidden;" accept="image/*" data-theme="f" />
+                                    <input class="upload" type="file" name="upload" id="upload" style="visibility: hidden" accept="image/*" data-theme="f" />
 
                                     <label for="upload">
-                                        <span role="button" tabindex="0" aria-label="upload user profile">
-                                        <i class="fa fa-camera upload-button"></i>
-                                        </span>
-                                    </label>
+                      <span
+                        role="button"
+                        tabindex="0"
+                        aria-label="upload user profile"
+                      >
+                        <i class="fa fa-camera upload-button"></i>
+                      </span>
+                    </label>
                                 </section>
                             </div>
                         </div>
                     </div>
-                    <div style="padding-top: 10px;">
+                    <div style="padding-top: 10px">
                         <label for="fullname">Full Name</label>
                         <input type="text" name="username" id="full_name" placeholder="Enter your name" />
                         <div id="username_error"></div>
@@ -217,40 +216,52 @@
                         <input type="password" name="password_confirm" id="confirm_password" placeholder="Re enter your password" />
                         <div id="password_error"></div>
                     </div>
-
                 </div>
 
-                <div style="padding:10px; text-align: center">
-                    <p> By Signing Up, you agree to our <br> <a href="#" id="TC">Terms & Conditions </a> and <a href="#" id="PP">Privacy Policy</a> </p>
+                <div style="padding: 10px; text-align: center">
+                    <p>
+                        By Signing Up, you agree to our <br />
+                        <a href="#" id="TC">Terms & Conditions </a> and
+                        <a href="#" id="PP">Privacy Policy</a>
+                    </p>
 
-                    <button class="submit-button" id="signup_btn" type="submit" name="register" style="width: 50%; margin: 0 auto; background-color: #FB752C; color: white; font-weight: normal;" onclick="submitBTN_validate()">Sign up</button>
+                    <button class="submit-button" id="signup_btn" type="submit" name="register" style="
+                width: 50%;
+                margin: 0 auto;
+                background-color: #fb752c;
+                color: white;
+                font-weight: normal;
+              " onclick="submitBTN_validate()">
+              Sign up
+            </button>
 
                     <div style="text-align: center">
-                        <p> Already have an account? <br> <a href="#" id="SI">Sign In </a> </p>
+                        <p>
+                            Already have an account? <br />
+                            <a href="#" id="SI">Sign In </a>
+                        </p>
                     </div>
                 </div>
             </form>
         </div>
-
     </div>
 
     <script>
         // select form elements
-        var username = document.forms['vform']['username'];
-        var email = document.forms['vform']['email'];
-        var password = document.forms['vform']['password'];
-        var password_confirm = document.forms['vform']['password_confirm'];
-
+        var username = document.forms["vform"]["username"];
+        var email = document.forms["vform"]["email"];
+        var password = document.forms["vform"]["password"];
+        var password_confirm = document.forms["vform"]["password_confirm"];
 
         // select error display elements
-        var username_error = document.getElementById('username_error');
-        var email_error = document.getElementById('email_error');
-        var password_error = document.getElementById('password_error');
+        var username_error = document.getElementById("username_error");
+        var email_error = document.getElementById("email_error");
+        var password_error = document.getElementById("password_error");
 
         // setup blur events to catch the validation after focus out
-        username.addEventListener('blur', nameVerify, true);
-        email.addEventListener('blur', emailVerify, true);
-        password_confirm.addEventListener('blur', passwordVerify, true);
+        username.addEventListener("blur", nameVerify, true);
+        email.addEventListener("blur", emailVerify, true);
+        password_confirm.addEventListener("blur", passwordVerify, true);
 
         function ValidateForm() {
             // Username validation
@@ -304,7 +315,8 @@
                 password_error.style.color = "red";
                 password_error.style.fontSize = "14px";
                 password_error.style.marginBottom = "10px";
-                password_error.textContent = "Password must be at least 6 characters long";
+                password_error.textContent =
+                    "Password must be at least 6 characters long";
                 password.focus();
                 return false;
             } else if (password.value != password_confirm.value) {
@@ -374,7 +386,8 @@
                 password_error.style.color = "red";
                 password_error.style.fontSize = "14px";
                 password_error.style.marginBottom = "10px";
-                password_error.textContent = "Password must be at least 6 characters long";
+                password_error.textContent =
+                    "Password must be at least 6 characters long";
                 return false;
             } else if (password.value != password_confirm.value) {
                 password_confirm.style.border = "1px solid red";
@@ -392,25 +405,23 @@
         }
 
         $(document).ready(function() {
-
-
             var readURL = function(input) {
                 if (input.files && input.files[0]) {
                     var reader = new FileReader();
 
                     reader.onload = function(e) {
-                        $('.profile-pic').attr('src', e.target.result);
-                    }
+                        $(".profile-pic").attr("src", e.target.result);
+                    };
 
                     reader.readAsDataURL(input.files[0]);
                 }
-            }
+            };
 
-            $(".file-upload").on('change', function() {
+            $(".file-upload").on("change", function() {
                 readURL(this);
             });
 
-            $(".upload-button").on('click', function() {
+            $(".upload-button").on("click", function() {
                 $(".file-upload").click();
             });
         });
@@ -423,13 +434,11 @@
             window.location.href = "terms_conditions.html";
         });
 
-
         $("#PP").click(function() {
             window.location.href = "privacy_policy.html";
         });
 
         function submitBTN_validate() {
-
             var name_validate = nameVerify();
 
             var email_validate = emailVerify();
@@ -438,9 +447,8 @@
 
             var form_validate = ValidateForm();
 
-
             if (name_validate && email_validate && password_validate) {
-                signUp()
+                signUp();
             }
         }
 
@@ -448,7 +456,7 @@
         const INPUT = document.querySelector("#upload");
         const BTN = document.querySelector('span[role="button"]');
 
-        const handleUpload = event => {
+        const handleUpload = (event) => {
             const file = event.target.files[0];
             const reader = new FileReader();
 
@@ -461,7 +469,7 @@
 
         INPUT.addEventListener("change", handleUpload);
 
-        BTN.addEventListener("keypress", event => {
+        BTN.addEventListener("keypress", (event) => {
             if (event.key === " " || event.key === "Enter") {
                 BTN.click();
             }

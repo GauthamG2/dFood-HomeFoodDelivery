@@ -217,3 +217,9 @@ function decQuantity(foodId) {
     $(`#display-quantity-${id}`).text(Number(vallue) - 1);
     calculateTotal(Number(vallue) - 1, foodId);
 }
+
+function redeemPoints() {
+    debugger
+    totalPrice = totalPrice - points
+
+}
