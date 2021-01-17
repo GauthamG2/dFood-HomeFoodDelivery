@@ -6,7 +6,7 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="../images/logo.png" type="image/gif">
+    <link rel="icon" href="../images/logo.png" type="image/gif">
     <link rel="stylesheet" href="../css/myTheme1.css" />
     <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
@@ -61,17 +61,17 @@
             transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
         }
         
-		a{
-			text-decoration: none;
+        a {
+            text-decoration: none;
         }
-
         /* Avatar uplaod CSS */
+        
         section {
             position: relative;
             height: 150px;
             width: 150px;
         }
-
+        
         #user-avatar {
             height: inherit;
             width: inherit;
@@ -79,11 +79,11 @@
             border-radius: 50%;
             transition: ease-out 200ms;
         }
-
+        
         input {
             display: none;
         }
-
+        
         label span[role="button"] {
             position: absolute;
             bottom: 0;
@@ -94,53 +94,52 @@
             display: grid;
             place-items: center;
             border-radius: 50%;
-            box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14),
-                0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+            box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
             transition: ease-out 200ms;
             cursor: pointer;
         }
-
+        
         label span:hover,
         label span:focus {
-            box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14),
-                0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+            box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
             background-color: #ffffff;
         }
-
+        
         .fa {
             color: #FB752C;
         }
-
         /* To remove iput field on avatar update */
-        .ui-body-f, .ui-page-theme-f .ui-body-inherit, html .ui-bar-f .ui-body-inherit,
-        html .ui-body-f .ui-body-inherit, html body .ui-group-theme-f .ui-body-inherit,
+        
+        .ui-body-f,
+        .ui-page-theme-f .ui-body-inherit,
+        html .ui-bar-f .ui-body-inherit,
+        html .ui-body-f .ui-body-inherit,
+        html body .ui-group-theme-f .ui-body-inherit,
         html .ui-panel-page-container-f {
             visibility: hidden;
         }
-        
         /* Media query */
+        
         @media all and (max-width: 35em) {}
-
         /* iPhone 5/SE portrait */
+        
         @media screen and (min-width: 320px)and (max-width: 320px) and (orientation: portrait) {}
-
-
         /* iPad portrait */
+        
         @media screen and (min-width: 768px)and (max-width: 1366px) and (orientation: portrait) {
             #FR {
                 margin-left: 100px;
                 margin-right: 100px;
             }
         }
-
         /* iPad landscape */
+        
         @media screen and (min-width: 768px)and (max-width: 1366px) and (orientation: landscape) {
             #FR {
                 margin-left: 100px;
                 margin-right: 100px;
             }
         }
-        
     </style>
 </head>
 
@@ -148,8 +147,9 @@
 
     <div data-role="page" id="pageone" data-theme="d">
         <div data-role="header" data-position="fixed">
-			<h1> Sign Up <a data-rel="back" target="_self">   <img src="../images/icons/Icon ionic-ios-arrow-back.png" 
-				style="float: left; margin-top: 0; ">  </a>  </h1>
+            <h1> Sign Up
+                <a data-rel="back" target="_self"> <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; margin-top: 0; "> </a>
+            </h1>
         </div>
         <div>
             <img src="../images/logo.png" class="center" id="logoProfile" width=250 height="145">
@@ -180,10 +180,10 @@
                                     <div id="user-avatar" aria-label="user avatar">
                                         <img src="../images/icons_svg/Icon-avatar-upload.svg">
                                     </div>
-                                    
-                                    <input class="upload" type="file" name="upload" id="upload" style="visibility: hidden;" accept="image/*" data-theme="f"/>
-                                    
-                                    <label for="upload" >
+
+                                    <input class="upload" type="file" name="upload" id="upload" style="visibility: hidden;" accept="image/*" data-theme="f" />
+
+                                    <label for="upload">
                                         <span role="button" tabindex="0" aria-label="upload user profile">
                                         <i class="fa fa-camera upload-button"></i>
                                         </span>
@@ -217,7 +217,7 @@
                         <input type="password" name="password_confirm" id="confirm_password" placeholder="Re enter your password" />
                         <div id="password_error"></div>
                     </div>
-                    
+
                 </div>
 
                 <div style="padding:10px; text-align: center">
@@ -230,225 +230,225 @@
                     </div>
                 </div>
             </form>
-            </div>
-
         </div>
 
-        <script>
-            // select form elements
-            var username = document.forms['vform']['username'];
-            var email = document.forms['vform']['email'];
-            var password = document.forms['vform']['password'];
-            var password_confirm = document.forms['vform']['password_confirm'];
+    </div>
+
+    <script>
+        // select form elements
+        var username = document.forms['vform']['username'];
+        var email = document.forms['vform']['email'];
+        var password = document.forms['vform']['password'];
+        var password_confirm = document.forms['vform']['password_confirm'];
 
 
-            // select error display elements
-            var username_error = document.getElementById('username_error');
-            var email_error = document.getElementById('email_error');
-            var password_error = document.getElementById('password_error');
+        // select error display elements
+        var username_error = document.getElementById('username_error');
+        var email_error = document.getElementById('email_error');
+        var password_error = document.getElementById('password_error');
 
-            // setup blur events to catch the validation after focus out
-            username.addEventListener('blur', nameVerify, true);
-            email.addEventListener('blur', emailVerify, true);
-            password_confirm.addEventListener('blur', passwordVerify, true);
+        // setup blur events to catch the validation after focus out
+        username.addEventListener('blur', nameVerify, true);
+        email.addEventListener('blur', emailVerify, true);
+        password_confirm.addEventListener('blur', passwordVerify, true);
 
-            function ValidateForm() {
-                // Username validation
-                if (username.value == "") {
-                    username.style.border = "1px solid red";
-					username_error.style.color = "red";
-					username_error.style.fontSize = "14px";
-			        username_error.style.marginBottom = "10px";
-                    username_error.textContent = "Username is required";
-                    username.focus();
-                    return false;
-                } else {
-                    return true;
-                }
-
-                // regex to validate the email address
-                var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-
-                // Email validation
-                if (email.value == "") {
-                    email.style.border = "1px solid red";
-					email_error.style.color = "red";
-					email_error.style.fontSize = "14px";
-			        email_error.style.marginBottom = "10px";
-                    email_error.textContent = "Email is required";
-                    email.focus();
-                    return false;
-                } else if (!re.test(email.value)) {
-                    email.style.border = "1px solid red";
-					email_error.style.color = "red";
-					email_error.style.fontSize = "14px";
-			        email_error.style.marginBottom = "10px";
-                    email_error.textContent = "Invalid email, please re-enter";
-                    email.focus();
-                    return false;
-                } else {
-                    return true;
-                }
-
-                // Password validation
-                if (password.value == "") {
-                    password.style.border = "1px solid red";
-					password_error.style.color = "red";
-					password_error.style.fontSize = "14px";
-			        password_error.style.marginBottom = "10px";
-                    password_error.textContent = "Password is required";
-                    password.focus();
-                    return false;
-                } else if (password.value.length < 6) {
-                    password.style.border = "1px solid red";
-					password_error.style.color = "red";
-					password_error.style.fontSize = "14px";
-			        password_error.style.marginBottom = "10px";
-                    password_error.textContent = "Password must be at least 6 characters long";
-                    password.focus();
-                    return false;
-                } else if (password.value != password_confirm.value) {
-                    password_confirm.style.border = "1px solid red";
-					password_error.style.color = "red";
-					password_error.style.fontSize = "14px";
-			        password_error.style.marginBottom = "10px";
-                    password_error.textContent = "Passwords do not match";
-                    password_confirm.focus();
-                    return false;
-                } else {
-                    return true;
-                }
+        function ValidateForm() {
+            // Username validation
+            if (username.value == "") {
+                username.style.border = "1px solid red";
+                username_error.style.color = "red";
+                username_error.style.fontSize = "14px";
+                username_error.style.marginBottom = "10px";
+                username_error.textContent = "Username is required";
+                username.focus();
+                return false;
+            } else {
+                return true;
             }
 
-            // event handler functions
-            function nameVerify() {
-                if (username.value == "") {
-                    username.style.border = "1px solid red";
-					username_error.style.color = "red";
-					username_error.style.fontSize = "14px";
-			        username_error.style.marginBottom = "10px";
-                    username_error.textContent = "Username is required";
-                    return false;
-                } else {
-                    username.style.border = "1px solid #5cb85c";
-                    username_error.innerHTML = "";
-                    return true;
-                }
+            // regex to validate the email address
+            var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+            // Email validation
+            if (email.value == "") {
+                email.style.border = "1px solid red";
+                email_error.style.color = "red";
+                email_error.style.fontSize = "14px";
+                email_error.style.marginBottom = "10px";
+                email_error.textContent = "Email is required";
+                email.focus();
+                return false;
+            } else if (!re.test(email.value)) {
+                email.style.border = "1px solid red";
+                email_error.style.color = "red";
+                email_error.style.fontSize = "14px";
+                email_error.style.marginBottom = "10px";
+                email_error.textContent = "Invalid email, please re-enter";
+                email.focus();
+                return false;
+            } else {
+                return true;
             }
 
-            function emailVerify() {
-                // regex to validate the email address
-                var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-
-                if (email.value == "") {
-                    email.style.border = "1px solid red";
-					email_error.style.color = "red";
-					email_error.style.fontSize = "14px";
-			        email_error.style.marginBottom = "10px";
-                    email_error.textContent = "Email is required";
-                    return false;
-                } else if (!re.test(email.value)) {
-                    email.style.border = "1px solid red";
-					email_error.style.color = "red";
-					email_error.style.fontSize = "14px";
-			        email_error.style.marginBottom = "10px";
-                    email_error.textContent = "Invalid email, please re-enter";
-                    return false;
-                } else {
-                    email.style.border = "1px solid #5cb85c";
-                    email_error.innerHTML = "";
-                    return true;
-                }
+            // Password validation
+            if (password.value == "") {
+                password.style.border = "1px solid red";
+                password_error.style.color = "red";
+                password_error.style.fontSize = "14px";
+                password_error.style.marginBottom = "10px";
+                password_error.textContent = "Password is required";
+                password.focus();
+                return false;
+            } else if (password.value.length < 6) {
+                password.style.border = "1px solid red";
+                password_error.style.color = "red";
+                password_error.style.fontSize = "14px";
+                password_error.style.marginBottom = "10px";
+                password_error.textContent = "Password must be at least 6 characters long";
+                password.focus();
+                return false;
+            } else if (password.value != password_confirm.value) {
+                password_confirm.style.border = "1px solid red";
+                password_error.style.color = "red";
+                password_error.style.fontSize = "14px";
+                password_error.style.marginBottom = "10px";
+                password_error.textContent = "Passwords do not match";
+                password_confirm.focus();
+                return false;
+            } else {
+                return true;
             }
+        }
 
-            function passwordVerify() {
-                if (password.value == "") {
-                    password.style.border = "1px solid red";
-					password_error.style.color = "red";
-					password_error.style.fontSize = "14px";
-			        password_error.style.marginBottom = "10px";
-                    password_error.textContent = "Password is required";
-                    return false;
-                } else if (password.value.length < 6) {
-                    password.style.border = "1px solid red";
-					password_error.style.color = "red";
-					password_error.style.fontSize = "14px";
-			        password_error.style.marginBottom = "10px";
-                    password_error.textContent = "Password must be at least 6 characters long";
-                    return false;
-                } else if (password.value != password_confirm.value) {
-                    password_confirm.style.border = "1px solid red";
-					password_error.style.color = "red";
-					password_error.style.fontSize = "14px";
-			        password_error.style.marginBottom = "10px";
-                    password_error.textContent = "Passwords do not match";
-                    return false;
-                } else {
-                    password_confirm.style.border = "1px solid #5cb85c";
-                    password.style.border = "1px solid #5cb85c";
-                    password_error.innerHTML = "";
-                    return true;
-                }
+        // event handler functions
+        function nameVerify() {
+            if (username.value == "") {
+                username.style.border = "1px solid red";
+                username_error.style.color = "red";
+                username_error.style.fontSize = "14px";
+                username_error.style.marginBottom = "10px";
+                username_error.textContent = "Username is required";
+                return false;
+            } else {
+                username.style.border = "1px solid #5cb85c";
+                username_error.innerHTML = "";
+                return true;
             }
+        }
 
-            $(document).ready(function() {
+        function emailVerify() {
+            // regex to validate the email address
+            var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+            if (email.value == "") {
+                email.style.border = "1px solid red";
+                email_error.style.color = "red";
+                email_error.style.fontSize = "14px";
+                email_error.style.marginBottom = "10px";
+                email_error.textContent = "Email is required";
+                return false;
+            } else if (!re.test(email.value)) {
+                email.style.border = "1px solid red";
+                email_error.style.color = "red";
+                email_error.style.fontSize = "14px";
+                email_error.style.marginBottom = "10px";
+                email_error.textContent = "Invalid email, please re-enter";
+                return false;
+            } else {
+                email.style.border = "1px solid #5cb85c";
+                email_error.innerHTML = "";
+                return true;
+            }
+        }
+
+        function passwordVerify() {
+            if (password.value == "") {
+                password.style.border = "1px solid red";
+                password_error.style.color = "red";
+                password_error.style.fontSize = "14px";
+                password_error.style.marginBottom = "10px";
+                password_error.textContent = "Password is required";
+                return false;
+            } else if (password.value.length < 6) {
+                password.style.border = "1px solid red";
+                password_error.style.color = "red";
+                password_error.style.fontSize = "14px";
+                password_error.style.marginBottom = "10px";
+                password_error.textContent = "Password must be at least 6 characters long";
+                return false;
+            } else if (password.value != password_confirm.value) {
+                password_confirm.style.border = "1px solid red";
+                password_error.style.color = "red";
+                password_error.style.fontSize = "14px";
+                password_error.style.marginBottom = "10px";
+                password_error.textContent = "Passwords do not match";
+                return false;
+            } else {
+                password_confirm.style.border = "1px solid #5cb85c";
+                password.style.border = "1px solid #5cb85c";
+                password_error.innerHTML = "";
+                return true;
+            }
+        }
+
+        $(document).ready(function() {
 
 
-                var readURL = function(input) {
-                    if (input.files && input.files[0]) {
-                        var reader = new FileReader();
+            var readURL = function(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
 
-                        reader.onload = function(e) {
-                            $('.profile-pic').attr('src', e.target.result);
-                        }
-
-                        reader.readAsDataURL(input.files[0]);
+                    reader.onload = function(e) {
+                        $('.profile-pic').attr('src', e.target.result);
                     }
-                }
 
-                $(".file-upload").on('change', function() {
-                    readURL(this);
-                });
-
-                $(".upload-button").on('click', function() {
-                    $(".file-upload").click();
-                });
-            });
-
-            $("#SI").click(function() {
-                window.location.href = "signin.html";
-            });
-
-            $("#TC").click(function() {
-                window.location.href = "terms_conditions.html";
-            });
-
-
-            $("#PP").click(function() {
-                window.location.href = "privacy_policy.html";
-            });
-
-            function submitBTN_validate() {
-
-                var name_validate = nameVerify();
-
-                var email_validate = emailVerify();
-
-                var password_validate = passwordVerify();
-
-                var form_validate = ValidateForm();
-
-
-                if (name_validate && email_validate && password_validate) {
-                    signUp()
+                    reader.readAsDataURL(input.files[0]);
                 }
             }
 
-            const AVATAR = document.querySelector("#user-avatar");
-            const INPUT = document.querySelector("#upload");
-            const BTN = document.querySelector('span[role="button"]');
+            $(".file-upload").on('change', function() {
+                readURL(this);
+            });
 
-            const handleUpload = event => {
+            $(".upload-button").on('click', function() {
+                $(".file-upload").click();
+            });
+        });
+
+        $("#SI").click(function() {
+            window.location.href = "signin.html";
+        });
+
+        $("#TC").click(function() {
+            window.location.href = "terms_conditions.html";
+        });
+
+
+        $("#PP").click(function() {
+            window.location.href = "privacy_policy.html";
+        });
+
+        function submitBTN_validate() {
+
+            var name_validate = nameVerify();
+
+            var email_validate = emailVerify();
+
+            var password_validate = passwordVerify();
+
+            var form_validate = ValidateForm();
+
+
+            if (name_validate && email_validate && password_validate) {
+                signUp()
+            }
+        }
+
+        const AVATAR = document.querySelector("#user-avatar");
+        const INPUT = document.querySelector("#upload");
+        const BTN = document.querySelector('span[role="button"]');
+
+        const handleUpload = event => {
             const file = event.target.files[0];
             const reader = new FileReader();
 
@@ -457,16 +457,16 @@
                 const imageBuffer = reader.result;
                 AVATAR.style.background = `url(${imageBuffer}) center center/cover`;
             };
-            };
+        };
 
-            INPUT.addEventListener("change", handleUpload);
+        INPUT.addEventListener("change", handleUpload);
 
-            BTN.addEventListener("keypress", event => {
+        BTN.addEventListener("keypress", event => {
             if (event.key === " " || event.key === "Enter") {
                 BTN.click();
             }
-            });
-        </script>
+        });
+    </script>
 </body>
 
 </html>

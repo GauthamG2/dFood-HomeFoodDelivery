@@ -186,7 +186,6 @@ function addToCart() {
     sessionStorage.setItem('cart', JSON.stringify(cart));
     console.log(sessionStorage);
     location.reload();
-
 }
 
 

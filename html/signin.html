@@ -14,6 +14,16 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+
+    <!-- toast Links -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    <script src="../js/signin.js"></script>
+
     <style>
         img {
             display: block;
@@ -52,23 +62,22 @@
             text-decoration: none;
         }
         /* Show password icon styling finished*/
-
         /* Media query */
+        
         @media all and (max-width: 35em) {}
-
         /* iPhone 5/SE portrait */
+        
         @media screen and (min-width: 320px)and (max-width: 320px) and (orientation: portrait) {}
-
-
         /* iPad portrait */
+        
         @media screen and (min-width: 768px)and (max-width: 1366px) and (orientation: portrait) {
             #FR {
                 margin-left: 100px;
                 margin-right: 100px;
             }
         }
-
         /* iPad landscape */
+        
         @media screen and (min-width: 768px)and (max-width: 1366px) and (orientation: landscape) {
             #FR {
                 margin-left: 100px;
@@ -105,16 +114,16 @@
                             </span>
                             <div id="password_error"></div>
                         </div>
-                        
+
                         <div>
                             <p style="float:right;margin:10px; font-size: 14px;"> <a href="#" id="FP">Forget Password?</a> </p>
                         </div>
                         <div>
-                            <button class="submit-button" style=" margin-top: 5em;" class="ui-btn ui-corner-all ui-mini" id="LogingBtn" onclick="submitBTN_validate()">Sign in </button>
+                            <button class="submit-button" style=" margin-top: 5em;" class="ui-btn ui-corner-all ui-mini" id="LogingBtn" onclick="login()">Sign in </button>
                         </div>
                     </div>
 
-                    
+
                 </form>
 
                 <div style="text-align: center;">
