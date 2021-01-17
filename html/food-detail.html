@@ -188,10 +188,16 @@
         }
 
         function decreaseValue() {
+            //debugger
             var value = parseInt(document.getElementById('number').value, 10);
             value = isNaN(value) ? 0 : value;
             value < 1 ? value = 1 : '';
             value--;
+            if (value <= 0) {
+                value = 1;
+                document.getElementById('number').value = value;
+                location.reload;
+            }
             document.getElementById('number').value = value;
         }
 
@@ -241,7 +247,7 @@
                                         <span class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</span>
                                     </div>
                                     <div class="col my-auto text-center">
-                                        <input type="number" id="number" value="0" />
+                                        <input type="number" id="number" value="1" />
                                     </div>
                                     <div class="col my-auto text-center">
                                         <span class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</span>
@@ -284,12 +290,7 @@
                         <div class="ui-block-a" style="padding: 5px;">
                             <div class="ui-body ui-body-d shadow" style="background-color: #ffffff; border: none ; border-radius: 10px;padding: 10px;box-shadow: 0 0 10px #8a795d;">
                                 <div>
-                                    <div class="favHeart">
-                                        <a href="#" id="hamburger" target="_self">
-                                            <img id="dofav" style="position: absolute;right: 1rem;top: 1rem;" src="/images/icons_svg/Icon feather-heart-1.svg" align="right" />
-                                            <!-- <img id="fav" style="position: absolute;right: 2rem;top: 2rem;" src="Icons/favorite-black-24dp.svg" width="26" height="26" align="right" /> -->
-                                        </a>
-                                    </div>
+
                                     <a href="#" target="_self">
                                         <img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui" src="/images/Food_Images/Momo_Images/2-Chicken-Burger.jpg" height="100%" width="100%" style="border-radius: 10px; object-fit: cover" /></a>
                                 </div>
@@ -318,12 +319,7 @@
                             <div class="ui-block-b" style="padding: 5px;">
                                 <div class="ui-body ui-body-d shadow" style="background-color: #ffffff; border: none ; border-radius: 10px; padding: 10px; box-shadow: #070707;box-shadow: 0 0 10px #8a795d;">
                                     <div>
-                                        <div class="favHeart">
-                                            <a href="#" id="hamburger" target="_self">
-                                                <img id="dofav" style="position: absolute;right: 1rem;top: 1rem;" src="/images/icons_svg/Icon feather-heart-1.svg" align="right" />
-                                                <!-- <img id="fav" style="position: absolute;right: 2rem;top: 2rem;" src="Icons/favorite-black-24dp.svg" width="26" height="26" align="right" /> -->
-                                            </a>
-                                        </div>
+
                                         <a href="#" target="_self">
                                             <img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui" src="/images/Food_Images/Momo_Images/6-Tinga-Tacos.jpg" height="100%" width="100%" style="border-radius: 10px; object-fit: cover" />
                                         </a>
@@ -367,6 +363,18 @@
                     </div>
                 </div>
             </div>
+
+            <!-- <script>
+                function validateAddToCart() {
+                    var quantityNumber = $('#number').val();
+
+                    if (quantityNumber != 0) {
+                        addToCart()
+                    } else {
+
+                    }
+                }
+            </script> -->
 </body>
 
 </html>

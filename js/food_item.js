@@ -160,6 +160,8 @@ function renderFoodItem() {
 function addToCart() {
     //debugger
     var quantityNumber = $('#number').val();
+
+
     console.log(foodId);
     var x = 0;
     cart = JSON.parse(sessionStorage.getItem('cart'));
@@ -186,6 +188,8 @@ function addToCart() {
     location.reload();
 
 }
+
+
 
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = window.location.search.substring(1),
