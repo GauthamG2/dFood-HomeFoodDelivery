@@ -41,7 +41,7 @@ function repeat() {
         <div id="FR" style="margin-top: 10px;" >
         <div> 
 				<div id="ordered-food-image-container" style="display:inline-block; vertical-align:top">
-					<img id="image" src="../images/pancake.jpg">
+					<img id="image" src="../images/Food_Images/1_Fruit_Pancake.jpg">
 				</div>
 					<div style="display:inline-block; margin: 15px 0 0 15px;">
 					<h4 style="margin: auto"> Your order in Momo </h4>
