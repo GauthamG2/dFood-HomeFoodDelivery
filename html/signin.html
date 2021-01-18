@@ -62,8 +62,8 @@
             text-decoration: none;
         }
         /* Show password icon styling finished*/
+
         /* Media query */
-        
         @media all and (max-width: 35em) {}
         /* iPhone 5/SE portrait */
         
@@ -75,6 +75,9 @@
                 margin-left: 100px;
                 margin-right: 100px;
             }
+            #LogingBtn{
+                width: 250px;
+            }
         }
         /* iPad landscape */
         
@@ -82,6 +85,9 @@
             #FR {
                 margin-left: 100px;
                 margin-right: 100px;
+            }
+            #LogingBtn{
+                width: 250px;
             }
         }
     </style>
@@ -118,7 +124,7 @@
                         <div>
                             <p style="float:right;margin:10px; font-size: 14px;"> <a href="#" id="FP">Forget Password?</a> </p>
                         </div>
-                        <div>
+                        <div align="center">
                             <button class="submit-button" style=" margin-top: 5em;" class="ui-btn ui-corner-all ui-mini" id="LogingBtn" onclick="login()">Sign in </button>
                         </div>
                     </div>

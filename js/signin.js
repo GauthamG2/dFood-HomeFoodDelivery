@@ -34,7 +34,7 @@ $(document).ready(function() {
 });
 
 function login() {
-    debugger
+    // debugger
     cart = [];
     var email = $('#email').val();
     var password = $('#password').val();

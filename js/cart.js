@@ -219,7 +219,7 @@ function decQuantity(foodId) {
 }
 
 function redeemPoints() {
-    debugger
+    // debugger
     totalPrice = totalPrice - points
 
 }

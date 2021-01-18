@@ -5,97 +5,111 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title> Vendor Home </title>
 		<link rel="stylesheet" href="../css/myTheme1.css" />
-  <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
-  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> 
-  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> 
+		<link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> 
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> 
  
-  <script> 
+  		<!-- Adding footer -->
+		  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+		  </script>
+		  <script>
+			  $(function() {
+				  $("#footer").load("footer.html");
+			  });
+		  </script>
 
 
-        $(function(){
-            $("#footer").load("footer.html");
-            $("#tab-bar").load("tabbar.html"); 
-        });
-    </script> 
+		<style>
 
+			/* #container{
+				border: solid #FB752C;
+				border-radius: 8px;
+				background-color: white;
+				margin: 20px 40px;
+				padding: 10px;
+			} */
 
-<style>
+			/* a{
+				text-decoration: none;
+				font-size: 20px; 
+				font-weight: bold;
 
-/* #container{
-	border: solid #FB752C;
-	border-radius: 8px;
-	background-color: white;
-	margin: 20px 40px;
-	padding: 10px;
-} */
+			} */
 
+			.ui-btn,label.ui-btn {
+				font-size: 20px;
+				border: 2px solid #FB752C !important;
+				background-color: transparent !important;
+				}
 
-/* a{
-	text-decoration: none;
-	font-size: 20px; 
-	font-weight: bold;
-
-} */
-
-
-.ui-btn,
-        label.ui-btn {
-          
-			font-size: 20px;
-            border: 2px solid #FB752C !important;
-            background-color: transparent !important;
-		
-        }
-        
-
-	#name{
-		color: #08204C !important;
-		   font-weight: bold !important;
-			font-size: 20px;
+			#name{
+				color: #08204C !important;
+				font-weight: bold !important;
+				font-size: 20px;
 				margin-top: 1.3em;
-	}
+			}
 
-	
-
-	</style>
+			/* Media query */
+			@media all and (max-width: 35em) {}
+			/* iPhone 5/SE portrait */
+			
+			@media screen and (min-width: 320px)and (max-width: 320px) and (orientation: portrait) {}
+			/* iPad portrait */
+			
+			@media screen and (min-width: 768px)and (max-width: 1366px) and (orientation: portrait) {
+				#FR {
+					margin-left: 100px;
+					margin-right: 100px;
+				}
+			}
+			/* iPad landscape */
+			
+			@media screen and (min-width: 768px)and (max-width: 1366px) and (orientation: landscape) {
+				#FR {
+					margin-left: 120px;
+					margin-right: 120px;
+				}
+			}
+		</style>
 
 	</head>
 	<body>
-		<div data-role="page" id="vendor_home" data-theme="d" style="text-align: center; position:absolute;  overflow:auto;">
+		<div data-role="page" id="vendor_home" data-theme="d" style="text-align: center; position:relative;">
 			<div data-role="header" data-position="fixed">
             <img src="../images/logo.png" class="center" id="logoProfile"  width=140 height="80" >
 			</div>
 
-			<div role="main" class="ui-content" style="margin: auto 15px;" >
-				<br>
-				<ul data-role="listview" data-inset="true">
-					<li >
-						<a href="../html/post_dish.html" target="_self"><img src="../images/illustrations/Menu 2.png" alt=""  height=100 width=80 > <p id="name"> Post Your Dish </p></a>
-					</li>
-				</ul>
-				<br>
-				<ul data-role="listview" data-inset="true">
-					<li>
-						<a href="#"><img src="../images/illustrations/Menu 2.png" alt=""  height=100 width=80> <p id="name">See Your Menu  </p></a>
-					</li>
-				</ul>
-				<br>
-				<ul data-role="listview" data-inset="true">
-					<li>
-						<a href="#"><img src="../images/illustrations/Phone order.png" alt=""  height=100 width=90> <p id="name" > Your Recevied <br>  Order </p></a>
-					</li>
-				</ul>
-				<br>
-				<ul data-role="listview" data-inset="true">
-					<li>
-						<a href="../html/vendor_account.html" target="_self"><img src="../images/illustrations/Cheif Profile.png" alt=""  height=100 width=80> <p id="name"> Your Account </p></a>
-					</li>
-				</ul>
-	
+			<div role="main" class="ui-content" style="margin: auto 15px; padding-bottom: 160px;" >
+				<div id="FR">
+					<br>
+					<ul data-role="listview" data-inset="true">
+						<li >
+							<a href="../html/post_dish.html" target="_self"><img src="../images/illustrations/Menu 2.png" alt=""  height=100 width=80 > <p id="name"> Post Your Dish </p></a>
+						</li>
+					</ul>
+					<br>
+					<ul data-role="listview" data-inset="true">
+						<li>
+							<a href="#"><img src="../images/illustrations/Menu 2.png" alt=""  height=100 width=80> <p id="name">See Your Menu  </p></a>
+						</li>
+					</ul>
+					<br>
+					<ul data-role="listview" data-inset="true">
+						<li>
+							<a href="#"><img src="../images/illustrations/Phone order.png" alt=""  height=100 width=90> <p id="name" > Your Recevied <br>  Order </p></a>
+						</li>
+					</ul>
+					<br>
+					<ul data-role="listview" data-inset="true">
+						<li>
+							<a href="../html/vendor_account.html" target="_self"><img src="../images/illustrations/Cheif Profile.png" alt=""  height=100 width=80> <p id="name"> Your Account </p></a>
+						</li>
+					</ul>
+				</div>
 			</div>
 
-<!-- 	
+			<!-- 	
 			<div role="main" class="ui-content" >
 						<div style="clear: left;">
 							<p id="container" ><a href="#"><img src="../images/illustrations/Menu 2.png"  alt=""  height=120 width=100>Post Your Dish</a> </p>
@@ -113,12 +127,9 @@
 							<p id="container" ><a href="#"><img src="../images/illustrations/Cheif Profile.png"  alt=""  height=120 width=100> Your Account </a> </p>
 						</div>
 			</div> -->
-
-    <!-- Adding Tab-bar -->
-    <div id="footer"></div>
-    <!-- Adding Tab-bar -->
-    <div id="tab-bar"></div>
+			<!-- Adding Footer -->
+			
+			<div id="footer" style="position: absolute;"></div>
 		</div>
-
 	</body>
 </html>

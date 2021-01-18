@@ -9,28 +9,23 @@
 		<link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
 		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> 
-		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> 
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		
 		<style>
+			/* Media query */
 			@media all and (max-width: 35em) {
-			.my-breakpoint .ui-block-a,
-			.my-breakpoint .ui-block-b,
-			.my-breakpoint .ui-block-c,
-			.my-breakpoint .ui-block-d,
-			.my-breakpoint .ui-block-e {
-			width: 100%;
-			float: none;
-			padding: 5px;
-			}
-			.img-ui {
-			height: 180px;
-			}
-			.slideshow-container, img {
-			max-height: 180px;
-			}
-			.dot {
-			height: 10px;
-			width: 10px; 
-			}
+				.my-breakpoint .ui-block-a,
+				.my-breakpoint .ui-block-b,
+				.my-breakpoint .ui-block-c,
+				.my-breakpoint .ui-block-d,
+				.my-breakpoint .ui-block-e {
+					width: 100%;
+					float: none;
+					padding: 5px;
+				}
+				.img-ui {
+					height: 180px;
+				}
 			}
 		</style>
 	</head>
@@ -44,64 +39,72 @@
 				</h1>
 			</div>
 			<div data-role="main" class="ui-content">
-				<div class="ui-block-a " style="padding-top: 5PX;">
-					<div class="ui-body ui-body-d shadow"
-						style="background-color: #ffffff; border: none ; border-radius: 10px;padding: 10px;box-shadow: 0 0 10px #8a795d;">
-						<div>
-							<a href="../html/vendor_review_detail.html" target="_self">
-							<img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui"
-								src="../images/pancake.jpg" height="100%"
-								width="100%" style="border-radius: 10px; object-fit: cover"/></a>        
-						</div>
-						<fieldset class="ui-grid-a">
+
+				<div class="ui-grid-a my-breakpoint ui-responsive" style="margin: 10px;">
+
+					<div class="ui-block-a " style="padding:10PX;">
+						<div class="ui-body ui-body-d shadow"
+							style="background-color: #ffffff; border: none ; border-radius: 10px;padding: 10px;box-shadow: 0 0 10px #8a795d;">
 							<div>
-								<h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;"> Fruit
-									Pancake
-									<img src="../images/noti1.png" class="ui-li-icon ui-corner-none" width=44 height=40 style="float: right;
-										margin: -10px 10px 0px 0px;">
-								</h3>
+								<a href="../html/vendor_review_detail.html" target="_self">
+								<img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui"
+									src="../images/pancake.jpg" height="100%"
+									width="100%" style="border-radius: 10px; object-fit: cover"/></a>        
 							</div>
-						</fieldset>
-					</div>
-				</div>
-				<div class="ui-block-b " style="padding-top: 20PX;" >
-					<div class="ui-body ui-body-d shadow"
-						style="background-color: #ffffff; border: none ; border-radius: 10px;padding: 10px;box-shadow: 0 0 10px #8a795d;">
-						<div>
-							<a href="#" target="_self">
-							<img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui"
-								src="../images/platter.jpg" height="100%"
-								width="100%" style="border-radius: 10px; object-fit: cover"/></a>        
+							<fieldset class="ui-grid-a">
+								<div>
+									<h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;"> Fruit
+										Pancake
+										<img src="../images/noti1.png" class="ui-li-icon ui-corner-none" width=44 height=40 style="float: right;
+											margin: -10px 10px 0px 0px;">
+									</h3>
+								</div>
+							</fieldset>
 						</div>
-						<fieldset class="ui-grid-a">
-							<div>
-								<h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;"> Breakfast Platter
-									<img src="../images/noti2.png" class="ui-li-icon ui-corner-none" width=44 height=40 style="float: right;
-										margin: -10px 10px 0px 0px;">
-								</h3>
-							</div>
-						</fieldset>
 					</div>
-				</div>
-				<div class="ui-block-c " style="padding-top: 20PX;" >
-					<div class="ui-body ui-body-d shadow"
-						style="background-color: #ffffff; border: none ; border-radius: 10px;padding: 10px;box-shadow: 0 0 10px #8a795d;">
-						<div>
-							<a href="#" target="_self">
-							<img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui"
-								src="../images/sandwish.jpg" height="100%"
-								width="100%" style="border-radius: 10px; object-fit: cover"/></a>        
+					<div class="ui-block-b " style="padding:10PX;" >
+						<div class="ui-body ui-body-d shadow"
+							style="background-color: #ffffff; border: none ; border-radius: 10px;padding: 10px;box-shadow: 0 0 10px #8a795d;">
+							<div>
+								<a href="#" target="_self">
+								<img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui"
+									src="../images/platter.jpg" height="100%"
+									width="100%" style="border-radius: 10px; object-fit: cover"/></a>        
+							</div>
+							<fieldset class="ui-grid-a">
+								<div>
+									<h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;"> Breakfast Platter
+										<img src="../images/noti2.png" class="ui-li-icon ui-corner-none" width=44 height=40 style="float: right;
+											margin: -10px 10px 0px 0px;">
+									</h3>
+								</div>
+							</fieldset>
 						</div>
-						<fieldset class="ui-grid-a">
-							<div>
-								<h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;"> Fresh Fruit bread 
-									<img src="../images/noti2.png" class="ui-li-icon ui-corner-none" width=44 height=40 style="float: right;
-										margin: -10px 10px 0px 0px;">
-								</h3>
-							</div>
-						</fieldset>
 					</div>
+					<div class="ui-block-a " style="padding: 10PX;">
+						<div class="ui-body ui-body-d shadow"
+							style="background-color: #ffffff; border: none ; border-radius: 10px;padding: 10px;box-shadow: 0 0 10px #8a795d;">
+							<div>
+								<a href="#" target="_self">
+								<img id="1_Grill_Chicken_Burger.jpg" class="responsive img-ui"
+									src="../images/sandwish.jpg" height="100%"
+									width="100%" style="border-radius: 10px; object-fit: cover"/></a>        
+							</div>
+							<fieldset class="ui-grid-a">
+								<div>
+									<h3 style="text-align: left !important;margin:10px 0px 2px 0px !important;"> Fresh Fruit bread 
+										<img src="../images/noti2.png" class="ui-li-icon ui-corner-none" width=44 height=40 style="float: right;
+											margin: -10px 10px 0px 0px;">
+									</h3>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				
 				</div>
+
+
+				
 			</div>
 		</div>
 	</body>

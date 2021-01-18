@@ -158,7 +158,7 @@ function renderFoodItem() {
 // Adding items to the cart 
 
 function addToCart() {
-    debugger
+    // debugger
     var quantityNumber = $('#number').val();
     if (quantityNumber != 0) {
         console.log(foodId);
