@@ -12,14 +12,15 @@
     <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <script src="../js/edit-profile.js"></script>
+
     <script>
         $(function() {
             $("#includedContent").load("footer.html");
         });
     </script>
     <style type="text/css">
-      
-        
         .profile-pic {
             max-width: 200px;
             max-height: 200px;
@@ -64,16 +65,16 @@
             transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
             color: #999;
         }
-        
-        
     </style>
 </head>
 
 <body>
     <div data-role="page" id="payment" data-theme="d" style="text-align: center; ">
         <div data-role="header" data-position="fixed">
-            <h1>Edit Profile <a data-rel="back"  target="_self">    
-                <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> </a></h1>
+            <h1>Edit Profile
+                <a data-rel="back" target="_self">
+                    <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> </a>
+            </h1>
         </div>
 
         <div data-role="main" class="ui-content">
@@ -83,26 +84,17 @@
 
                     <div class="row">
                         <div class="small-12 medium-2 large-2 columns">
-                            <div id="FR" style=" width: 40%; margin: 0 auto; margin-top: -5px; border-width: 2px;">
-                                <div class="circle" style=" margin: auto; margin-top: -5px;">
-                                    <!-- User Profile Image -->
-                                    <img class="profile-pic" src="../images/profilepic.png">
-                                </div>
-                                <div class="p-image" style="margin-bottom: 5px !important;">
-                                    <i class="fa fa-camera upload-button"></i>
-                                    <input class="file-upload" type="file" accept="image/*" />
-                                </div>
-                            </div>
+
                         </div>
                     </div>
 
                     <div style="text-align: left; font-size: 15px;">
                         <label for="fullname" style="font-size: 14px; margin-bottom: 5px !important;">Full Name</label>
-                        <input style="font-size: 14px;" type="text" name="username" placeholder="Enter your name" />
+                        <input style="font-size: 14px;" type="text" id="name" name="username" placeholder="Enter your name" />
                         <div id="username_error"></div>
 
                         <label for="Email" style="font-size: 14px; margin-bottom: 5px !important;">Email</label>
-                        <input style="font-size: 14px;" type="email" name="email" placeholder="Enter your email" />
+                        <input style="font-size: 14px;" type="email" id="email" name="email" placeholder="Enter your email" />
                         <div id="email_error"></div>
 
                         <label for="dob" style="font-size: 14px; margin-bottom: 5px !important;">Date of Birth</label>
@@ -117,8 +109,8 @@
             <button style="width: 40%; margin: 0 auto; margin-top: 10px; color: white; background-color:  #FB752C; font-weight: normal; " class="submit-button" id="save" type="submit" name="register" onclick="submitBTN_validate()">Save</button>
         </div>
 
-           <!-- Adding Tab-bar -->
-           <div data-role="footer" data-position="fixed" data-theme="e">
+        <!-- Adding Tab-bar -->
+        <div data-role="footer" data-position="fixed" data-theme="e">
             <div data-role="navbar" data-theme="e">
                 <ul>
                     <li><a href="/html/Home.html" target="_self" data-icon="home">Home</a></li>
@@ -131,18 +123,13 @@
 
     </div>
     <script>
-	
-        $("#save").click(function(){
-            window.location.href = "profile.html";				
+        $("#save").click(function() {
+            window.location.href = "profile.html";
         });
-    
-        
-    
-
-</script>
+    </script>
 
 
-   
+
 </body>
 
 </html>

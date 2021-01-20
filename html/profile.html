@@ -12,13 +12,15 @@
     <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="../js/profile.js"></script>
+
     <script>
         $(function() {
             $("#includedContent").load("footer.html");
         });
     </script>
     <style>
-       #birthdayOffer{
+        #birthdayOffer {
             font-weight: 700;
             border-width: 10px;
             border-radius: 8px;
@@ -62,58 +64,58 @@
 <body>
     <div data-role="page" id="payment" data-theme="d" style="text-align: center; ">
         <div data-role="header" data-position="fixed">
-            <h1>Profile <a data-rel="back"  target="_self">    
-                <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> </a> </h1>
+            <h1>Profile
+                <a data-rel="back" target="_self">
+                    <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> </a>
+            </h1>
         </div>
         <button class="submit-button" style=" background-color: transparent !important; color: #FB752C !important; border-width: 1px !important; width: 60%; margin: 0 auto; margin-top: 20px;" id="birthdayOffer">Birthday Offer</button>
         <br>
         <hr style="height:4px;border-width:0; width: 80%; color:#FB752C;;background-color:#FB752C;">
         <div id="FR" style=" width: 40%; margin: 0 auto; margin-top: 20px; border-width: 2px;">
-            <img src="" alt="ProfilePicture">
+            <img src="../images/Cake.png" class="center" id="user-avatar" width="250" height="145" />
         </div>
         <div id="FR" style=" width: 80%; margin: 0 auto; margin-top: 20px; border-width: 2px;">
             <div style="margin-top: -25px; margin-bottom: -25px;">
                 <h3>Name</h3>
-                <h4>Kamala Harrish</h4>
+                <h4 id="name">Kamala Harrish</h4>
                 <h3>Email</h3>
-                <h4>kamalaharrishmodara@gmail.com</h4>
+                <h4 id="email">kamalaharrishmodara@gmail.com</h4>
                 <h3>Date of Birth</h3>
-                <h4>13/09/2000</h4>
+                <h4 id="birthday">13/09/2000</h4>
                 <h3>Phone number</h3>
-                <h4>+94 77 777 7798</h4>
+                <h4 id="phonenumber">+94 77 777 7798</h4>
             </div>
         </div>
         <button class="submit-button" style="font-weight: normal; border-radius: 10px; width: 60%; margin: 0 auto; margin-top: 20px; background-color: #FB752C; color:white" class="ui-btn ui-corner-all ui-mini" id="EditProfileBtn" onclick="submitBTN_validate()">Edit Profile </button>
         <button class="submit-button" style="font-weight: normal; border-radius: 10px; width: 60%; margin: 0 auto; margin-top: 20px; background-color: #FB752C; color:white" class="ui-btn ui-corner-all ui-mini" id="ChangePasswordBtn" onclick="submitBTN_validate()">Change Password</button>
-    
-       <!-- Adding Tab-bar -->
-       <div data-role="footer" data-position="fixed" data-theme="e">
-        <div data-role="navbar" data-theme="e">
-            <ul>
-                <li><a href="/html/Home.html" target="_self" data-icon="home">Home</a></li>
-                <li><a href="/html/favourites.html" target="_self" data-icon="heart">Favourites</a></li>
-                <li><a href="/html/my_orders.html" target="_self" data-icon="mail">My Orders</a></li>
-                <li><a href="/html/account.html" target="_self" data-icon="user">Account</a></li>
-            </ul>
+
+        <!-- Adding Tab-bar -->
+        <div data-role="footer" data-position="fixed" data-theme="e">
+            <div data-role="navbar" data-theme="e">
+                <ul>
+                    <li><a href="/html/Home.html" target="_self" data-icon="home">Home</a></li>
+                    <li><a href="/html/favourites.html" target="_self" data-icon="heart">Favourites</a></li>
+                    <li><a href="/html/my_orders.html" target="_self" data-icon="mail">My Orders</a></li>
+                    <li><a href="/html/account.html" target="_self" data-icon="user">Account</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-    
-    
+
+
     </div>
     <script>
-	
-        $("#EditProfileBtn").click(function(){
-            window.location.href = "edit_profile.html";				
-        });
-    
-        
-        $("#ChangePasswordBtn").click(function(){
-            window.location.href = "change_password.html";				
+        $("#EditProfileBtn").click(function() {
+            window.location.href = "edit_profile.html";
         });
 
-</script>
 
-  
+        $("#ChangePasswordBtn").click(function() {
+            window.location.href = "change_password.html";
+        });
+    </script>
+
+
 </body>
 
 </html>
