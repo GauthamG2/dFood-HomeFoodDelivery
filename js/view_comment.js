@@ -52,8 +52,6 @@ if(reviews.length>0){
     reviews.forEach(function(item){
         rendorHtml += `
 
-
-
         <div>
             <p style="float:left; margin: auto; font-size: 17px; font-weight:bold"> ${item.userObj.name}</p>
             <span class="stars-container stars-${item.rating}" style="font-size:1.2em; float: right"> ★★★★★ </span>

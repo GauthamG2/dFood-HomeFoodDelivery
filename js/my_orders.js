@@ -62,10 +62,6 @@ $(document).ready(function () {
     responseMessage(msg);
   });
 
-
-
-
-
 });
 
 
@@ -78,39 +74,27 @@ function writeUserData() {
 
   console.log(user_cmt, "user comment")
 
-
-
-  // var vendor_cmt = $('#vendor_comment').val();
-  // console.log(vendor_cmt, "vendor comment")
-
-
   var foodItemID = '-MQIVU18l9mKwEdlWQ3I';
   firebase.database().ref('Vendors/' + 1).child('foodItem/' + foodItemID).child('reviews').push({
     // name: 'Melt House',
-    rating: ratingValue,
+    rating: ratingValue*10,
     review: user_cmt,
     reviewResponse: '',
     date: '20/20/20',
     userObj: {
-      name: 'Leesha'
+      name: 'Anne Mary'
     }
   }, (error) => {
     if (error) {
       console.log("Push to firebase failed!")
     } else {
       console.log("pushed to firebase succesfully!");
+      document.getElementById("user_comment").value = "";
+      var stars = $('#stars li').parent().children('li.star');
+      $(stars).removeClass('selected');
+    
     }
   });
-
-
-  // firebase.database().ref('customer/').push({
-  // name: 'Sarah',
-  // dob: '7/8/2019',
-
-
-
-
-  // })
 
 
 

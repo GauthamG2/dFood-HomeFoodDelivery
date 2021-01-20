@@ -44,6 +44,10 @@ $(document).ready(function () {
     repeat();
   })
 
+//   $('#vendor_reponse').click(function (e) {
+//     debugger
+//     $('#popup-modal').popup('open')
+// });
 
 });
 
@@ -71,12 +75,10 @@ function repeat() {
                             padding: 4px;
                             width:80%" placeholder="Add reply" required> 
                            
-                            <a onclick="writeVendorData('${item.key}')" style="margin: auto 5px  ;"> 
+                            <a id="vendor_reponse" data-rel="popup" data-position-to="window" data-transition="pop" 
+                            onclick="writeVendorData('${item.key}')" style="margin: auto 5px  ;"> 
                             <img src="../images/icons/Icon ionic-ios-add-circle.png"  class="ui-li-icon ui-corner-none" >  </a> 
-                        <hr style="  height:2px; border-width:0; background-color:#FB752C; margin: 20px auto;">
-                        
-
-                        
+                        <hr style="  height:2px; border-width:0; background-color:#FB752C; margin: 20px auto;">     
                   `
 
     })
@@ -85,6 +87,7 @@ function repeat() {
   }
 
 }
+
 
 
 function writeVendorData(id) {
@@ -109,6 +112,7 @@ function writeVendorData(id) {
         console.log("Push to firebase failed!")
       } else {
         console.log("pushed to firebase succesfully!");
+
       }
     });
 

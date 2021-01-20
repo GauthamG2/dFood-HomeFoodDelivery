@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../images/logo.png" type="image/gif">
     <link rel="stylesheet" href="../css/myTheme1.css" />
+  
     <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -17,205 +18,207 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC09VZzeKOjz-lv9FaXT8GrPNcn9x8ig_A&callback=initMap&libraries=&v=weekly" defer></script>
 
-    <!-- This is for info menu icon properties -->
-    <style>
-        .shadow {
-            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .25), 0 3px 10px 0 rgba(0, 0, 0, .2) !important;
-        }
-        
-        .rating-star {
-            position: absolute;
-            right: 1rem;
-            bottom: 0rem;
-        }
-        /* This is for card */
-        
-        .img-ui {
-            height: 250px;
-        }
-        /* This is for info menu  */
-        
-        .info-menu ul {
-            position: absolute;
-            top: 23%;
-            left: 50%;
-            padding: 10px;
-            margin-top: 20px;
-            transform: translate(-50%, -50%);
-            display: flex;
-        }
-        
-        .info-menu ul li {
-            list-style: none;
-            margin: 0 15px;
-        }
-        
-        .info-menu ul li .fa {
-            line-height: 60px;
-            transition: .6s;
-            color: #FB752C;
-        }
-        
-        .info-menu ul li .fa:hover {
-            color: #ffffff;
-        }
-        
-        .fa,
-        .fab,
-        .fad,
-        .fal,
-        .far,
-        .fas {
-            -moz-osx-font-smoothing: grayscale;
-            -webkit-font-smoothing: antialiased;
-            display: inline-block;
-            font-style: normal;
-            font-variant: normal;
-            text-rendering: auto;
-            line-height: 2.5;
-        }
-        
-        .info-menu ul li a {
-            position: relative;
-            display: block;
-            width: 60px;
-            height: 60px;
-            border-radius: 10px;
-            background-color: white;
-            text-align: center;
-            transition: 0.6s;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
-        }
-        
-        .info-menu ul li a:hover {
-            transform: translate(0, -10px);
-        }
-        
-        .fa-map-marker-alt:before {
-            content: "\f3c5";
-            font-size: 25px;
-        }
-        
-        .fa-phone-alt:before {
-            content: "\f879";
-            font-size: 25px;
-        }
-        
-        .fa-comments:before {
-            content: "\f086";
-            font-size: 25px;
-        }
-        
-        .fa-external-link-alt:before {
-            content: "\f35d";
-            font-size: 25px;
-        }
-        /* This is for Google map */
-        /* Set the size of the div element that contains the map */
-        
-        #map {
-            height: 700px;
-            width: 700px;
-        }
-        /* Google map popup custom close button */
-        
-        .ui-icon-delete:after {
-            background: url('/images/icons_svg/close.svg') no-repeat !important;
-        }
-        /* Media query */
-        
-        @media all and (max-width: 35em) {
-            .my-breakpoint .ui-block-a,
-            .my-breakpoint .ui-block-b,
-            .my-breakpoint .ui-block-c,
-            .my-breakpoint .ui-block-d,
-            .my-breakpoint .ui-block-e {
-                width: 100%;
-                float: none;
-                padding: 5px;
-            }
-            .img-ui {
-                height: 180px;
-            }
-            .slideshow-container,
-            img {
-                max-height: 180px;
-            }
-            .dot {
-                height: 10px;
-                width: 10px;
-            }
-        }
-        /* iPhone portrait */
-        
-        @media (orientation: portrait) and (max-device-width: 428px) {
-            .mySlides-fade iframe {
-                height: 180px;
-            }
-            .info-menu ul {
-                top: 10.85%;
-            }
-            .info-menu ul li {
-                margin: 0 8px;
-            }
-            .info-menu ul li a {
-                width: 40px;
-                height: 40px;
-            }
-            .fa,
-            .fab,
-            .fad,
-            .fal,
-            .far,
-            .fas {
-                line-height: 2.5;
-            }
-            .fa-map-marker-alt:before {
-                content: "\f3c5";
-                font-size: 16px;
-            }
-            .fa-phone-alt:before {
-                content: "\f879";
-                font-size: 16px;
-            }
-            .fa-comments:before {
-                content: "\f086";
-                font-size: 16px;
-            }
-            .fa-external-link-alt:before {
-                content: "\f35d";
-                font-size: 16px;
-            }
-            #map {
-                height: 600px;
-                width: 300px;
-            }
-        }
-        /* iPhone 5C and below Screen Resolution 320 X 568 */
-        
-        @media (orientation: portrait) and (max-device-width: 320px) {
-            #map {
-                height: 400px;
-                width: 250px;
-            }
-        }
-        /* iPhone landscape */
-        
-        @media (orientation: landscape) and (max-device-width: 926px) {
-            #map {
-                height: 250px;
-                width: 600px;
-            }
-        }
-        /* iPhone SE 5C and below Screen Resolution 320 X 568 */
-        
-        @media (orientation: landscape) and (max-device-width: 568px) {
-            #map {
-                height: 250px;
-                width: 400px;
-            }
-        }
-    </style>
+ <style>
+
+
+
+.shadow {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .25), 0 3px 10px 0 rgba(0, 0, 0, .2) !important;
+}
+
+.rating-star {
+    position: absolute;
+    right: 1rem;
+    bottom: 0rem;
+}
+/* This is for card */
+
+.img-ui {
+    height: 250px;
+}
+/* This is for info menu  */
+
+.info-menu ul {
+    position: absolute;
+    top: 23%;
+    left: 50%;
+    padding: 10px;
+    margin-top: 20px;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.info-menu ul li {
+    list-style: none;
+    margin: 0 15px;
+}
+
+.info-menu ul li .fa {
+    line-height: 60px;
+    transition: .6s;
+    color: #FB752C;
+}
+
+.info-menu ul li .fa:hover {
+    color: #ffffff;
+}
+
+.fa,
+.fab,
+.fad,
+.fal,
+.far,
+.fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 2.5;
+}
+
+.info-menu ul li a {
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+    transition: 0.6s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+}
+
+.info-menu ul li a:hover {
+    transform: translate(0, -10px);
+}
+
+.fa-map-marker-alt:before {
+    content: "\f3c5";
+    font-size: 25px;
+}
+
+.fa-phone-alt:before {
+    content: "\f879";
+    font-size: 25px;
+}
+
+.fa-comments:before {
+    content: "\f086";
+    font-size: 25px;
+}
+
+.fa-external-link-alt:before {
+    content: "\f35d";
+    font-size: 25px;
+}
+/* This is for Google map */
+/* Set the size of the div element that contains the map */
+
+#map {
+    height: 700px;
+    width: 700px;
+}
+/* Google map popup custom close button */
+
+.ui-icon-delete:after {
+    background: url('/images/icons_svg/close.svg') no-repeat !important;
+}
+/* Media query */
+
+@media all and (max-width: 35em) {
+    .my-breakpoint .ui-block-a,
+    .my-breakpoint .ui-block-b,
+    .my-breakpoint .ui-block-c,
+    .my-breakpoint .ui-block-d,
+    .my-breakpoint .ui-block-e {
+        width: 100%;
+        float: none;
+        padding: 5px;
+    }
+    .img-ui {
+        height: 180px;
+    }
+    .slideshow-container,
+    img {
+        max-height: 180px;
+    }
+    .dot {
+        height: 10px;
+        width: 10px;
+    }
+}
+/* iPhone portrait */
+
+@media (orientation: portrait) and (max-device-width: 428px) {
+    .mySlides-fade iframe {
+        height: 180px;
+    }
+    .info-menu ul {
+        top: 10.85%;
+    }
+    .info-menu ul li {
+        margin: 0 8px;
+    }
+    .info-menu ul li a {
+        width: 40px;
+        height: 40px;
+    }
+    .fa,
+    .fab,
+    .fad,
+    .fal,
+    .far,
+    .fas {
+        line-height: 2.5;
+    }
+    .fa-map-marker-alt:before {
+        content: "\f3c5";
+        font-size: 16px;
+    }
+    .fa-phone-alt:before {
+        content: "\f879";
+        font-size: 16px;
+    }
+    .fa-comments:before {
+        content: "\f086";
+        font-size: 16px;
+    }
+    .fa-external-link-alt:before {
+        content: "\f35d";
+        font-size: 16px;
+    }
+    #map {
+        height: 600px;
+        width: 300px;
+    }
+}
+/* iPhone 5C and below Screen Resolution 320 X 568 */
+
+@media (orientation: portrait) and (max-device-width: 320px) {
+    #map {
+        height: 400px;
+        width: 250px;
+    }
+}
+/* iPhone landscape */
+
+@media (orientation: landscape) and (max-device-width: 926px) {
+    #map {
+        height: 250px;
+        width: 600px;
+    }
+}
+/* iPhone SE 5C and below Screen Resolution 320 X 568 */
+
+@media (orientation: landscape) and (max-device-width: 568px) {
+    #map {
+        height: 250px;
+        width: 400px;
+    }
+}
+ </style>
 
     <script>
         // Initialize and add the map
