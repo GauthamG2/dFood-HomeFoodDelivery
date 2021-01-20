@@ -219,7 +219,22 @@ function decQuantity(foodId) {
 }
 
 function redeemPoints() {
-    // debugger
-    totalPrice = totalPrice - points
+    //debugger
+    //  afterRedeem = subTotal - points;
+    // $(document).ready(function() {
+    //     $("#redeem").click(function() {
+    $("#subTotal").text('Rs ' + (subTotal - points));
+    $("#points").text('0.00');
+    document.getElementById('#redeem').disabled = true;
+    disableButton();
+    //     });
+    // });
+    disableButton();
+}
 
+function disableButton() {
+    // document.getElementById("#redeem").disabled = true;
+    $('#redeem').on('click', function() {
+        $(this).prop("disabled", true);
+    });
 }
