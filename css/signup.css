@@ -1,0 +1,117 @@
+.submit-button {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+#FR {
+    border-style: solid;
+    border-color: #fb752c;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.circle {
+    border-radius: 50% !important;
+    overflow: hidden;
+    width: 128px;
+    height: 128px;
+    border: 2px solid #fb752c;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.p-image {
+    color: #fb752c;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.p-image:hover {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+a {
+    text-decoration: none;
+}
+/* Avatar uplaod CSS */
+
+section {
+    position: relative;
+    height: 150px;
+    width: 150px;
+}
+
+#user-avatar {
+    height: inherit;
+    width: inherit;
+    border: 3px solid #fb752c;
+    border-radius: 50%;
+    transition: ease-out 200ms;
+    background: url("../images/icons_svg/Icon-avatar-lite.svg") center center / cover;
+}
+
+input {
+    display: none;
+}
+
+label span[role="button"] {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    background-color: #ffffff;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+    transition: ease-out 200ms;
+    cursor: pointer;
+}
+
+label span:hover,
+label span:focus {
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    background-color: #ffffff;
+}
+
+.fa {
+    color: #fb752c;
+}
+/* To remove iput field on avatar update */
+
+.ui-body-f,
+.ui-page-theme-f .ui-body-inherit,
+html .ui-bar-f .ui-body-inherit,
+html .ui-body-f .ui-body-inherit,
+html body .ui-group-theme-f .ui-body-inherit,
+html .ui-panel-page-container-f {
+    visibility: hidden;
+}
+/* Media query */
+
+@media all and (max-width: 35em) {}
+/* iPhone 5/SE portrait */
+
+@media screen and (min-width: 320px) and (max-width: 320px) and (orientation: portrait) {}
+/* iPad portrait */
+
+@media screen and (min-width: 768px) and (max-width: 1366px) and (orientation: portrait) {
+    #FR {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}
+/* iPad landscape */
+
+@media screen and (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) {
+    #FR {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}

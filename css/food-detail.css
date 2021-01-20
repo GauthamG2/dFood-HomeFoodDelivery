@@ -1,0 +1,225 @@
+    /* This is for inside the card elements */
+        
+    .shadow {
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .25), 0 3px 10px 0 rgba(0, 0, 0, .2) !important;
+    }
+    
+    .rating-star {
+        position: absolute;
+        right: 1rem;
+        bottom: 0rem;
+    }
+    .stars-container:before {
+position: absolute;
+top: 0;
+left: 0;
+content: '★★★★★';
+color: lightgray;
+}
+
+.stars-container:after {
+position: absolute;
+top: 0;
+left: 0;
+content: '★★★★★';
+color: #FD6921;
+overflow: hidden;
+}
+
+.stars-container {
+position: relative;
+display: inline-block;
+color: transparent;
+}
+
+.stars-0:after {
+width: 0%;
+}
+
+.stars-10:after {
+width: 10%;
+}
+
+.stars-20:after {
+width: 20%;
+}
+
+.stars-30:after {
+width: 30%;
+}
+
+.stars-40:after {
+width: 40%;
+}
+
+.stars-50:after {
+width: 50%;
+}
+
+.stars-60:after {
+width: 60%;
+}
+
+.stars-70:after {
+width: 70%;
+}
+
+.stars-80:after {
+width: 80%;
+}
+
+.stars-90:after {
+width: 90%;
+}
+
+.stars-100:after {
+width: 100;
+}
+    /* This is for card */
+    
+    .img-ui {
+        height: 150px;
+    }
+    /* This is for rating and price alignment */
+    
+    .left {
+        float: left;
+    }
+    
+    .right {
+        float: right;
+    }
+    /* Media query */
+    
+    @media all and (max-width: 35em) {
+        .my-breakpoint .ui-block-a,
+        .my-breakpoint .ui-block-b,
+        .my-breakpoint .ui-block-c,
+        .my-breakpoint .ui-block-d,
+        .my-breakpoint .ui-block-e {
+            width: 100%;
+            float: none;
+            padding: 5px;
+        }
+        .img-ui {
+            height: 180px;
+        }
+        .slideshow-container,
+        img {
+            max-height: 180px;
+        }
+        .dot {
+            height: 10px;
+            width: 10px;
+        }
+    }
+    /* iPhone portrait */
+    
+    @media (orientation: portrait) and (max-device-width: 428px) {
+        .mySlides-fade iframe {
+            height: 180px;
+        }
+    }
+    /* iPhone 5C and below Screen Resolution 320 X 568 */
+    
+    @media (orientation: portrait) and (max-device-width: 320px) {}
+    /* iPhone landscape */
+    
+    @media (orientation: landscape) and (max-device-width: 926px) {}
+    /* iPhone SE 5C and below Screen Resolution 320 X 568 */
+    
+    @media (orientation: landscape) and (max-device-width: 568px) {}
+    /* This is for Increase/Decrease Input*/
+    
+    .value-button {
+        text-align: center;
+        vertical-align: middle;
+        background: #ffffff;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        height: 2rem;
+        font-weight: 600;
+    }
+    
+    .value-button:hover {
+        cursor: pointer;
+    }
+    
+    form #input-wrap {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    input#number {
+        text-align: center;
+        margin: 0px;
+        width: 40px;
+        height: 1rem;
+        min-height: 1rem;
+        border-left: 1px solid #fb752c;
+        border-right: 1px solid #fb752c;
+        border-radius: initial;
+    }
+    
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    
+    .container {
+        border: 1px solid #fb752c;
+        border-radius: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100px;
+        flex-direction: row;
+        padding: 0.1rem;
+    }
+    
+    .container .col {
+        flex: 1 0 22%;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+    }
+    
+    .my-auto {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    
+    .text-center {
+        text-align: center;
+    }
+    
+    .container .ui-input-text,
+    .container .ui-input-search {
+        margin: 0;
+        border-width: 0;
+        box-shadow: none;
+    }
+    
+    #add-to-cart {
+        width: 170px;
+        background-color: #ffffff;
+        background-repeat: no-repeat;
+        border: 1px solid #FB752C !important;
+        color: #FB752C;
+    }
+    
+    .ui-icon-addtocart:after {
+        background-image: url("/images/icons_svg/add-to-cart.svg")!important;
+        background-size: 18px 18px !important;
+        background-color: transparent;
+        margin-right: 30px;
+    }
+    /* Fallback */
+    
+    .ui-nosvg .ui-icon-addtocart:after {
+        background-image: url("/images/icons_svg/add-to-cart.svg")!important;
+    }
+
