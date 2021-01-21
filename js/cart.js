@@ -212,6 +212,8 @@ function calculateTotal(value, foodId) {
             // }
         }
     })
+    points = totalPrice / 20;
+    $('#points').text(points);
 }
 
 function clearCart() {
