@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dFood</title>
+<link rel="stylesheet" href="../css/myTheme1.css" />
+<link rel="stylesheet" href="../css/promotion.css" />
+<link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+<script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<!-- toast Links -->
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+
+<script>
+    $(function() {
+        $("#includedContent").load("footer.html");
+    });
+</script>
+<style>
+    #stripe,
+    #cash {
+        font-weight: bold;
+        border-width: 1px;
+        border: 3px solid #FB752C !important;
+    }
+</style>
+</head>
+
+<body>
+    <div data-role="page" id="payment" data-theme="d" style="text-align: center; ">
+        <div data-role="header" data-position="fixed">
+            <h1>Order Success
+
+            </h1>
+        </div>
+        <div>
+            <h2>Your order has been succesfully placed!</h2>
+            <br>
+            <br>
+            <br>
+            <button class="submit-button" style=" background-color: #FB752C !important; color: black !important; 
+					width: 90%; margin: 0 auto; margin-top: 40px;" id="goHome">Go to Home</button>
+        </div>
+        <!-- Adding Tab-bar -->
+        <div data-role="footer" data-position="fixed" data-theme="e">
+            <div data-role="navbar" data-theme="e">
+                <ul>
+                    <li><a href="/html/Home.html" target="_self" data-icon="home">Home</a></li>
+                    <li><a href="/html/favourites.html" target="_self" data-icon="heart">Favourites</a></li>
+                    <li><a href="/html/my_orders.html" target="_self" data-icon="mail">My Orders</a></li>
+                    <li><a href="/html/account.html" target="_self" data-icon="user">Account</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("#goHome").click(function() {
+            window.location.href = "home.html";
+        });
+    </script>
+
+
+</body>
+
+</html>
