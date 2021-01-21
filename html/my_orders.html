@@ -1,108 +1,112 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>dFood | My orders</title>
-		<link rel="icon" href="../images/logo.png" type="image/gif">
-		<link rel="stylesheet" href="../css/myTheme1.css" />
-		<link rel="stylesheet" href="../css/my_orders.css" />
-		<link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
-		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-		<script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
-		
-		<script src="../js/my_orders.js"> </script>
-		<script src="../js/myorder_viewcomment.js"> </script>
 
-		<script>
-			$(function() {
-			    $("#includedContent").load("footer.html");
-			});
-		</script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>dFood | My orders</title>
+    <link rel="icon" href="../images/logo.png" type="image/gif">
+    <link rel="stylesheet" href="../css/myTheme1.css" />
+    <link rel="stylesheet" href="../css/my_orders.css" />
+    <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
 
-	</head>
-	<body>
-		<div data-role="page" id="payment" data-theme="d" >
-		<div data-role="header" data-position="fixed">
-			<h1>My Orders
-				<a data-rel="back"  target="_self">    
-					<img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> </a>
-			</h1>
-		</div>
-		<div data-role="main" class="ui-content" >
-			<div id="FR"  >
-			<div> 
-				<div style="display:inline-block; vertical-align:top">
-					<img id="image" src="../images/Food_Images/1_Fruit_Pancake.jpg">
-				</div>
-					<div style="display:inline-block; margin: 15px 0 0 15px;">
-					<h4 style="margin: auto"> Your order in Momo </h4>
-					<p style="margin: 5px auto 0 auto;"> Ordered on 05/07/2020 <br> LKR 2,340.00 </p>
-					</div>
-					
-			</div>	
-			
+    <script src="../js/my_orders.js">
+    </script>
+    <script src="../js/myorder_viewcomment.js">
+    </script>
 
-				<div class='rating-stars text-center'>
-					<ul id='stars'>
-						<li class='star' title='Poor' data-value='1'>
-							<i class='fa fa-star fa-fw'></i>
-						</li>
-						<li class='star' title='Fair' data-value='2'>
-							<i class='fa fa-star fa-fw'></i>
-						</li>
-						<li class='star' title='Good' data-value='3'>
-							<i class='fa fa-star fa-fw'></i>
-						</li>
-						<li class='star' title='Excellent' data-value='4'>
-							<i class='fa fa-star fa-fw'></i>
-						</li>
-						<li class='star' title='WOW!!!' data-value='5'>
-							<i class='fa fa-star fa-fw'></i>
-						</li>
-					</ul>
-				</div>
-				
-				<div>  
-					<textarea rows="4" cols="50" id="user_comment" placeholder="Enter your comment here"> </textarea>
-					<a href="#rating"  data-rel="popup" data-position-to="window" data-transition="pop"> 
-					<button id="rate"  class="ui-btn ui-corner-all ui-mini" onclick="writeUserData()">Review order </button>
-					</a>
-				</div>
+    <script>
+        $(function() {
+            $("#includedContent").load("footer.html");
+        });
+    </script>
 
-			</div>
+</head>
 
-			<div data-role="popup" id="rating" data-theme="a" data-overlay-theme="b" class="ui-content" style="padding: 16px 50px; text-align: center;">
-				<h3>Success</h3>
-				<p style="margin-top: 20px"> Your comment has been  <br> Succesfully submited </p>
-	
-				<hr style="margin: 15px auto; ">
-	
-				<a data-rel="back" target="_self" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini" 
-				style="color: #FB752C;font-size: 15px;">OK</a>
-			</div>
-	
+<body>
+    <div data-role="page" id="payment" data-theme="d">
+        <div data-role="header" data-position="fixed">
+            <h1>My Orders
+                <a data-rel="back" target="_self">
+                    <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> </a>
+            </h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div id="FR">
+                <div>
+                    <div style="display:inline-block; vertical-align:top">
+                        <img id="image" src="../images/Food_Images/1_Fruit_Pancake.jpg">
+                    </div>
+                    <div style="display:inline-block; margin: 15px 0 0 15px;">
+                        <h4 style="margin: auto"> Your order in Momo </h4>
+                        <p style="margin: 5px auto 0 auto;"> Ordered on 05/07/2020 <br> LKR 2,340.00 </p>
+                    </div>
 
-			<div id="repeat">
-			
-			</div>
-		   <!-- Adding Tab-bar -->
-		   <div data-role="footer" data-position="fixed" data-theme="e">
-            <div data-role="navbar" data-theme="e">
-                <ul>
-                    <li><a href="/html/Home.html" target="_self" data-icon="home">Home</a></li>
-                    <li><a href="/html/favourites.html" target="_self" data-icon="heart">Favourites</a></li>
-                    <li><a href="/html/my_orders.html" target="_self" data-icon="mail">My Orders</a></li>
-                    <li><a href="/html/account.html" target="_self" data-icon="user">Account</a></li>
-                </ul>
+                </div>
+
+
+                <div class='rating-stars text-center'>
+                    <ul id='stars'>
+                        <li class='star' title='Poor' data-value='1'>
+                            <i class='fa fa-star fa-fw'></i>
+                        </li>
+                        <li class='star' title='Fair' data-value='2'>
+                            <i class='fa fa-star fa-fw'></i>
+                        </li>
+                        <li class='star' title='Good' data-value='3'>
+                            <i class='fa fa-star fa-fw'></i>
+                        </li>
+                        <li class='star' title='Excellent' data-value='4'>
+                            <i class='fa fa-star fa-fw'></i>
+                        </li>
+                        <li class='star' title='WOW!!!' data-value='5'>
+                            <i class='fa fa-star fa-fw'></i>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <textarea rows="4" cols="50" id="user_comment" placeholder="Enter your comment here"> </textarea>
+                    <a href="#rating" data-rel="popup" data-position-to="window" data-transition="pop">
+                        <button id="rate" class="ui-btn ui-corner-all ui-mini" onclick="writeUserData()">Review Order </button>
+                    </a>
+                </div>
+
+            </div>
+
+            <div data-role="popup" id="rating" data-theme="a" data-overlay-theme="b" class="ui-content" style="padding: 16px 50px; text-align: center;">
+                <h3>Success</h3>
+                <p style="margin-top: 20px"> Your comment has been <br> Succesfully submited </p>
+
+                <hr style="margin: 15px auto; ">
+
+                <a data-rel="back" target="_self" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini" style="color: #FB752C;font-size: 15px;">OK</a>
+            </div>
+
+
+            <div id="repeat">
+
+            </div>
+            <!-- Adding Tab-bar -->
+            <div data-role="footer" data-position="fixed" data-theme="e">
+                <div data-role="navbar" data-theme="e">
+                    <ul>
+                        <li><a href="/html/Home.html" target="_self" data-icon="home">Home</a></li>
+                        <li><a href="/html/favourites.html" target="_self" data-icon="heart">Favourites</a></li>
+                        <li><a href="/html/my_orders.html" target="_self" data-icon="mail">My Orders</a></li>
+                        <li><a href="/html/account.html" target="_self" data-icon="user">Account</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-		</div>
-	</body>
+</body>
+
 </html>

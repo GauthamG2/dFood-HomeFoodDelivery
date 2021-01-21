@@ -12,13 +12,20 @@
 <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<!-- toast Links -->
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+
 <script>
     $(function() {
         $("#includedContent").load("footer.html");
     });
 </script>
 <style>
-    #stripe, #cash {
+    #stripe,
+    #cash {
         font-weight: bold;
         border-width: 1px;
         border: 3px solid #FB752C !important;
@@ -30,7 +37,7 @@
     <div data-role="page" id="payment" data-theme="d" style="text-align: center; ">
         <div data-role="header" data-position="fixed">
             <h1>Payment
-                <a data-rel="back" target="_self">   
+                <a data-rel="back" target="_self">
                     <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> </a>
             </h1>
         </div>
@@ -40,8 +47,8 @@
             <button class="submit-button" style=" background-color: transparent !important; color: black !important; border-width: 2px; width: 90%; margin: 
             0 auto; margin-top: 40px;" id="cash">Cash</button>
         </div>
-           <!-- Adding Tab-bar -->
-           <div data-role="footer" data-position="fixed" data-theme="e">
+        <!-- Adding Tab-bar -->
+        <div data-role="footer" data-position="fixed" data-theme="e">
             <div data-role="navbar" data-theme="e">
                 <ul>
                     <li><a href="/html/Home.html" target="_self" data-icon="home">Home</a></li>
@@ -55,11 +62,16 @@
 
     <script>
         $("#stripe").click(function() {
-            window.location.href = "payment_portal.html";
+            toastr.success('Stripe payment methoad has been selected!', 'Success');
+        });
+
+        $("#cash").click(function() {
+            //debugger
+            toastr.info('This option is currently unavailable, Please select other!', 'Alert');
         });
     </script>
 
- 
+
 </body>
 
 </html>

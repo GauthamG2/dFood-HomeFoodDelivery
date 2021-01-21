@@ -8,21 +8,12 @@
     <link rel="stylesheet" href="../css/myTheme1.css" />
     <link rel="stylesheet" href="../css/jquery.mobile.icons.min.css" />
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-    <script>
-        $(function () {
-            $("#includedContent").load("footer.html");
-        });
-    </script>
-
     <style>
-        #proceed {
-            display: none;
-        }
-
         .centerDessert {
             position: relative;
             left: 50%;
@@ -34,114 +25,113 @@
             height: 300;
         }
 
-        @media (orientation: landscape) and (max-device-width : 1024px) {
-            #cd {
-                display: none;
-                margin-left: 50%;
-                margin-right: 10%;
-                width: 90%;
-                margin-top: 30px;
-            }
+        #cd {
+            margin: 20px;
+            height: 300px;
+            width: 260px;
+            border: 3px solid #FB752C;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
 
-        @media screen and (max-device-width : 1024px) {
+        #spin {
+            position: relative;
+            display: inline-block;
+            margin: 30px 20px 20px 20px;
+            width: 170px;
+            background-color: #ffffff;
+            background-repeat: no-repeat;
+            border: 1px solid #FB752C !important;
+            color: #FB752C;
+            text-indent: -30px;
+            font-size: 18px;
+        }
 
-            #cd {
-                display: none;
-                margin-left: 10%;
-                margin-right: 10%;
-                width: 90%;
-                margin-top: 30px;
-            }
+        #collect {
+            display: none;
+            margin: 10px 20px;
+            width: 250px;
+            border: 1px solid #FB752C !important;
+        }
+
+        .fa-dharmachakra:before {
+            position: absolute;
+            content: "\f655";
+            font-size: 18px;
+            padding: 5px;
+            top: 0.5em;
+            right: 1.3em;
         }
     </style>
-
-    <!-- Adding footer -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
-    </script>
-    <script>
-        $(function() {
-            $("#footer").load("footer.html");
-        });
-    </script>
 </head>
 
 <body>
     <div data-role="page" id="draw" data-theme="d">
-        <div>
-            <div data-role="header" data-position="fixed">
-                <h1>Draw 
-                    <a data-rel="back" target="_self">
-                        <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> </a>
-                </h1>
-            </div>
-    
+
+        <div data-role="header" data-position="fixed">
+            <h1>Draw
+                <a data-rel="back" target="_self">
+                    <img src="../images/icons/Icon ionic-ios-arrow-back.png" style="float: left; "> </a>
+            </h1>
+        </div>
+        <div data-role="main" class="ui-content" data-theme="d" style="padding: 0px;" align="center">
             <div>
                 </br>
-                <h1
-                    style="background-color: peachpuff; color: #FB752C; text-align: center; margin-top: 10px; font-family: 'Open Sans';">
-                    Spin for a Dessert!
+                <h1 style="color: #FB752C; margin:10px;">
+                    Spin for a Dessert !
                     </br>
-                    <h4
-                        style="margin-left: auto; margin-right: auto; margin-bottom: auto; font-family: 'Open Sans'; font-size: small; text-align: center;">
+                    <h4 style="margin: 20px; line-height: 25px;">
                         Click the Spin button to win a dessert.
                         </br>
-                        The dessert will be added with your order :)
+                        The dessert will be added with your order.
                     </h4>
             </div>
             <form>
-    
-                <div id="cd" class="roulette" style="border-radius: 8px;">
-                    <img src="../images/1.jpeg" width="300" height="300" />
-                    <img src="../images/6.jpg" width="300" height="300" />
-                    <img src="../images/2.jpeg" width="300" height="300" />
-                    <img src="../images/6.jpg" width="300" height="300" />
-                    <img src="../images/3.jpeg" width="300" height="300" />
-                    <img src="../images/6.jpg" width="300" height="300" />
-                    <img src="../images/4.jpeg" width="300" height="300" />
-                    <img src="../images/6.jpg" width="300" height="300" />
-                    <img src="../images/5.jpg" width="300" height="300" />
-                    <img src="../images/6.jpg" width="300" height="300" />
+
+                <div id="cd" class="roulette">
+                    <img src="../images/1.jpeg" height="320px" width="260px" style="object-fit: cover;" />
+                    <img src="../images/6.jpg" height="260px" width="260px" style="object-fit: cover;" />
+                    <img src="../images/2.jpeg" height="260px" width="260px" style="object-fit: cover;" />
+                    <img src="../images/6.jpg" height="260px" width="260px" style="object-fit: cover;" />
+                    <img src="../images/3.jpeg" height="260px" width="260px" style="object-fit: cover;" />
+                    <img src="../images/6.jpg" height="260px" width="260px" style="object-fit: cover;" />
+                    <img src="../images/4.jpeg" height="260px" width="260px" style="object-fit: cover;" />
+                    <img src="../images/6.jpg" height="260px" width="260px" style="object-fit: cover;" />
+                    <img src="../images/5.jpg" height="260px" width="260px" style="object-fit: cover;" />
+                    <img src="../images/6.jpg" height="260px" width="260px" style="object-fit: cover;" />
                 </div>
             </form>
-    
-            <button id="go"
-                style="background-color:#FB752C; color:white; margin: 0 auto auto; width: 35%; border-radius: 10px; font-family: 'Open Sans'; margin-top: 20px;">SPIN
-                !</button>
-    
-            <div style="padding-bottom: 40px; margin-left: 35%;">
-                <a href="#addpromo" data-rel="popup" data-position-to="window" data-transition="pop">
-                    <button type="button" id="proceed"
-                        style="color:white; margin: 0 auto auto; width: 45%; border-radius: 10px; font-family: 'Open Sans'; margin-top: 20px;">Collect</button>
-                </a>
+
+            <button class="fas fa-dharmachakra" id="spin">Spin</button>
+
+            <a href="#addpromo" data-rel="popup" data-position-to="window" data-transition="pop">
+
+                <button type="button" id="collect">Collect</button>
+
+            </a>
+
+            <script src="../js/spin.js" charset="utf-8"></script>
+
+            <div data-role="popup" id="addpromo" data-theme="a" data-overlay-theme="b" class="ui-content">
+                <h3>Congratualations!</h3>
+                <p style="margin-top: 20px"> <br> You've won a dessert</p>
+                <hr style="margin: 15px auto;">
+                <a href="../html/cart.html" target="_self" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini"
+                    style="color: #FB752C;">OK</a>
             </div>
-
         </div>
-        
 
-        
-        
 
-        <script src="../js/spin.js" charset="utf-8"></script>
-
-        <div data-role="popup" id="addpromo" data-theme="a" data-overlay-theme="b" class="ui-content">
-            <h3>Congratualations!</h3>
-            <p style="margin-top: 20px"> <br> You've won a dessert</p>
-            <hr style="margin: 15px auto;">
-            <a href="../html/cart.html" target="_self" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini"
-                style="color: #FB752C;">OK</a>
-        </div>
         <script>
 
             $(document).ready(function () {
                 setTimeout(function () {
-                    $("#proceed").show();
+                    $("#collect").show();
                 }, 15000);
             });
         </script>
         <!-- Adding Footer -->
         <!-- <div id="footer"></div> -->
-        
 
         <!-- Adding Tab-bar -->
         <div data-role="footer" data-position="fixed" data-theme="e">

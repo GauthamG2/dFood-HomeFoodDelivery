@@ -1,3 +1,35 @@
+// const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+// const express = require('express');
+// const app = express();
+// app.use(express.static('.'));
+
+// const YOUR_DOMAIN = 'http://localhost:5051';
+
+// app.post('/create-checkout-session', async(req, res) => {
+//     const session = await stripe.checkout.sessions.create({
+//         payment_method_types: ['card'],
+//         line_items: [{
+//             price_data: {
+//                 currency: 'usd',
+//                 product_data: {
+//                     name: 'Stubborn Attachments',
+//                     images: ['https://i.imgur.com/EHyR2nP.png'],
+//                 },
+//                 unit_amount: 2000,
+//             },
+//             quantity: 1,
+//         }, ],
+
+//         mode: 'payment',
+//         success_url: `${YOUR_DOMAIN}/html/success.html`,
+//         cancel_url: `${YOUR_DOMAIN}/cancel.html`,
+//     });
+
+//     res.json({ id: session.id });
+// });
+
+// app.listen(5051, () => console.log('Running on port 5051'));
+
 var foodItem = [{
         id: '1',
         name: 'Fruit Pancake',
@@ -106,6 +138,7 @@ $(document).ready(function() {
 // This is getting food items added to the card
 
 function renderCartItem() {
+    removeOrderButton();
 
     // debugger
     totalPrice = 0;
@@ -157,6 +190,8 @@ function renderCartItem() {
         $('#points').text(points);
     }
 
+
+
 }
 
 
@@ -189,7 +224,9 @@ function clearCart() {
     //debugger
     sessionStorage.setItem('cart', JSON.stringify(cart));
     console.log(sessionStorage);
+
     location.reload();
+
 }
 
 function removeItem(foodId) {
@@ -199,6 +236,7 @@ function removeItem(foodId) {
     renderCartItem();
     sessionStorage.setItem('cart', JSON.stringify(cart));
     location.reload();
+
 }
 
 function incQuantity(foodId) {
@@ -237,4 +275,31 @@ function disableButton() {
     $('#redeem').on('click', function() {
         $(this).prop("disabled", true);
     });
+}
+
+function disableOrderButton() {
+    // document.getElementById("#redeem").disabled = true;
+    $('#PlaceOrder').on('click', function() {
+        $(this).prop("disabled", true);
+    });
+}
+
+function removeOrderButton() {
+    if (cart.length == 0) {
+        //debugger
+        var myobj = document.getElementById("PlaceOrder");
+        myobj.remove();
+        var redeem = document.getElementById("redeem");
+        redeem.remove();
+        var AddPromoCode = document.getElementById("AddPromoCode");
+        AddPromoCode.remove();
+
+        location.reload
+    }
+}
+
+function reloadScreen() {
+    if (cart.length > 0) {
+        location.reload();
+    }
 }

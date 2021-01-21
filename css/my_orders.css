@@ -1,43 +1,74 @@
 #FR {
-    border-style: solid;
-    border-color: #FB752C;
-    border-radius: 8px; 
-    padding: 15px ; 
-    }
-    #image{
-    width: 6em; 
-    height: 6em; 
+  border-style: solid;
+  border-color: #fb752c;
+  border-radius: 8px;
+  padding: 15px;
+}
+#image {
+  width: 6em;
+  height: 6em;
+  border-radius: 8px;
+}
+#rate {
+  height: 44px;
+  width: 35%;
+  padding: 5px;
+  margin: 15px auto auto auto;
+  border-radius: 8px;
+}
+/* Rating Star Widgets Style */
+.rating-stars ul {
+  list-style-type: none;
+  padding: 0;
+  margin: auto;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+.rating-stars ul > li.star {
+  display: inline-block;
+  margin-top: 10px;
+}
+/* Idle State of the stars */
+.rating-stars ul > li.star > i.fa {
+  font-size: 1.8em; /* Change the size of the stars */
+  color: #ccc; /* Color on idle state */
+}
+/* Hover state of the stars */
+.rating-stars ul > li.star.hover > i.fa {
+  color: #ffcc36;
+}
+/* Selected state of the stars */
+.rating-stars ul > li.star.selected > i.fa {
+  color: #ff912c;
+}
+.text-center {
+  text-align: center;
+}
 
-    border-radius: 8px;
-    }
-    #rate{
-    width: 35%; 
-    padding: 5px; 
-    margin: 15px auto auto auto;
-    }
-    /* Rating Star Widgets Style */
-    .rating-stars ul {
-    list-style-type:none;
-    padding:0;
-    margin:auto;
-    -moz-user-select:none;
-    -webkit-user-select:none;
-    }
-    .rating-stars ul > li.star {
-    display:inline-block;
-    margin-top: 10px;
-    }
-    /* Idle State of the stars */
-    .rating-stars ul > li.star > i.fa {
-    font-size:1.8em; /* Change the size of the stars */
-    color:#ccc; /* Color on idle state */
-    }
-    /* Hover state of the stars */
-    .rating-stars ul > li.star.hover > i.fa {
-    color:#FFCC36;
-    }
-    /* Selected state of the stars */
-    .rating-stars ul > li.star.selected > i.fa {
-    color:#FF912C;
-    }
-    .text-center {text-align:center;}
+/* Media query */
+
+/* iPhone 5/SE portrait */
+@media screen and (min-width: 320px) and (max-width: 320px) and (orientation: portrait) {
+  #FR {
+    text-align-last: center;
+  }
+  #ordered-food-image-container {
+    margin-left: 28%;
+  }
+}
+
+/* iPad portrait */
+@media screen and (min-width: 768px) and (max-width: 1366px) and (orientation: portrait) {
+  #FR {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
+
+/* iPad landscape */
+@media screen and (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) {
+  #FR {
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+}

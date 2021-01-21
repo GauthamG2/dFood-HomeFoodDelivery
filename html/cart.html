@@ -92,13 +92,13 @@
                     <p id="totalPrice" style="padding-left: 10px; font-size: 16px; "> 00.00</p>
                     <p id="service-charges" style="padding-left: 10px; font-size: 16px; margin-top: -10px;">50.00</p>
                     <p id="subTotal" name="subTotal" style="padding-left: 10px; font-size: 16px; font-weight: bold; margin-top: -10px;"> 00.00</p>
-                    <a href="../html/payment.html"><img src="../images/icons/card.png" style="float: right; margin-top: -5px;"> </a>
+                    <a href="#" id="payment"><img src="../images/icons/card.png" style="float: right; margin-top: -5px;"> </a>
                 </div>
             </fieldset>
             <p class="paragraph" style="margin-top:15px; text-align:center">You'll earn <b id="points">0</b> points for this order!</p>
             <fieldset class="ui-grid-a">
                 <div class="ui-block-a" style="width: 50%; text-align: left;">
-                    <button class="submit-button" style=" background-color: transparent !important; color:  #FB752C  !important; border-width: 1px !important; width: 90%; margin: 0 auto; margin-top: 40px; font-size: 15px;" onclick="redeemPoints()">Redeem Points</button>
+                    <button class="submit-button" id='redeem' style=" background-color: transparent !important; color:  #FB752C  !important; border-width: 1px !important; width: 90%; margin: 0 auto; margin-top: 40px; font-size: 15px;" onclick="redeemPoints(); disableButton();">Redeem Points</button>
                 </div>
                 <div class="ui-block-b" style="width: 50%; text-align: right;">
                     <button class="submit-button" style=" background-color: transparent !important; color:  #FB752C !important; border-width: 1px !important; width: 90%; margin: 0 auto; margin-top: 40px; font-size: 15px;" id="AddPromoCode">Add Promo Code</button>
@@ -131,6 +131,10 @@
 
                     //This will be printed when the transaction is successful. To charge, server side scripting is required.
                     if (token.id) {
+                        debugger
+                        clearCart();
+                        window.location.href = "order-success.html";
+
                         $("#thankyouPayment").html("Thank you, your payment was successful!");
 
                         //You can also use the following code to re-submit the form content to another file for further processing.
@@ -167,6 +171,10 @@
 
         $("#AddPromoCode").click(function() {
             window.location.href = "promotion.html";
+        });
+
+        $("#payment").click(function() {
+            window.location.href = "payment.html";
         });
     </script>
 </body>
