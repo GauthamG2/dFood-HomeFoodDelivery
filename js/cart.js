@@ -252,7 +252,9 @@ function incQuantity(foodId) {
 function decQuantity(foodId) {
     var vallue = $(`#display-quantity-${foodId}`).html();
     console.log(vallue, 'val');
-    $(`#display-quantity-${id}`).text(Number(vallue) - 1);
+    x = vallue - 1;
+    console.log(x);
+    $(`#display-quantity-${foodId}`).text(Number(vallue) - 1);
     calculateTotal(Number(vallue) - 1, foodId);
 }
 
